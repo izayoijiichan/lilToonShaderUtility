@@ -1,0 +1,27 @@
+{
+  "name": "com.izayoi.liltoon.shader.utility",
+  "displayName": "lilToon Shader Utility",
+  "description": "This package is utility scripts to get/set lilToon shader property values.",
+  "version": "1.0.0",
+  "type": "tool",
+  "category": "",
+  "keywords": [
+    "unity",
+    "shader",
+    "toon",
+    "lilToon"
+  ],
+  "unity": "2019.4",
+  "author": {
+    "name" : "Izayoi Jiichan"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/izayoijiichan/lilToonShaderUtility/tree/main/LICENSE.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izayoijiichan/lilToonShaderUtility.git"
+  },
+  "dependencies": {}
+}
