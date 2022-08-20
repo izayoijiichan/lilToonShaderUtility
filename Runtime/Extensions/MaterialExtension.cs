@@ -19,6 +19,7 @@ namespace LilToonShader.Extensions
         /// <returns></returns>
         public static bool GetSafeBool(this Material material, string propertyName)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasInt(propertyName))
             {
                 return material.GetInt(propertyName) == 1;
@@ -29,6 +30,12 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                return material.GetInt(propertyName) == 1;
+            }
+#endif
             else
             {
                 Debug.LogError($"{material.name} don't have {propertyName} property.");
@@ -45,6 +52,7 @@ namespace LilToonShader.Extensions
         /// <returns></returns>
         public static Color GetSafeColor(this Material material, string propertyName)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasColor(propertyName))
             {
                 return material.GetColor(propertyName);
@@ -55,6 +63,12 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                return material.GetColor(propertyName);
+            }
+#endif
             else
             {
                 Debug.LogError($"{material.name} don't have {propertyName} property.");
@@ -97,6 +111,7 @@ namespace LilToonShader.Extensions
         /// <returns></returns>
         public static float GetSafeFloat(this Material material, string propertyName)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasFloat(propertyName))
             {
                 return material.GetFloat(propertyName);
@@ -107,6 +122,12 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                return material.GetFloat(propertyName);
+            }
+#endif
             else
             {
                 Debug.LogError($"{material.name} don't have {propertyName} property.");
@@ -125,6 +146,7 @@ namespace LilToonShader.Extensions
         {
             //return material.GetSafeInteger(propertyName);
 
+#if UNITY_2021_2_OR_NEWER
             if (material.HasInt(propertyName))
             {
                 return material.GetInt(propertyName);
@@ -135,6 +157,12 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                return material.GetInt(propertyName);
+            }
+#endif
             else
             {
                 Debug.LogError($"{material.name} don't have {propertyName} property.");
@@ -151,6 +179,7 @@ namespace LilToonShader.Extensions
         /// <returns></returns>
         public static int GetSafeInteger(this Material material, string propertyName)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasInteger(propertyName))
             {
                 return material.GetInteger(propertyName);
@@ -167,6 +196,9 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            return GetSafeInt(material, propertyName);
+#endif
         }
 
         /// <summary>
@@ -177,6 +209,7 @@ namespace LilToonShader.Extensions
         /// <returns></returns>
         public static Texture2D GetSafeTexture(this Material material, string propertyName)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasTexture(propertyName))
             {
                 return (Texture2D)material.GetTexture(propertyName);
@@ -187,6 +220,12 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                return (Texture2D)material.GetTexture(propertyName);
+            }
+#endif
             else
             {
                 Debug.LogError($"{material.name} don't have {propertyName} property.");
@@ -214,6 +253,7 @@ namespace LilToonShader.Extensions
         /// <returns></returns>
         public static Vector4 GetSafeVector4(this Material material, string propertyName)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasVector(propertyName))
             {
                 return material.GetVector(propertyName);
@@ -224,6 +264,12 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                return material.GetVector(propertyName);
+            }
+#endif
             else
             {
                 Debug.LogError($"{material.name} don't have {propertyName} property.");
@@ -245,6 +291,7 @@ namespace LilToonShader.Extensions
         /// <returns>Whether it could be set.</returns>
         public static bool SetSafeBool(this Material material, string propertyName, bool value)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasInt(propertyName))
             {
                 material.SetInt(propertyName, (value == true) ? 1 : 0);
@@ -257,6 +304,14 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                material.SetInt(propertyName, (value == true) ? 1 : 0);
+
+                return true;
+            }
+#endif
             else
             {
                 Debug.LogWarning($"{material.name} don't have {propertyName} property.");
@@ -279,6 +334,7 @@ namespace LilToonShader.Extensions
         {
             //return material.SetSafeInteger(propertyName, value, minValue, maxValue, defaultValue);
 
+#if UNITY_2021_2_OR_NEWER
             if (material.HasInt(propertyName))
             {
                 int setValue = value;
@@ -302,6 +358,25 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                int setValue = value;
+
+                if (minValue.HasValue && value < minValue)
+                {
+                    setValue = defaultValue;
+                }
+                else if (maxValue.HasValue && value > maxValue)
+                {
+                    setValue = defaultValue;
+                }
+
+                material.SetInt(propertyName, setValue);
+
+                return true;
+            }
+#endif
             else
             {
                 Debug.LogWarning($"{material.name} don't have {propertyName} property.");
@@ -322,6 +397,7 @@ namespace LilToonShader.Extensions
         /// <returns>Whether it could be set.</returns>
         public static bool SetSafeInteger(this Material material, string propertyName, int value, int? minValue = null, int? maxValue = null, int defaultValue = default)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasInteger(propertyName))
             {
                 int setValue = value;
@@ -351,6 +427,9 @@ namespace LilToonShader.Extensions
 
                 return false;
             }
+#else
+            return SetSafeInt(material, propertyName, value, minValue, maxValue, defaultValue);
+#endif
         }
 
         /// <summary>
@@ -365,6 +444,7 @@ namespace LilToonShader.Extensions
         /// <returns>Whether it could be set.</returns>
         public static bool SetSafeFloat(this Material material, string propertyName, float value, float? minValue = null, float? maxValue = null, float defaultValue = default)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasFloat(propertyName))
             {
                 float setValue = value;
@@ -388,6 +468,25 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                float setValue = value;
+
+                if (minValue.HasValue && value < minValue)
+                {
+                    setValue = defaultValue;
+                }
+                else if (maxValue.HasValue && value > maxValue)
+                {
+                    setValue = defaultValue;
+                }
+
+                material.SetFloat(propertyName, setValue);
+
+                return true;
+            }
+#endif
             else
             {
                 Debug.LogWarning($"{material.name} don't have {propertyName} property.");
@@ -405,6 +504,7 @@ namespace LilToonShader.Extensions
         /// <returns>Whether it could be set.</returns>
         public static bool SetSafeColor(this Material material, string propertyName, Color color)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasColor(propertyName))
             {
                 material.SetColor(propertyName, color);
@@ -417,6 +517,14 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                material.SetColor(propertyName, color);
+
+                return true;
+            }
+#endif
             else
             {
                 Debug.LogWarning($"{material.name} don't have {propertyName} property.");
@@ -434,6 +542,7 @@ namespace LilToonShader.Extensions
         /// <returns>Whether it could be set.</returns>
         public static bool SetSafeTexture(this Material material, string propertyName, Texture2D texture)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasTexture(propertyName))
             {
                 material.SetTexture(propertyName, texture);
@@ -446,6 +555,14 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                material.SetTexture(propertyName, texture);
+
+                return true;
+            }
+#endif
             else
             {
                 Debug.LogWarning($"{material.name} don't have {propertyName} property.");
@@ -463,6 +580,7 @@ namespace LilToonShader.Extensions
         /// <returns>Whether it could be set.</returns>
         public static bool SetSafeVector(this Material material, string propertyName, Vector4 vector)
         {
+#if UNITY_2021_2_OR_NEWER
             if (material.HasVector(propertyName))
             {
                 material.SetVector(propertyName, vector);
@@ -475,6 +593,14 @@ namespace LilToonShader.Extensions
 
                 return default;
             }
+#else
+            if (material.HasProperty(propertyName))
+            {
+                material.SetVector(propertyName, vector);
+
+                return true;
+            }
+#endif
             else
             {
                 Debug.LogWarning($"{material.name} don't have {propertyName} property.");

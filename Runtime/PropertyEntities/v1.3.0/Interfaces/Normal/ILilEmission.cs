@@ -35,7 +35,7 @@ namespace LilToonShader.v1_3_0
         /// <remarks>v1.3.0 added</remarks>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.0f)]
-        public float EmissionMainStrength { get; set; }
+        float EmissionMainStrength { get; set; }
 
         /// <summary>Emission Blend</summary>
         //[Range(0.0f, 1.0f)]
