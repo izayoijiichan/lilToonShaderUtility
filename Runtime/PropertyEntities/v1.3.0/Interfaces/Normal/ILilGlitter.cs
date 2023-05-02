@@ -26,6 +26,10 @@ namespace LilToonShader.v1_3_0
         /// <summary>Glitter Color Texture</summary>
         Texture2D GlitterColorTex { get; set; }
 
+        /// <summary>Glitter Color Texture UV Mode</summary>
+        /// <remarks>v1.3.2 added</remarks>
+        LilGlitterColorTextureUVMode GlitterColorTex_UVMode { get; set; }
+
         /// <summary>Glitter Main Strength</summary>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.0f)]

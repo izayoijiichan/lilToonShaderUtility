@@ -48,6 +48,11 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(-8)]
         float OutlineLitOffset { get; set; }
 
+        /// <summary>Outline Lit Receive Shadow</summary>
+        /// <remarks>v1.3.1 added</remarks>
+        //[DefaultValue(false)]
+        bool OutlineLitShadowReceive { get; set; }
+
         /// <summary>Outline Width</summary>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.05f)]

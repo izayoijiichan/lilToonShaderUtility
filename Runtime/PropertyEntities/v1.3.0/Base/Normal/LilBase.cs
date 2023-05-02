@@ -32,5 +32,11 @@ namespace LilToonShader.v1_3_0
         /// <remarks>v1.3.0 added</remarks>
         //[DefaultValue(0,0,0,0)]
         public Color BackfaceColor { get; set; }
+
+        /// <summary>AA Strength</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        //[Range(0.0f, 1.0f)]
+        //[DefaultValue(1.0)]
+        public float AAStrength { get; set; }
     }
 }

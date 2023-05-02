@@ -20,6 +20,20 @@ namespace LilToonShader
         MatCap = 4,
     }
 
+    /// <summary>Normal Map UV Mode</summary>
+    /// <remarks>v1.3.1 added</remarks>
+    public enum LilNormalMapUVMode
+    {
+        /// <summary>UV0</summary>
+        UV0 = 0,
+        /// <summary>UV1</summary>
+        UV1 = 1,
+        /// <summary>UV2</summary>
+        UV2 = 2,
+        /// <summary>UV3</summary>
+        UV3 = 3,
+    }
+
     /// <summary>Glitter UV Mode</summary>
     /// <remarks>Glitter</remarks>
     public enum LilGlitterUVMode
@@ -28,6 +42,20 @@ namespace LilToonShader
         UV0 = 0,
         /// <summary>UV1</summary>
         UV1 = 1,
+    }
+
+    /// <summary>Glitter Color Texture UV Mode</summary>
+    /// <remarks>v1.3.2 added</remarks>
+    public enum LilGlitterColorTextureUVMode
+    {
+        /// <summary>UV0</summary>
+        UV0 = 0,
+        /// <summary>UV1</summary>
+        UV1 = 1,
+        /// <summary>UV2</summary>
+        UV2 = 2,
+        /// <summary>UV3</summary>
+        UV3 = 3,
     }
 
     /// <summary>Emission UV Mode</summary>

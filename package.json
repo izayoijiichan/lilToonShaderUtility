@@ -2,7 +2,7 @@
   "name": "com.izayoi.liltoon.shader.utility",
   "displayName": "lilToon Shader Utility",
   "description": "This package is utility scripts to get/set lilToon shader property values.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "tool",
   "category": "",
   "keywords": [
@@ -11,7 +11,7 @@
     "toon",
     "lilToon"
   ],
-  "unity": "2019.4",
+  "unity": "2020.3",
   "author": {
     "name" : "Izayoi Jiichan"
   },

@@ -99,5 +99,10 @@ namespace LilToonShader.v1_3_0
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.1f)]
         public float RimIndirBlur { get; set; }
+
+        /// <summary>Rim Blend Mode</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        //[DefaultValue(LilBlendMode.Add)]
+        public LilBlendMode RimBlendMode { get; set; }
     }
 }

@@ -370,12 +370,13 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.Invisible, propertyBlock.Invisible);
-            material.SetSafeBool(PropertyName.FlipNormal, propertyBlock.FlipNormal);
-            material.SetSafeBool(PropertyName.ShiftBackfaceUV, propertyBlock.ShiftBackfaceUV);
-            material.SetSafeBool(PropertyName.BackfaceForceShadow, propertyBlock.BackfaceForceShadow);
+            material.SetSafeBool(PropertyNameID.Invisible, propertyBlock.Invisible);
+            material.SetSafeBool(PropertyNameID.FlipNormal, propertyBlock.FlipNormal);
+            material.SetSafeBool(PropertyNameID.ShiftBackfaceUV, propertyBlock.ShiftBackfaceUV);
+            material.SetSafeBool(PropertyNameID.BackfaceForceShadow, propertyBlock.BackfaceForceShadow);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeColor(PropertyName.BackfaceColor, propertyBlock.BackfaceColor);  // v1.3.0
+            material.SetSafeColor(PropertyNameID.BackfaceColor, propertyBlock.BackfaceColor);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.AAStrength, propertyBlock.AAStrength, 0.0f, 1.0f, 1.0f);  // v1.3.7
 #endif
         }
 
@@ -391,11 +392,14 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.Invisible, propertyBlock.Invisible);
-            material.SetSafeBool(PropertyName.FlipNormal, propertyBlock.FlipNormal);
-            material.SetSafeBool(PropertyName.ShiftBackfaceUV, propertyBlock.ShiftBackfaceUV);
-            material.SetSafeBool(PropertyName.BackfaceForceShadow, propertyBlock.BackfaceForceShadow);
-            material.SetSafeTexture(PropertyName.TriMask, propertyBlock.TriMask);  // Lite only
+            material.SetSafeBool(PropertyNameID.Invisible, propertyBlock.Invisible);
+            material.SetSafeBool(PropertyNameID.FlipNormal, propertyBlock.FlipNormal);
+            material.SetSafeBool(PropertyNameID.ShiftBackfaceUV, propertyBlock.ShiftBackfaceUV);
+            material.SetSafeBool(PropertyNameID.BackfaceForceShadow, propertyBlock.BackfaceForceShadow);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeFloat(PropertyNameID.AAStrength, propertyBlock.AAStrength, 0.0f, 1.0f, 1.0f);  // v1.3.7
+#endif
+            material.SetSafeTexture(PropertyNameID.TriMask, propertyBlock.TriMask);  // Lite only
         }
 
         /// <summary>
@@ -410,7 +414,7 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.Invisible, propertyBlock.Invisible);
+            material.SetSafeBool(PropertyNameID.Invisible, propertyBlock.Invisible);
         }
 
         #endregion
@@ -429,9 +433,9 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeFloat(PropertyName.LightMinLimit, propertyBlock.LightMinLimit, 0f, 1f, 0.05f);
-            material.SetSafeFloat(PropertyName.LightMaxLimit, propertyBlock.LightMaxLimit, 0f, 10f, 1f);
-            material.SetSafeFloat(PropertyName.MonochromeLighting, propertyBlock.MonochromeLighting, 0f, 1f, 0f);
+            material.SetSafeFloat(PropertyNameID.LightMinLimit, propertyBlock.LightMinLimit, 0f, 1f, 0.05f);
+            material.SetSafeFloat(PropertyNameID.LightMaxLimit, propertyBlock.LightMaxLimit, 0f, 10f, 1f);
+            material.SetSafeFloat(PropertyNameID.MonochromeLighting, propertyBlock.MonochromeLighting, 0f, 1f, 0f);
         }
 
         /// <summary>
@@ -446,12 +450,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.AsUnlit, propertyBlock.AsUnlit);
-            material.SetSafeFloat(PropertyName.VertexLightStrength, propertyBlock.VertexLightStrength, 0f, 1f, 0f);
-            material.SetSafeVector(PropertyName.LightDirectionOverride, propertyBlock.LightDirectionOverride);
-            material.SetSafeFloat(PropertyName.AlphaBoostFA, propertyBlock.AlphaBoostFA, 1f, 100f, 10f);
-            material.SetSafeFloat(PropertyName.BeforeExposureLimit, propertyBlock.BeforeExposureLimit, null, null, 10000f);
-            material.SetSafeFloat(PropertyName.LilDirectionalLightStrength, propertyBlock.LilDirectionalLightStrength, 0f, 1f, 1f);
+            material.SetSafeBool(PropertyNameID.AsUnlit, propertyBlock.AsUnlit);
+            material.SetSafeFloat(PropertyNameID.VertexLightStrength, propertyBlock.VertexLightStrength, 0f, 1f, 0f);
+            material.SetSafeVector(PropertyNameID.LightDirectionOverride, propertyBlock.LightDirectionOverride);
+            material.SetSafeFloat(PropertyNameID.AlphaBoostFA, propertyBlock.AlphaBoostFA, 1f, 100f, 10f);
+            material.SetSafeFloat(PropertyNameID.BeforeExposureLimit, propertyBlock.BeforeExposureLimit, null, null, 10000f);
+            material.SetSafeFloat(PropertyNameID.LilDirectionalLightStrength, propertyBlock.LilDirectionalLightStrength, 0f, 1f, 1f);
         }
 
         #endregion
@@ -470,10 +474,10 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeColor(PropertyName.Color, propertyBlock.Color);
-            material.SetSafeTexture(PropertyName.MainTex, propertyBlock.MainTex);
+            material.SetSafeColor(PropertyNameID.Color, propertyBlock.Color);
+            material.SetSafeTexture(PropertyNameID.MainTex, propertyBlock.MainTex);
 
-            material.SetSafeVector(PropertyName.FakeShadowVector, propertyBlock.FakeShadowVector);
+            material.SetSafeVector(PropertyNameID.FakeShadowVector, propertyBlock.FakeShadowVector);
         }
 
         /// <summary>
@@ -488,9 +492,9 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeColor(PropertyName.Color, propertyBlock.Color);
-            material.SetSafeTexture(PropertyName.MainTex, propertyBlock.MainTex);
-            material.SetSafeVector(PropertyName.MainTex_ScrollRotate, propertyBlock.MainTex_ScrollRotate);
+            material.SetSafeColor(PropertyNameID.Color, propertyBlock.Color);
+            material.SetSafeTexture(PropertyNameID.MainTex, propertyBlock.MainTex);
+            material.SetSafeVector(PropertyNameID.MainTex_ScrollRotate, propertyBlock.MainTex_ScrollRotate);
         }
 
         /// <summary>
@@ -505,13 +509,13 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeColor(PropertyName.Color, propertyBlock.Color);
-            material.SetSafeTexture(PropertyName.MainTex, propertyBlock.MainTex);
-            material.SetSafeVector(PropertyName.MainTex_ScrollRotate, propertyBlock.MainTex_ScrollRotate);
-            material.SetSafeVector(PropertyName.MainTexHSVG, propertyBlock.MainTexHSVG);
-            material.SetSafeFloat(PropertyName.MainGradationStrength, propertyBlock.MainGradationStrength, 0f, 1f, 0f);
-            material.SetSafeTexture(PropertyName.MainGradationTex, propertyBlock.MainGradationTex);
-            material.SetSafeTexture(PropertyName.MainColorAdjustMask, propertyBlock.MainColorAdjustMask);
+            material.SetSafeColor(PropertyNameID.Color, propertyBlock.Color);
+            material.SetSafeTexture(PropertyNameID.MainTex, propertyBlock.MainTex);
+            material.SetSafeVector(PropertyNameID.MainTex_ScrollRotate, propertyBlock.MainTex_ScrollRotate);
+            material.SetSafeVector(PropertyNameID.MainTexHSVG, propertyBlock.MainTexHSVG);
+            material.SetSafeFloat(PropertyNameID.MainGradationStrength, propertyBlock.MainGradationStrength, 0f, 1f, 0f);
+            material.SetSafeTexture(PropertyNameID.MainGradationTex, propertyBlock.MainGradationTex);
+            material.SetSafeTexture(PropertyNameID.MainColorAdjustMask, propertyBlock.MainColorAdjustMask);
         }
 
         /// <summary>
@@ -526,33 +530,39 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseMain2ndTex, propertyBlock.UseMain2ndTex);
+            material.SetSafeBool(PropertyNameID.UseMain2ndTex, propertyBlock.UseMain2ndTex);
 
-            material.SetSafeColor(PropertyName.Color2nd, propertyBlock.Color2nd);
-            material.SetSafeTexture(PropertyName.Main2ndTex, propertyBlock.Main2ndTex);
-            material.SetSafeInt(PropertyName.Main2ndTex_UVMode, (int)propertyBlock.Main2ndTex_UVMode);
-            material.SetSafeFloat(PropertyName.Main2ndTexAngle, propertyBlock.Main2ndTexAngle, null, null, 0f); ;
-            material.SetSafeVector(PropertyName.Main2ndTexDecalAnimation, propertyBlock.Main2ndTexDecalAnimation);
-            material.SetSafeVector(PropertyName.Main2ndTexDecalSubParam, propertyBlock.Main2ndTexDecalSubParam);
-            material.SetSafeBool(PropertyName.Main2ndTexIsDecal, propertyBlock.Main2ndTexIsDecal);
-            material.SetSafeBool(PropertyName.Main2ndTexIsLeftOnly, propertyBlock.Main2ndTexIsLeftOnly);
-            material.SetSafeBool(PropertyName.Main2ndTexIsRightOnly, propertyBlock.Main2ndTexIsRightOnly);
-            material.SetSafeBool(PropertyName.Main2ndTexShouldCopy, propertyBlock.Main2ndTexShouldCopy);
-            material.SetSafeBool(PropertyName.Main2ndTexShouldFlipMirror, propertyBlock.Main2ndTexShouldFlipMirror);
-            material.SetSafeBool(PropertyName.Main2ndTexShouldFlipCopy, propertyBlock.Main2ndTexShouldFlipCopy);
-            material.SetSafeBool(PropertyName.Main2ndTexIsMSDF, propertyBlock.Main2ndTexIsMSDF);
-            material.SetSafeTexture(PropertyName.Main2ndBlendMask, propertyBlock.Main2ndBlendMask);
-            material.SetSafeInt(PropertyName.Main2ndTexBlendMode, (int)propertyBlock.Main2ndTexBlendMode);
-            material.SetSafeBool(PropertyName.Main2ndEnableLighting, propertyBlock.Main2ndEnableLighting);
+            material.SetSafeColor(PropertyNameID.Color2nd, propertyBlock.Color2nd);
+            material.SetSafeTexture(PropertyNameID.Main2ndTex, propertyBlock.Main2ndTex);
+            material.SetSafeFloat(PropertyNameID.Main2ndTexAngle, propertyBlock.Main2ndTexAngle, null, null, 0f);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeVector(PropertyNameID.Main2ndTex_ScrollRotate, propertyBlock.Main2ndTex_ScrollRotate);  // v1.3.7
+#endif
+            material.SetSafeInt(PropertyNameID.Main2ndTex_UVMode, (int)propertyBlock.Main2ndTex_UVMode);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeInt(PropertyNameID.Main2ndTex_Cull, (int)propertyBlock.Main2ndTex_Cull);  // v1.3.1
+#endif
+            material.SetSafeVector(PropertyNameID.Main2ndTexDecalAnimation, propertyBlock.Main2ndTexDecalAnimation);
+            material.SetSafeVector(PropertyNameID.Main2ndTexDecalSubParam, propertyBlock.Main2ndTexDecalSubParam);
+            material.SetSafeBool(PropertyNameID.Main2ndTexIsDecal, propertyBlock.Main2ndTexIsDecal);
+            material.SetSafeBool(PropertyNameID.Main2ndTexIsLeftOnly, propertyBlock.Main2ndTexIsLeftOnly);
+            material.SetSafeBool(PropertyNameID.Main2ndTexIsRightOnly, propertyBlock.Main2ndTexIsRightOnly);
+            material.SetSafeBool(PropertyNameID.Main2ndTexShouldCopy, propertyBlock.Main2ndTexShouldCopy);
+            material.SetSafeBool(PropertyNameID.Main2ndTexShouldFlipMirror, propertyBlock.Main2ndTexShouldFlipMirror);
+            material.SetSafeBool(PropertyNameID.Main2ndTexShouldFlipCopy, propertyBlock.Main2ndTexShouldFlipCopy);
+            material.SetSafeBool(PropertyNameID.Main2ndTexIsMSDF, propertyBlock.Main2ndTexIsMSDF);
+            material.SetSafeTexture(PropertyNameID.Main2ndBlendMask, propertyBlock.Main2ndBlendMask);
+            material.SetSafeInt(PropertyNameID.Main2ndTexBlendMode, (int)propertyBlock.Main2ndTexBlendMode);
+            material.SetSafeBool(PropertyNameID.Main2ndEnableLighting, propertyBlock.Main2ndEnableLighting);
 
-            material.SetSafeTexture(PropertyName.Main2ndDissolveMask, propertyBlock.Main2ndDissolveMask);
-            material.SetSafeTexture(PropertyName.Main2ndDissolveNoiseMask, propertyBlock.Main2ndDissolveNoiseMask);
-            material.SetSafeVector(PropertyName.Main2ndDissolveNoiseMask_ScrollRotate, propertyBlock.Main2ndDissolveNoiseMask_ScrollRotate);
-            material.SetSafeFloat(PropertyName.Main2ndDissolveNoiseStrength, propertyBlock.Main2ndDissolveNoiseStrength, null, null, 0.1f);
-            material.SetSafeColor(PropertyName.Main2ndDissolveColor, propertyBlock.Main2ndDissolveColor);
-            material.SetSafeVector(PropertyName.Main2ndDissolveParams, propertyBlock.Main2ndDissolveParams);
-            material.SetSafeVector(PropertyName.Main2ndDissolvePos, propertyBlock.Main2ndDissolvePos);
-            material.SetSafeVector(PropertyName.Main2ndDistanceFade, propertyBlock.Main2ndDistanceFade);
+            material.SetSafeTexture(PropertyNameID.Main2ndDissolveMask, propertyBlock.Main2ndDissolveMask);
+            material.SetSafeTexture(PropertyNameID.Main2ndDissolveNoiseMask, propertyBlock.Main2ndDissolveNoiseMask);
+            material.SetSafeVector(PropertyNameID.Main2ndDissolveNoiseMask_ScrollRotate, propertyBlock.Main2ndDissolveNoiseMask_ScrollRotate);
+            material.SetSafeFloat(PropertyNameID.Main2ndDissolveNoiseStrength, propertyBlock.Main2ndDissolveNoiseStrength, null, null, 0.1f);
+            material.SetSafeColor(PropertyNameID.Main2ndDissolveColor, propertyBlock.Main2ndDissolveColor);
+            material.SetSafeVector(PropertyNameID.Main2ndDissolveParams, propertyBlock.Main2ndDissolveParams);
+            material.SetSafeVector(PropertyNameID.Main2ndDissolvePos, propertyBlock.Main2ndDissolvePos);
+            material.SetSafeVector(PropertyNameID.Main2ndDistanceFade, propertyBlock.Main2ndDistanceFade);
         }
 
         /// <summary>
@@ -567,33 +577,39 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseMain3rdTex, propertyBlock.UseMain3rdTex);
+            material.SetSafeBool(PropertyNameID.UseMain3rdTex, propertyBlock.UseMain3rdTex);
 
-            material.SetSafeColor(PropertyName.Color3rd, propertyBlock.Color3rd);
-            material.SetSafeTexture(PropertyName.Main3rdTex, propertyBlock.Main3rdTex);
-            material.SetSafeInt(PropertyName.Main3rdTex_UVMode, (int)propertyBlock.Main3rdTex_UVMode);
-            material.SetSafeFloat(PropertyName.Main3rdTexAngle, propertyBlock.Main3rdTexAngle, null, null, 0f); ;
-            material.SetSafeVector(PropertyName.Main3rdTexDecalAnimation, propertyBlock.Main3rdTexDecalAnimation);
-            material.SetSafeVector(PropertyName.Main3rdTexDecalSubParam, propertyBlock.Main3rdTexDecalSubParam);
-            material.SetSafeBool(PropertyName.Main3rdTexIsDecal, propertyBlock.Main3rdTexIsDecal);
-            material.SetSafeBool(PropertyName.Main3rdTexIsLeftOnly, propertyBlock.Main3rdTexIsLeftOnly);
-            material.SetSafeBool(PropertyName.Main3rdTexIsRightOnly, propertyBlock.Main3rdTexIsRightOnly);
-            material.SetSafeBool(PropertyName.Main3rdTexShouldCopy, propertyBlock.Main3rdTexShouldCopy);
-            material.SetSafeBool(PropertyName.Main3rdTexShouldFlipMirror, propertyBlock.Main3rdTexShouldFlipMirror);
-            material.SetSafeBool(PropertyName.Main3rdTexShouldFlipCopy, propertyBlock.Main3rdTexShouldFlipCopy);
-            material.SetSafeBool(PropertyName.Main3rdTexIsMSDF, propertyBlock.Main3rdTexIsMSDF);
-            material.SetSafeTexture(PropertyName.Main3rdBlendMask, propertyBlock.Main3rdBlendMask);
-            material.SetSafeInt(PropertyName.Main3rdTexBlendMode, (int)propertyBlock.Main3rdTexBlendMode);
-            material.SetSafeBool(PropertyName.Main3rdEnableLighting, propertyBlock.Main3rdEnableLighting);
+            material.SetSafeColor(PropertyNameID.Color3rd, propertyBlock.Color3rd);
+            material.SetSafeTexture(PropertyNameID.Main3rdTex, propertyBlock.Main3rdTex);
+            material.SetSafeFloat(PropertyNameID.Main3rdTexAngle, propertyBlock.Main3rdTexAngle, null, null, 0f);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeVector(PropertyNameID.Main3rdTex_ScrollRotate, propertyBlock.Main3rdTex_ScrollRotate);  // v1.3.7
+#endif
+            material.SetSafeInt(PropertyNameID.Main3rdTex_UVMode, (int)propertyBlock.Main3rdTex_UVMode);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeInt(PropertyNameID.Main3rdTex_Cull, (int)propertyBlock.Main3rdTex_Cull);  // v1.3.1
+#endif
+            material.SetSafeVector(PropertyNameID.Main3rdTexDecalAnimation, propertyBlock.Main3rdTexDecalAnimation);
+            material.SetSafeVector(PropertyNameID.Main3rdTexDecalSubParam, propertyBlock.Main3rdTexDecalSubParam);
+            material.SetSafeBool(PropertyNameID.Main3rdTexIsDecal, propertyBlock.Main3rdTexIsDecal);
+            material.SetSafeBool(PropertyNameID.Main3rdTexIsLeftOnly, propertyBlock.Main3rdTexIsLeftOnly);
+            material.SetSafeBool(PropertyNameID.Main3rdTexIsRightOnly, propertyBlock.Main3rdTexIsRightOnly);
+            material.SetSafeBool(PropertyNameID.Main3rdTexShouldCopy, propertyBlock.Main3rdTexShouldCopy);
+            material.SetSafeBool(PropertyNameID.Main3rdTexShouldFlipMirror, propertyBlock.Main3rdTexShouldFlipMirror);
+            material.SetSafeBool(PropertyNameID.Main3rdTexShouldFlipCopy, propertyBlock.Main3rdTexShouldFlipCopy);
+            material.SetSafeBool(PropertyNameID.Main3rdTexIsMSDF, propertyBlock.Main3rdTexIsMSDF);
+            material.SetSafeTexture(PropertyNameID.Main3rdBlendMask, propertyBlock.Main3rdBlendMask);
+            material.SetSafeInt(PropertyNameID.Main3rdTexBlendMode, (int)propertyBlock.Main3rdTexBlendMode);
+            material.SetSafeBool(PropertyNameID.Main3rdEnableLighting, propertyBlock.Main3rdEnableLighting);
 
-            material.SetSafeTexture(PropertyName.Main3rdDissolveMask, propertyBlock.Main3rdDissolveMask);
-            material.SetSafeTexture(PropertyName.Main3rdDissolveNoiseMask, propertyBlock.Main3rdDissolveNoiseMask);
-            material.SetSafeVector(PropertyName.Main3rdDissolveNoiseMask_ScrollRotate, propertyBlock.Main3rdDissolveNoiseMask_ScrollRotate);
-            material.SetSafeFloat(PropertyName.Main3rdDissolveNoiseStrength, propertyBlock.Main3rdDissolveNoiseStrength, null, null, 0.1f);
-            material.SetSafeColor(PropertyName.Main3rdDissolveColor, propertyBlock.Main3rdDissolveColor);
-            material.SetSafeVector(PropertyName.Main3rdDissolveParams, propertyBlock.Main3rdDissolveParams);
-            material.SetSafeVector(PropertyName.Main3rdDissolvePos, propertyBlock.Main3rdDissolvePos);
-            material.SetSafeVector(PropertyName.Main3rdDistanceFade, propertyBlock.Main3rdDistanceFade);
+            material.SetSafeTexture(PropertyNameID.Main3rdDissolveMask, propertyBlock.Main3rdDissolveMask);
+            material.SetSafeTexture(PropertyNameID.Main3rdDissolveNoiseMask, propertyBlock.Main3rdDissolveNoiseMask);
+            material.SetSafeVector(PropertyNameID.Main3rdDissolveNoiseMask_ScrollRotate, propertyBlock.Main3rdDissolveNoiseMask_ScrollRotate);
+            material.SetSafeFloat(PropertyNameID.Main3rdDissolveNoiseStrength, propertyBlock.Main3rdDissolveNoiseStrength, null, null, 0.1f);
+            material.SetSafeColor(PropertyNameID.Main3rdDissolveColor, propertyBlock.Main3rdDissolveColor);
+            material.SetSafeVector(PropertyNameID.Main3rdDissolveParams, propertyBlock.Main3rdDissolveParams);
+            material.SetSafeVector(PropertyNameID.Main3rdDissolvePos, propertyBlock.Main3rdDissolvePos);
+            material.SetSafeVector(PropertyNameID.Main3rdDistanceFade, propertyBlock.Main3rdDistanceFade);
         }
 
         #endregion
@@ -612,10 +628,10 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.AlphaMaskMode, (int)propertyBlock.AlphaMaskMode);
-            material.SetSafeTexture(PropertyName.AlphaMask, propertyBlock.AlphaMask);
-            material.SetSafeFloat(PropertyName.AlphaMaskScale, propertyBlock.AlphaMaskScale, null, null, 1.0f);
-            material.SetSafeFloat(PropertyName.AlphaMaskValue, propertyBlock.AlphaMaskValue, null, null, 0.0f);
+            material.SetSafeInt(PropertyNameID.AlphaMaskMode, (int)propertyBlock.AlphaMaskMode);
+            material.SetSafeTexture(PropertyNameID.AlphaMask, propertyBlock.AlphaMask);
+            material.SetSafeFloat(PropertyNameID.AlphaMaskScale, propertyBlock.AlphaMaskScale, null, null, 1.0f);
+            material.SetSafeFloat(PropertyNameID.AlphaMaskValue, propertyBlock.AlphaMaskValue, null, null, 0.0f);
         }
 
         #endregion
@@ -634,10 +650,10 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseBumpMap, propertyBlock.UseBumpMap);
+            material.SetSafeBool(PropertyNameID.UseBumpMap, propertyBlock.UseBumpMap);
 
-            material.SetSafeTexture(PropertyName.BumpMap, propertyBlock.BumpMap);
-            material.SetSafeFloat(PropertyName.BumpScale, propertyBlock.BumpScale, -10.0f, 10.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.BumpMap, propertyBlock.BumpMap);
+            material.SetSafeFloat(PropertyNameID.BumpScale, propertyBlock.BumpScale, -10.0f, 10.0f, 1.0f);
         }
 
         /// <summary>
@@ -652,11 +668,14 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseBump2ndMap, propertyBlock.UseBump2ndMap);
+            material.SetSafeBool(PropertyNameID.UseBump2ndMap, propertyBlock.UseBump2ndMap);
 
-            material.SetSafeTexture(PropertyName.Bump2ndMap, propertyBlock.Bump2ndMap);
-            material.SetSafeFloat(PropertyName.Bump2ndScale, propertyBlock.Bump2ndScale, -10.0f, 10.0f, 1.0f);
-            material.SetSafeTexture(PropertyName.Bump2ndScaleMask, propertyBlock.Bump2ndScaleMask);
+            material.SetSafeTexture(PropertyNameID.Bump2ndMap, propertyBlock.Bump2ndMap);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeInt(PropertyNameID.Bump2ndMap_UVMode, (int)propertyBlock.Bump2ndMap_UVMode);  // v1.3.1
+#endif
+            material.SetSafeFloat(PropertyNameID.Bump2ndScale, propertyBlock.Bump2ndScale, -10.0f, 10.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.Bump2ndScaleMask, propertyBlock.Bump2ndScaleMask);
         }
 
         #endregion
@@ -675,28 +694,28 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseAnisotropy, propertyBlock.UseAnisotropy);
+            material.SetSafeBool(PropertyNameID.UseAnisotropy, propertyBlock.UseAnisotropy);
 
-            material.SetSafeTexture(PropertyName.AnisotropyTangentMap, propertyBlock.AnisotropyTangentMap);
-            material.SetSafeFloat(PropertyName.AnisotropyScale, propertyBlock.AnisotropyScale, -1.0f, 1.0f, 1.0f);
-            material.SetSafeTexture(PropertyName.AnisotropyScaleMask, propertyBlock.AnisotropyScaleMask);
+            material.SetSafeTexture(PropertyNameID.AnisotropyTangentMap, propertyBlock.AnisotropyTangentMap);
+            material.SetSafeFloat(PropertyNameID.AnisotropyScale, propertyBlock.AnisotropyScale, -1.0f, 1.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.AnisotropyScaleMask, propertyBlock.AnisotropyScaleMask);
 
-            material.SetSafeFloat(PropertyName.AnisotropyTangentWidth, propertyBlock.AnisotropyTangentWidth, 0.0f, 10.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.AnisotropyBitangentWidth, propertyBlock.AnisotropyBitangentWidth, 0.0f, 10.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.AnisotropyShift, propertyBlock.AnisotropyShift, -10.0f, 10.0f, 0.0f);
-            material.SetSafeFloat(PropertyName.AnisotropyShiftNoiseScale, propertyBlock.AnisotropyShiftNoiseScale, -1.0f, 1.0f, 0.0f);
-            material.SetSafeFloat(PropertyName.AnisotropySpecularStrength, propertyBlock.AnisotropySpecularStrength, 0.0f, 10.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.AnisotropyTangentWidth, propertyBlock.AnisotropyTangentWidth, 0.0f, 10.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.AnisotropyBitangentWidth, propertyBlock.AnisotropyBitangentWidth, 0.0f, 10.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.AnisotropyShift, propertyBlock.AnisotropyShift, -10.0f, 10.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.AnisotropyShiftNoiseScale, propertyBlock.AnisotropyShiftNoiseScale, -1.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.AnisotropySpecularStrength, propertyBlock.AnisotropySpecularStrength, 0.0f, 10.0f, 1.0f);
 
-            material.SetSafeFloat(PropertyName.Anisotropy2ndTangentWidth, propertyBlock.Anisotropy2ndTangentWidth, 0.0f, 10.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.Anisotropy2ndBitangentWidth, propertyBlock.Anisotropy2ndBitangentWidth, 0.0f, 10.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.Anisotropy2ndShift, propertyBlock.Anisotropy2ndShift, -10.0f, 10.0f, 0.0f);
-            material.SetSafeFloat(PropertyName.Anisotropy2ndShiftNoiseScale, propertyBlock.Anisotropy2ndShiftNoiseScale, -1.0f, 1.0f, 0.0f);
-            material.SetSafeFloat(PropertyName.Anisotropy2ndSpecularStrength, propertyBlock.Anisotropy2ndSpecularStrength, 0.0f, 10.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.Anisotropy2ndTangentWidth, propertyBlock.Anisotropy2ndTangentWidth, 0.0f, 10.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.Anisotropy2ndBitangentWidth, propertyBlock.Anisotropy2ndBitangentWidth, 0.0f, 10.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.Anisotropy2ndShift, propertyBlock.Anisotropy2ndShift, -10.0f, 10.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.Anisotropy2ndShiftNoiseScale, propertyBlock.Anisotropy2ndShiftNoiseScale, -1.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.Anisotropy2ndSpecularStrength, propertyBlock.Anisotropy2ndSpecularStrength, 0.0f, 10.0f, 0.0f);
 
-            material.SetSafeTexture(PropertyName.AnisotropyShiftNoiseMask, propertyBlock.AnisotropyShiftNoiseMask);
-            material.SetSafeBool(PropertyName.Anisotropy2Reflection, propertyBlock.Anisotropy2Reflection);
-            material.SetSafeBool(PropertyName.Anisotropy2MatCap, propertyBlock.Anisotropy2MatCap);
-            material.SetSafeBool(PropertyName.Anisotropy2MatCap2nd, propertyBlock.Anisotropy2MatCap2nd);
+            material.SetSafeTexture(PropertyNameID.AnisotropyShiftNoiseMask, propertyBlock.AnisotropyShiftNoiseMask);
+            material.SetSafeBool(PropertyNameID.Anisotropy2Reflection, propertyBlock.Anisotropy2Reflection);
+            material.SetSafeBool(PropertyNameID.Anisotropy2MatCap, propertyBlock.Anisotropy2MatCap);
+            material.SetSafeBool(PropertyNameID.Anisotropy2MatCap2nd, propertyBlock.Anisotropy2MatCap2nd);
         }
 
         #endregion
@@ -715,20 +734,20 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseBacklight, propertyBlock.UseBacklight);
+            material.SetSafeBool(PropertyNameID.UseBacklight, propertyBlock.UseBacklight);
 
-            material.SetSafeColor(PropertyName.BacklightColor, propertyBlock.BacklightColor);
-            material.SetSafeTexture(PropertyName.BacklightColorTex, propertyBlock.BacklightColorTex);
+            material.SetSafeColor(PropertyNameID.BacklightColor, propertyBlock.BacklightColor);
+            material.SetSafeTexture(PropertyNameID.BacklightColorTex, propertyBlock.BacklightColorTex);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.BacklightMainStrength, (int)propertyBlock.BacklightMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.BacklightMainStrength, (int)propertyBlock.BacklightMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
-            material.SetSafeFloat(PropertyName.BacklightNormalStrength, propertyBlock.BacklightNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.BacklightBorder, propertyBlock.BacklightBorder, 0.0f, 1.0f, 0.35f);
-            material.SetSafeFloat(PropertyName.BacklightBlur, propertyBlock.BacklightBlur, 0.0f, 1.0f, 0.05f);
-            material.SetSafeFloat(PropertyName.BacklightDirectivity, propertyBlock.BacklightDirectivity, null, null, 5.0f);
-            material.SetSafeFloat(PropertyName.BacklightViewStrength, propertyBlock.BacklightViewStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeBool(PropertyName.BacklightReceiveShadow, propertyBlock.BacklightReceiveShadow);
-            material.SetSafeBool(PropertyName.BacklightBackfaceMask, propertyBlock.BacklightBackfaceMask);
+            material.SetSafeFloat(PropertyNameID.BacklightNormalStrength, propertyBlock.BacklightNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.BacklightBorder, propertyBlock.BacklightBorder, 0.0f, 1.0f, 0.35f);
+            material.SetSafeFloat(PropertyNameID.BacklightBlur, propertyBlock.BacklightBlur, 0.0f, 1.0f, 0.05f);
+            material.SetSafeFloat(PropertyNameID.BacklightDirectivity, propertyBlock.BacklightDirectivity, null, null, 5.0f);
+            material.SetSafeFloat(PropertyNameID.BacklightViewStrength, propertyBlock.BacklightViewStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeBool(PropertyNameID.BacklightReceiveShadow, propertyBlock.BacklightReceiveShadow);
+            material.SetSafeBool(PropertyNameID.BacklightBackfaceMask, propertyBlock.BacklightBackfaceMask);
         }
 
         #endregion
@@ -747,16 +766,16 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseShadow, propertyBlock.UseShadow);
-            material.SetSafeTexture(PropertyName.ShadowColorTex, propertyBlock.ShadowColorTex);
-            material.SetSafeFloat(PropertyName.ShadowBorder, propertyBlock.ShadowBorder, 0.0f, 1.0f, 0.5f);
-            material.SetSafeFloat(PropertyName.ShadowBlur, propertyBlock.ShadowBlur, 0.0f, 1.0f, 0.1f);
-            material.SetSafeTexture(PropertyName.Shadow2ndColorTex, propertyBlock.Shadow2ndColorTex);
-            material.SetSafeFloat(PropertyName.Shadow2ndBorder, propertyBlock.Shadow2ndBorder, 0.0f, 1.0f, 0.5f);
-            material.SetSafeFloat(PropertyName.Shadow2ndBlur, propertyBlock.Shadow2ndBlur, 0.0f, 1.0f, 0.3f);
-            material.SetSafeColor(PropertyName.ShadowBorderColor, propertyBlock.ShadowBorderColor);
-            material.SetSafeFloat(PropertyName.ShadowBorderRange, propertyBlock.ShadowBorderRange, 0.0f, 1.0f, 0.0f);
-            material.SetSafeFloat(PropertyName.ShadowEnvStrength, propertyBlock.ShadowEnvStrength, 0.0f, 1.0f, 0.0f);
+            material.SetSafeBool(PropertyNameID.UseShadow, propertyBlock.UseShadow);
+            material.SetSafeTexture(PropertyNameID.ShadowColorTex, propertyBlock.ShadowColorTex);
+            material.SetSafeFloat(PropertyNameID.ShadowBorder, propertyBlock.ShadowBorder, 0.0f, 1.0f, 0.5f);
+            material.SetSafeFloat(PropertyNameID.ShadowBlur, propertyBlock.ShadowBlur, 0.0f, 1.0f, 0.1f);
+            material.SetSafeTexture(PropertyNameID.Shadow2ndColorTex, propertyBlock.Shadow2ndColorTex);
+            material.SetSafeFloat(PropertyNameID.Shadow2ndBorder, propertyBlock.Shadow2ndBorder, 0.0f, 1.0f, 0.5f);
+            material.SetSafeFloat(PropertyNameID.Shadow2ndBlur, propertyBlock.Shadow2ndBlur, 0.0f, 1.0f, 0.3f);
+            material.SetSafeColor(PropertyNameID.ShadowBorderColor, propertyBlock.ShadowBorderColor);
+            material.SetSafeFloat(PropertyNameID.ShadowBorderRange, propertyBlock.ShadowBorderRange, 0.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.ShadowEnvStrength, propertyBlock.ShadowEnvStrength, 0.0f, 1.0f, 0.0f);
         }
 
         /// <summary>
@@ -771,65 +790,68 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseShadow, propertyBlock.UseShadow);
+            material.SetSafeBool(PropertyNameID.UseShadow, propertyBlock.UseShadow);
 
-            //material.SetSafeBool(PropertyName.ShadowReceive, propertyBlock.ShadowReceive);
-            material.SetSafeFloat(PropertyName.ShadowStrength, propertyBlock.ShadowStrength, 0.0f, 1.0f, 0.0f);
+            //material.SetSafeBool(PropertyNameID.ShadowReceive, propertyBlock.ShadowReceive);
+            material.SetSafeFloat(PropertyNameID.ShadowStrength, propertyBlock.ShadowStrength, 0.0f, 1.0f, 0.0f);
 
-            material.SetSafeTexture(PropertyName.ShadowStrengthMask, propertyBlock.ShadowStrengthMask);
+            material.SetSafeTexture(PropertyNameID.ShadowStrengthMask, propertyBlock.ShadowStrengthMask);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.ShadowStrengthMaskLOD, propertyBlock.ShadowStrengthMaskLOD, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.ShadowStrengthMaskLOD, propertyBlock.ShadowStrengthMaskLOD, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
 
-            material.SetSafeTexture(PropertyName.ShadowBorderMask, propertyBlock.ShadowBorderMask);
+            material.SetSafeTexture(PropertyNameID.ShadowBorderMask, propertyBlock.ShadowBorderMask);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.ShadowBorderMaskLOD, propertyBlock.ShadowBorderMaskLOD, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.ShadowBorderMaskLOD, propertyBlock.ShadowBorderMaskLOD, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
 
-            material.SetSafeTexture(PropertyName.ShadowBlurMask, propertyBlock.ShadowBlurMask);
+            material.SetSafeTexture(PropertyNameID.ShadowBlurMask, propertyBlock.ShadowBlurMask);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.ShadowBlurMaskLOD, propertyBlock.ShadowBlurMaskLOD, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.ShadowBlurMaskLOD, propertyBlock.ShadowBlurMaskLOD, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
 
-            material.SetSafeVector(PropertyName.ShadowAOShift, propertyBlock.ShadowAOShift);
-            material.SetSafeVector(PropertyName.ShadowAOShift2, propertyBlock.ShadowAOShift2);
-            material.SetSafeBool(PropertyName.ShadowPostAO, propertyBlock.ShadowPostAO);
+            material.SetSafeVector(PropertyNameID.ShadowAOShift, propertyBlock.ShadowAOShift);
+            material.SetSafeVector(PropertyNameID.ShadowAOShift2, propertyBlock.ShadowAOShift2);
+            material.SetSafeBool(PropertyNameID.ShadowPostAO, propertyBlock.ShadowPostAO);
 
-            material.SetSafeColor(PropertyName.ShadowColor, propertyBlock.ShadowColor);
-            material.SetSafeTexture(PropertyName.ShadowColorTex, propertyBlock.ShadowColorTex);
-            material.SetSafeFloat(PropertyName.ShadowNormalStrength, propertyBlock.ShadowNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.ShadowBorder, propertyBlock.ShadowBorder, 0.0f, 1.0f, 0.5f);
-            material.SetSafeFloat(PropertyName.ShadowBlur, propertyBlock.ShadowBlur, 0.0f, 1.0f, 0.1f);
-            material.SetSafeBool(PropertyName.ShadowReceive, propertyBlock.ShadowReceive);
-
-            material.SetSafeColor(PropertyName.Shadow2ndColor, propertyBlock.Shadow2ndColor);
-            material.SetSafeTexture(PropertyName.Shadow2ndColorTex, propertyBlock.Shadow2ndColorTex);
-            material.SetSafeFloat(PropertyName.Shadow2ndNormalStrength, propertyBlock.Shadow2ndNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.Shadow2ndBorder, propertyBlock.Shadow2ndBorder, 0.0f, 1.0f, 0.15f);
-            material.SetSafeFloat(PropertyName.Shadow2ndBlur, propertyBlock.Shadow2ndBlur, 0.0f, 1.0f, 0.1f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeBool(PropertyName.Shadow2ndReceive, propertyBlock.Shadow2ndReceive);  // v1.3.0
+            material.SetSafeInt(PropertyNameID.ShadowColorType, (int)propertyBlock.ShadowColorType);  // v1.3.5
+#endif
+            material.SetSafeColor(PropertyNameID.ShadowColor, propertyBlock.ShadowColor);
+            material.SetSafeTexture(PropertyNameID.ShadowColorTex, propertyBlock.ShadowColorTex);
+            material.SetSafeFloat(PropertyNameID.ShadowNormalStrength, propertyBlock.ShadowNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.ShadowBorder, propertyBlock.ShadowBorder, 0.0f, 1.0f, 0.5f);
+            material.SetSafeFloat(PropertyNameID.ShadowBlur, propertyBlock.ShadowBlur, 0.0f, 1.0f, 0.1f);
+            material.SetSafeBool(PropertyNameID.ShadowReceive, propertyBlock.ShadowReceive);
+
+            material.SetSafeColor(PropertyNameID.Shadow2ndColor, propertyBlock.Shadow2ndColor);
+            material.SetSafeTexture(PropertyNameID.Shadow2ndColorTex, propertyBlock.Shadow2ndColorTex);
+            material.SetSafeFloat(PropertyNameID.Shadow2ndNormalStrength, propertyBlock.Shadow2ndNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.Shadow2ndBorder, propertyBlock.Shadow2ndBorder, 0.0f, 1.0f, 0.15f);
+            material.SetSafeFloat(PropertyNameID.Shadow2ndBlur, propertyBlock.Shadow2ndBlur, 0.0f, 1.0f, 0.1f);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeBool(PropertyNameID.Shadow2ndReceive, propertyBlock.Shadow2ndReceive);  // v1.3.0
 #endif
 
-            material.SetSafeColor(PropertyName.Shadow3rdColor, propertyBlock.Shadow3rdColor);
-            material.SetSafeTexture(PropertyName.Shadow3rdColorTex, propertyBlock.Shadow3rdColorTex);
-            material.SetSafeFloat(PropertyName.Shadow3rdNormalStrength, propertyBlock.Shadow3rdNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.Shadow3rdBorder, propertyBlock.Shadow3rdBorder, 0.0f, 1.0f, 0.25f);
-            material.SetSafeFloat(PropertyName.Shadow3rdBlur, propertyBlock.Shadow3rdBlur, 0.0f, 1.0f, 0.1f);
+            material.SetSafeColor(PropertyNameID.Shadow3rdColor, propertyBlock.Shadow3rdColor);
+            material.SetSafeTexture(PropertyNameID.Shadow3rdColorTex, propertyBlock.Shadow3rdColorTex);
+            material.SetSafeFloat(PropertyNameID.Shadow3rdNormalStrength, propertyBlock.Shadow3rdNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.Shadow3rdBorder, propertyBlock.Shadow3rdBorder, 0.0f, 1.0f, 0.25f);
+            material.SetSafeFloat(PropertyNameID.Shadow3rdBlur, propertyBlock.Shadow3rdBlur, 0.0f, 1.0f, 0.1f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeBool(PropertyName.Shadow3rdReceive, propertyBlock.Shadow3rdReceive);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.Shadow3rdReceive, propertyBlock.Shadow3rdReceive);  // v1.3.0
 #endif
 
-            material.SetSafeColor(PropertyName.ShadowBorderColor, propertyBlock.ShadowBorderColor);
-            material.SetSafeFloat(PropertyName.ShadowBorderRange, propertyBlock.ShadowBorderRange, 0.0f, 1.0f, 0.08f);
+            material.SetSafeColor(PropertyNameID.ShadowBorderColor, propertyBlock.ShadowBorderColor);
+            material.SetSafeFloat(PropertyNameID.ShadowBorderRange, propertyBlock.ShadowBorderRange, 0.0f, 1.0f, 0.08f);
 
-            material.SetSafeFloat(PropertyName.ShadowMainStrength, propertyBlock.ShadowMainStrength, 0.0f, 1.0f, 0.0f);
-            material.SetSafeFloat(PropertyName.ShadowEnvStrength, propertyBlock.ShadowEnvStrength, 0.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.ShadowMainStrength, propertyBlock.ShadowMainStrength, 0.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.ShadowEnvStrength, propertyBlock.ShadowEnvStrength, 0.0f, 1.0f, 0.0f);
 
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeInt(PropertyName.ShadowMaskType, (int)propertyBlock.ShadowMaskType);  // v1.3.0
-            material.SetSafeFloat(PropertyName.ShadowFlatBorder, (int)propertyBlock.ShadowFlatBorder, -2.0f, 2.0f, 1.0f);  // v1.3.0
-            material.SetSafeFloat(PropertyName.ShadowFlatBlur, (int)propertyBlock.ShadowFlatBlur, 0.001f, 2.0f, 1.0f);  // v1.3.0
+            material.SetSafeInt(PropertyNameID.ShadowMaskType, (int)propertyBlock.ShadowMaskType);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.ShadowFlatBorder, (int)propertyBlock.ShadowFlatBorder, -2.0f, 2.0f, 1.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.ShadowFlatBlur, (int)propertyBlock.ShadowFlatBlur, 0.001f, 2.0f, 1.0f);  // v1.3.0
 #endif
         }
 
@@ -849,37 +871,37 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseReflection, propertyBlock.UseReflection);
+            material.SetSafeBool(PropertyNameID.UseReflection, propertyBlock.UseReflection);
 
-            material.SetSafeFloat(PropertyName.Smoothness, propertyBlock.Smoothness, 0.0f, 1.0f, 1.0f);
-            material.SetSafeTexture(PropertyName.SmoothnessTex, propertyBlock.SmoothnessTex);
+            material.SetSafeFloat(PropertyNameID.Smoothness, propertyBlock.Smoothness, 0.0f, 1.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.SmoothnessTex, propertyBlock.SmoothnessTex);
 
-            material.SetSafeFloat(PropertyName.Metallic, propertyBlock.Metallic, 0.0f, 1.0f, 0.0f);
-            material.SetSafeTexture(PropertyName.MetallicGlossMap, propertyBlock.MetallicGlossMap);
+            material.SetSafeFloat(PropertyNameID.Metallic, propertyBlock.Metallic, 0.0f, 1.0f, 0.0f);
+            material.SetSafeTexture(PropertyNameID.MetallicGlossMap, propertyBlock.MetallicGlossMap);
 
-            material.SetSafeFloat(PropertyName.Reflectance, propertyBlock.Reflectance, 0.0f, 1.0f, 0.04f);
+            material.SetSafeFloat(PropertyNameID.Reflectance, propertyBlock.Reflectance, 0.0f, 1.0f, 0.04f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.GSAAStrength, propertyBlock.GSAAStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.GSAAStrength, propertyBlock.GSAAStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
-            material.SetSafeBool(PropertyName.ApplySpecular, propertyBlock.ApplySpecular);
-            material.SetSafeBool(PropertyName.ApplySpecularFA, propertyBlock.ApplySpecularFA);
-            material.SetSafeBool(PropertyName.SpecularToon, propertyBlock.SpecularToon);
-            material.SetSafeFloat(PropertyName.SpecularNormalStrength, propertyBlock.SpecularNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.SpecularBorder, propertyBlock.SpecularBorder, 0.0f, 1.0f, 0.5f);
-            material.SetSafeFloat(PropertyName.SpecularBlur, propertyBlock.SpecularBlur, 0.0f, 1.0f, 0.0f);
+            material.SetSafeBool(PropertyNameID.ApplySpecular, propertyBlock.ApplySpecular);
+            material.SetSafeBool(PropertyNameID.ApplySpecularFA, propertyBlock.ApplySpecularFA);
+            material.SetSafeBool(PropertyNameID.SpecularToon, propertyBlock.SpecularToon);
+            material.SetSafeFloat(PropertyNameID.SpecularNormalStrength, propertyBlock.SpecularNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.SpecularBorder, propertyBlock.SpecularBorder, 0.0f, 1.0f, 0.5f);
+            material.SetSafeFloat(PropertyNameID.SpecularBlur, propertyBlock.SpecularBlur, 0.0f, 1.0f, 0.0f);
 
-            material.SetSafeBool(PropertyName.ApplyReflection, propertyBlock.ApplyReflection);
-            material.SetSafeFloat(PropertyName.ReflectionNormalStrength, propertyBlock.ReflectionNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeColor(PropertyName.ReflectionColor, propertyBlock.ReflectionColor);
-            material.SetSafeTexture(PropertyName.ReflectionColorTex, propertyBlock.ReflectionColorTex);
+            material.SetSafeBool(PropertyNameID.ApplyReflection, propertyBlock.ApplyReflection);
+            material.SetSafeFloat(PropertyNameID.ReflectionNormalStrength, propertyBlock.ReflectionNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeColor(PropertyNameID.ReflectionColor, propertyBlock.ReflectionColor);
+            material.SetSafeTexture(PropertyNameID.ReflectionColorTex, propertyBlock.ReflectionColorTex);
 
-            material.SetSafeBool(PropertyName.ReflectionApplyTransparency, propertyBlock.ReflectionApplyTransparency);
-            material.SetSafeTexture(PropertyName.ReflectionCubeTex, propertyBlock.ReflectionCubeTex);
-            material.SetSafeColor(PropertyName.ReflectionCubeColor, propertyBlock.ReflectionCubeColor);
-            material.SetSafeBool(PropertyName.ReflectionCubeOverride, propertyBlock.ReflectionCubeOverride);
-            material.SetSafeFloat(PropertyName.ReflectionCubeEnableLighting, propertyBlock.ReflectionCubeEnableLighting, 0.0f, 1.0f, 1.0f);
+            material.SetSafeBool(PropertyNameID.ReflectionApplyTransparency, propertyBlock.ReflectionApplyTransparency);
+            material.SetSafeTexture(PropertyNameID.ReflectionCubeTex, propertyBlock.ReflectionCubeTex);
+            material.SetSafeColor(PropertyNameID.ReflectionCubeColor, propertyBlock.ReflectionCubeColor);
+            material.SetSafeBool(PropertyNameID.ReflectionCubeOverride, propertyBlock.ReflectionCubeOverride);
+            material.SetSafeFloat(PropertyNameID.ReflectionCubeEnableLighting, propertyBlock.ReflectionCubeEnableLighting, 0.0f, 1.0f, 1.0f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeInt(PropertyName.ReflectionBlendMode, (int)propertyBlock.ReflectionBlendMode, null, null, (int)LilBlendMode.Add);  // v1.3.0
+            material.SetSafeInt(PropertyNameID.ReflectionBlendMode, (int)propertyBlock.ReflectionBlendMode, null, null, (int)LilBlendMode.Add);  // v1.3.0
 #endif
         }
 
@@ -899,12 +921,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseMatCap, propertyBlock.UseMatCap);
-            material.SetSafeTexture(PropertyName.MatCapTex, propertyBlock.MatCapTex);
-            material.SetSafeVector(PropertyName.MatCapBlendUV1, propertyBlock.MatCapBlendUV1);
-            material.SetSafeBool(PropertyName.MatCapZRotCancel, propertyBlock.MatCapZRotCancel);
-            material.SetSafeBool(PropertyName.MatCapPerspective, propertyBlock.MatCapPerspective);
-            material.SetSafeBool(PropertyName.MatCapBlend, propertyBlock.MatCapMul);  // Lite only
+            material.SetSafeBool(PropertyNameID.UseMatCap, propertyBlock.UseMatCap);
+            material.SetSafeTexture(PropertyNameID.MatCapTex, propertyBlock.MatCapTex);
+            material.SetSafeVector(PropertyNameID.MatCapBlendUV1, propertyBlock.MatCapBlendUV1);
+            material.SetSafeBool(PropertyNameID.MatCapZRotCancel, propertyBlock.MatCapZRotCancel);
+            material.SetSafeBool(PropertyNameID.MatCapPerspective, propertyBlock.MatCapPerspective);
+            material.SetSafeBool(PropertyNameID.MatCapBlend, propertyBlock.MatCapMul);  // Lite only
         }
 
         /// <summary>
@@ -919,32 +941,32 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseMatCap, propertyBlock.UseMatCap);
+            material.SetSafeBool(PropertyNameID.UseMatCap, propertyBlock.UseMatCap);
 
-            material.SetSafeColor(PropertyName.MatCapColor, propertyBlock.MatCapColor);
-            material.SetSafeTexture(PropertyName.MatCapTex, propertyBlock.MatCapTex);
+            material.SetSafeColor(PropertyNameID.MatCapColor, propertyBlock.MatCapColor);
+            material.SetSafeTexture(PropertyNameID.MatCapTex, propertyBlock.MatCapTex);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.MatCapMainStrength, propertyBlock.MatCapMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.MatCapMainStrength, propertyBlock.MatCapMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
-            material.SetSafeVector(PropertyName.MatCapBlendUV1, propertyBlock.MatCapBlendUV1);
-            material.SetSafeBool(PropertyName.MatCapZRotCancel, propertyBlock.MatCapZRotCancel);
-            material.SetSafeBool(PropertyName.MatCapPerspective, propertyBlock.MatCapPerspective);
-            material.SetSafeFloat(PropertyName.MatCapVRParallaxStrength, propertyBlock.MatCapVRParallaxStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeVector(PropertyNameID.MatCapBlendUV1, propertyBlock.MatCapBlendUV1);
+            material.SetSafeBool(PropertyNameID.MatCapZRotCancel, propertyBlock.MatCapZRotCancel);
+            material.SetSafeBool(PropertyNameID.MatCapPerspective, propertyBlock.MatCapPerspective);
+            material.SetSafeFloat(PropertyNameID.MatCapVRParallaxStrength, propertyBlock.MatCapVRParallaxStrength, 0.0f, 1.0f, 1.0f);
 
-            material.SetSafeFloat(PropertyName.MatCapBlend, propertyBlock.MatCapBlend, 0.0f, 1.0f, 1.0f);
-            material.SetSafeTexture(PropertyName.MatCapBlendMask, propertyBlock.MatCapBlendMask);
+            material.SetSafeFloat(PropertyNameID.MatCapBlend, propertyBlock.MatCapBlend, 0.0f, 1.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.MatCapBlendMask, propertyBlock.MatCapBlendMask);
 
-            material.SetSafeFloat(PropertyName.MatCapEnableLighting, propertyBlock.MatCapEnableLighting, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.MatCapShadowMask, propertyBlock.MatCapShadowMask, 0.0f, 1.0f, 0.0f);
-            material.SetSafeBool(PropertyName.MatCapBackfaceMask, propertyBlock.MatCapBackfaceMask);
-            material.SetSafeFloat(PropertyName.MatCapLod, propertyBlock.MatCapLod, 0.0f, 10.0f, 0.0f);
-            material.SetSafeInt(PropertyName.MatCapBlendMode, (int)propertyBlock.MatCapBlendMode);
-            material.SetSafeBool(PropertyName.MatCapApplyTransparency, propertyBlock.MatCapApplyTransparency);
+            material.SetSafeFloat(PropertyNameID.MatCapEnableLighting, propertyBlock.MatCapEnableLighting, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.MatCapShadowMask, propertyBlock.MatCapShadowMask, 0.0f, 1.0f, 0.0f);
+            material.SetSafeBool(PropertyNameID.MatCapBackfaceMask, propertyBlock.MatCapBackfaceMask);
+            material.SetSafeFloat(PropertyNameID.MatCapLod, propertyBlock.MatCapLod, 0.0f, 10.0f, 0.0f);
+            material.SetSafeInt(PropertyNameID.MatCapBlendMode, (int)propertyBlock.MatCapBlendMode);
+            material.SetSafeBool(PropertyNameID.MatCapApplyTransparency, propertyBlock.MatCapApplyTransparency);
 
-            material.SetSafeFloat(PropertyName.MatCapNormalStrength, propertyBlock.MatCapNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeBool(PropertyName.MatCapCustomNormal, propertyBlock.MatCapCustomNormal);
-            material.SetSafeTexture(PropertyName.MatCapBumpMap, propertyBlock.MatCapBumpMap);
-            material.SetSafeFloat(PropertyName.MatCapBumpScale, propertyBlock.MatCapBumpScale, -10.0f, 10.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.MatCapNormalStrength, propertyBlock.MatCapNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeBool(PropertyNameID.MatCapCustomNormal, propertyBlock.MatCapCustomNormal);
+            material.SetSafeTexture(PropertyNameID.MatCapBumpMap, propertyBlock.MatCapBumpMap);
+            material.SetSafeFloat(PropertyNameID.MatCapBumpScale, propertyBlock.MatCapBumpScale, -10.0f, 10.0f, 1.0f);
         }
 
         /// <summary>
@@ -959,32 +981,32 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseMatCap2nd, propertyBlock.UseMatCap2nd);
+            material.SetSafeBool(PropertyNameID.UseMatCap2nd, propertyBlock.UseMatCap2nd);
 
-            material.SetSafeColor(PropertyName.MatCap2ndColor, propertyBlock.MatCap2ndColor);
-            material.SetSafeTexture(PropertyName.MatCap2ndTex, propertyBlock.MatCap2ndTex);
+            material.SetSafeColor(PropertyNameID.MatCap2ndColor, propertyBlock.MatCap2ndColor);
+            material.SetSafeTexture(PropertyNameID.MatCap2ndTex, propertyBlock.MatCap2ndTex);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.MatCap2ndMainStrength, propertyBlock.MatCap2ndMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.MatCap2ndMainStrength, propertyBlock.MatCap2ndMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
-            material.SetSafeVector(PropertyName.MatCap2ndBlendUV1, propertyBlock.MatCap2ndBlendUV1);
-            material.SetSafeBool(PropertyName.MatCap2ndZRotCancel, propertyBlock.MatCap2ndZRotCancel);
-            material.SetSafeBool(PropertyName.MatCap2ndPerspective, propertyBlock.MatCap2ndPerspective);
-            material.SetSafeFloat(PropertyName.MatCap2ndVRParallaxStrength, propertyBlock.MatCap2ndVRParallaxStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeVector(PropertyNameID.MatCap2ndBlendUV1, propertyBlock.MatCap2ndBlendUV1);
+            material.SetSafeBool(PropertyNameID.MatCap2ndZRotCancel, propertyBlock.MatCap2ndZRotCancel);
+            material.SetSafeBool(PropertyNameID.MatCap2ndPerspective, propertyBlock.MatCap2ndPerspective);
+            material.SetSafeFloat(PropertyNameID.MatCap2ndVRParallaxStrength, propertyBlock.MatCap2ndVRParallaxStrength, 0.0f, 1.0f, 1.0f);
 
-            material.SetSafeFloat(PropertyName.MatCap2ndBlend, propertyBlock.MatCap2ndBlend, 0.0f, 1.0f, 1.0f);
-            material.SetSafeTexture(PropertyName.MatCap2ndBlendMask, propertyBlock.MatCap2ndBlendMask);
+            material.SetSafeFloat(PropertyNameID.MatCap2ndBlend, propertyBlock.MatCap2ndBlend, 0.0f, 1.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.MatCap2ndBlendMask, propertyBlock.MatCap2ndBlendMask);
 
-            material.SetSafeFloat(PropertyName.MatCap2ndEnableLighting, propertyBlock.MatCap2ndEnableLighting, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.MatCap2ndShadowMask, propertyBlock.MatCap2ndShadowMask, 0.0f, 1.0f, 0.0f);
-            material.SetSafeBool(PropertyName.MatCap2ndBackfaceMask, propertyBlock.MatCap2ndBackfaceMask);
-            material.SetSafeFloat(PropertyName.MatCap2ndLod, propertyBlock.MatCap2ndLod, 0.0f, 10.0f, 0.0f);
-            material.SetSafeInt(PropertyName.MatCap2ndBlendMode, (int)propertyBlock.MatCap2ndBlendMode);
-            material.SetSafeBool(PropertyName.MatCap2ndApplyTransparency, propertyBlock.MatCap2ndApplyTransparency);
+            material.SetSafeFloat(PropertyNameID.MatCap2ndEnableLighting, propertyBlock.MatCap2ndEnableLighting, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.MatCap2ndShadowMask, propertyBlock.MatCap2ndShadowMask, 0.0f, 1.0f, 0.0f);
+            material.SetSafeBool(PropertyNameID.MatCap2ndBackfaceMask, propertyBlock.MatCap2ndBackfaceMask);
+            material.SetSafeFloat(PropertyNameID.MatCap2ndLod, propertyBlock.MatCap2ndLod, 0.0f, 10.0f, 0.0f);
+            material.SetSafeInt(PropertyNameID.MatCap2ndBlendMode, (int)propertyBlock.MatCap2ndBlendMode);
+            material.SetSafeBool(PropertyNameID.MatCap2ndApplyTransparency, propertyBlock.MatCap2ndApplyTransparency);
 
-            material.SetSafeFloat(PropertyName.MatCap2ndNormalStrength, propertyBlock.MatCap2ndNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeBool(PropertyName.MatCap2ndCustomNormal, propertyBlock.MatCap2ndCustomNormal);
-            material.SetSafeTexture(PropertyName.MatCap2ndBumpMap, propertyBlock.MatCap2ndBumpMap);
-            material.SetSafeFloat(PropertyName.MatCap2ndBumpScale, propertyBlock.MatCap2ndBumpScale, -10.0f, 10.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.MatCap2ndNormalStrength, propertyBlock.MatCap2ndNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeBool(PropertyNameID.MatCap2ndCustomNormal, propertyBlock.MatCap2ndCustomNormal);
+            material.SetSafeTexture(PropertyNameID.MatCap2ndBumpMap, propertyBlock.MatCap2ndBumpMap);
+            material.SetSafeFloat(PropertyNameID.MatCap2ndBumpScale, propertyBlock.MatCap2ndBumpScale, -10.0f, 10.0f, 1.0f);
         }
 
         #endregion
@@ -1003,12 +1025,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseRim, propertyBlock.UseRim);
-            material.SetSafeColor(PropertyName.RimColor, propertyBlock.RimColor);
-            material.SetSafeFloat(PropertyName.RimBorder, propertyBlock.RimBorder, 0.0f, 1.0f, 0.5f);
-            material.SetSafeFloat(PropertyName.RimBlur, propertyBlock.RimBlur, 0.0f, 1.0f, 0.1f);
-            material.SetSafeFloat(PropertyName.RimFresnelPower, propertyBlock.RimFresnelPower, 0.01f, 50.0f, 3.0f);
-            material.SetSafeFloat(PropertyName.RimShadowMask, propertyBlock.RimShadowMask, 0.0f, 1.0f, 0.0f);
+            material.SetSafeBool(PropertyNameID.UseRim, propertyBlock.UseRim);
+            material.SetSafeColor(PropertyNameID.RimColor, propertyBlock.RimColor);
+            material.SetSafeFloat(PropertyNameID.RimBorder, propertyBlock.RimBorder, 0.0f, 1.0f, 0.5f);
+            material.SetSafeFloat(PropertyNameID.RimBlur, propertyBlock.RimBlur, 0.0f, 1.0f, 0.1f);
+            material.SetSafeFloat(PropertyNameID.RimFresnelPower, propertyBlock.RimFresnelPower, 0.01f, 50.0f, 3.0f);
+            material.SetSafeFloat(PropertyNameID.RimShadowMask, propertyBlock.RimShadowMask, 0.0f, 1.0f, 0.0f);
         }
 
         /// <summary>
@@ -1023,29 +1045,32 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseRim, propertyBlock.UseRim);
+            material.SetSafeBool(PropertyNameID.UseRim, propertyBlock.UseRim);
 
-            material.SetSafeColor(PropertyName.RimColor, propertyBlock.RimColor);
-            material.SetSafeTexture(PropertyName.RimColorTex, propertyBlock.RimColorTex);
+            material.SetSafeColor(PropertyNameID.RimColor, propertyBlock.RimColor);
+            material.SetSafeTexture(PropertyNameID.RimColorTex, propertyBlock.RimColorTex);
 
-            material.SetSafeFloat(PropertyName.RimMainStrength, propertyBlock.RimNormalStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
-            material.SetSafeFloat(PropertyName.RimNormalStrength, propertyBlock.RimNormalStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.RimBorder, propertyBlock.RimBorder, 0.0f, 1.0f, 0.5f);
-            material.SetSafeFloat(PropertyName.RimBlur, propertyBlock.RimBlur, 0.0f, 1.0f, 0.65f);
-            material.SetSafeFloat(PropertyName.RimFresnelPower, propertyBlock.RimFresnelPower, 0.01f, 50.0f, 3.5f);
-            material.SetSafeFloat(PropertyName.RimEnableLighting, propertyBlock.RimEnableLighting, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.RimShadowMask, propertyBlock.RimShadowMask, 0.0f, 1.0f, 0.5f);
-            material.SetSafeBool(PropertyName.RimBackfaceMask, propertyBlock.RimBackfaceMask);
-            material.SetSafeFloat(PropertyName.RimVRParallaxStrength, propertyBlock.RimVRParallaxStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeBool(PropertyName.RimApplyTransparency, propertyBlock.RimApplyTransparency);
+            material.SetSafeFloat(PropertyNameID.RimMainStrength, propertyBlock.RimNormalStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.RimNormalStrength, propertyBlock.RimNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.RimBorder, propertyBlock.RimBorder, 0.0f, 1.0f, 0.5f);
+            material.SetSafeFloat(PropertyNameID.RimBlur, propertyBlock.RimBlur, 0.0f, 1.0f, 0.65f);
+            material.SetSafeFloat(PropertyNameID.RimFresnelPower, propertyBlock.RimFresnelPower, 0.01f, 50.0f, 3.5f);
+            material.SetSafeFloat(PropertyNameID.RimEnableLighting, propertyBlock.RimEnableLighting, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.RimShadowMask, propertyBlock.RimShadowMask, 0.0f, 1.0f, 0.5f);
+            material.SetSafeBool(PropertyNameID.RimBackfaceMask, propertyBlock.RimBackfaceMask);
+            material.SetSafeFloat(PropertyNameID.RimVRParallaxStrength, propertyBlock.RimVRParallaxStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeBool(PropertyNameID.RimApplyTransparency, propertyBlock.RimApplyTransparency);
 
-            material.SetSafeFloat(PropertyName.RimDirStrength, propertyBlock.RimDirStrength, 0.0f, 1.0f, 0.0f);
-            material.SetSafeFloat(PropertyName.RimDirRange, propertyBlock.RimDirRange, -1.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.RimDirStrength, propertyBlock.RimDirStrength, 0.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.RimDirRange, propertyBlock.RimDirRange, -1.0f, 1.0f, 0.0f);
 
-            material.SetSafeFloat(PropertyName.RimIndirRange, propertyBlock.RimIndirRange, -1.0f, 1.0f, 0.0f);
-            material.SetSafeColor(PropertyName.RimIndirColor, propertyBlock.RimIndirColor);
-            material.SetSafeFloat(PropertyName.RimIndirBorder, propertyBlock.RimIndirBorder, 0.0f, 1.0f, 0.5f);
-            material.SetSafeFloat(PropertyName.RimIndirBlur, propertyBlock.RimIndirBlur, 0.0f, 1.0f, 0.1f);
+            material.SetSafeFloat(PropertyNameID.RimIndirRange, propertyBlock.RimIndirRange, -1.0f, 1.0f, 0.0f);
+            material.SetSafeColor(PropertyNameID.RimIndirColor, propertyBlock.RimIndirColor);
+            material.SetSafeFloat(PropertyNameID.RimIndirBorder, propertyBlock.RimIndirBorder, 0.0f, 1.0f, 0.5f);
+            material.SetSafeFloat(PropertyNameID.RimIndirBlur, propertyBlock.RimIndirBlur, 0.0f, 1.0f, 0.1f);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeInt(PropertyNameID.RimBlendMode, (int)propertyBlock.RimBlendMode);  // v1.3.7
+#endif
         }
 
         #endregion
@@ -1064,33 +1089,36 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseGlitter, propertyBlock.UseGlitter);
+            material.SetSafeBool(PropertyNameID.UseGlitter, propertyBlock.UseGlitter);
 
-            material.SetSafeInt(PropertyName.GlitterUVMode, (int)propertyBlock.GlitterUVMode);
-            material.SetSafeColor(PropertyName.GlitterColor, propertyBlock.GlitterColor);
-            material.SetSafeTexture(PropertyName.GlitterColorTex, propertyBlock.GlitterColorTex);
-            material.SetSafeFloat(PropertyName.GlitterMainStrength, propertyBlock.GlitterMainStrength, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.GlitterNormalStrength, propertyBlock.GlitterNormalStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeInt(PropertyNameID.GlitterUVMode, (int)propertyBlock.GlitterUVMode);
+            material.SetSafeColor(PropertyNameID.GlitterColor, propertyBlock.GlitterColor);
+            material.SetSafeTexture(PropertyNameID.GlitterColorTex, propertyBlock.GlitterColorTex);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeInt(PropertyNameID.GlitterColorTex_UVMode, (int)propertyBlock.GlitterColorTex_UVMode);  // v1.3.2
+#endif
+            material.SetSafeFloat(PropertyNameID.GlitterMainStrength, propertyBlock.GlitterMainStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.GlitterNormalStrength, propertyBlock.GlitterNormalStrength, 0.0f, 1.0f, 1.0f);
 
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.GlitterScaleRandomize, propertyBlock.GlitterScaleRandomize, 0.0f, 1.0f, 0.0f);  // v1.3.0
-            material.SetSafeBool(PropertyName.GlitterApplyShape, propertyBlock.GlitterApplyShape);  // v1.3.0
-            material.SetSafeTexture(PropertyName.GlitterShapeTex, propertyBlock.GlitterShapeTex);  // v1.3.0
-            material.SetSafeVector(PropertyName.GlitterAtras, propertyBlock.GlitterAtras);  // v1.3.0
-            material.SetSafeBool(PropertyName.GlitterAngleRandomize, propertyBlock.GlitterAngleRandomize);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.GlitterScaleRandomize, propertyBlock.GlitterScaleRandomize, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.GlitterApplyShape, propertyBlock.GlitterApplyShape);  // v1.3.0
+            material.SetSafeTexture(PropertyNameID.GlitterShapeTex, propertyBlock.GlitterShapeTex);  // v1.3.0
+            material.SetSafeVector(PropertyNameID.GlitterAtras, propertyBlock.GlitterAtras);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.GlitterAngleRandomize, propertyBlock.GlitterAngleRandomize);  // v1.3.0
 #endif
 
-            material.SetSafeVector(PropertyName.GlitterParams1, propertyBlock.GlitterParams1);
-            material.SetSafeVector(PropertyName.GlitterParams2, propertyBlock.GlitterParams2);
-            material.SetSafeFloat(PropertyName.GlitterPostContrast, propertyBlock.GlitterPostContrast, null, null, 1.0f);
+            material.SetSafeVector(PropertyNameID.GlitterParams1, propertyBlock.GlitterParams1);
+            material.SetSafeVector(PropertyNameID.GlitterParams2, propertyBlock.GlitterParams2);
+            material.SetSafeFloat(PropertyNameID.GlitterPostContrast, propertyBlock.GlitterPostContrast, null, null, 1.0f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.GlitterSensitivity, propertyBlock.GlitterSensitivity, null, null, 0.25f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.GlitterSensitivity, propertyBlock.GlitterSensitivity, null, null, 0.25f);  // v1.3.0
 #endif
-            material.SetSafeFloat(PropertyName.GlitterEnableLighting, propertyBlock.GlitterEnableLighting, 0.0f, 1.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.GlitterShadowMask, propertyBlock.GlitterShadowMask, 0.0f, 1.0f, 0.0f);
-            material.SetSafeBool(PropertyName.GlitterBackfaceMask, propertyBlock.GlitterBackfaceMask);
-            material.SetSafeBool(PropertyName.GlitterApplyTransparency, propertyBlock.GlitterApplyTransparency);
-            material.SetSafeFloat(PropertyName.GlitterVRParallaxStrength, propertyBlock.GlitterVRParallaxStrength, 0.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.GlitterEnableLighting, propertyBlock.GlitterEnableLighting, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.GlitterShadowMask, propertyBlock.GlitterShadowMask, 0.0f, 1.0f, 0.0f);
+            material.SetSafeBool(PropertyNameID.GlitterBackfaceMask, propertyBlock.GlitterBackfaceMask);
+            material.SetSafeBool(PropertyNameID.GlitterApplyTransparency, propertyBlock.GlitterApplyTransparency);
+            material.SetSafeFloat(PropertyNameID.GlitterVRParallaxStrength, propertyBlock.GlitterVRParallaxStrength, 0.0f, 1.0f, 0.0f);
         }
 
         #endregion
@@ -1109,12 +1137,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseEmission, propertyBlock.UseEmission);
-            material.SetSafeColor(PropertyName.EmissionColor, propertyBlock.EmissionColor);
-            material.SetSafeTexture(PropertyName.EmissionMap, propertyBlock.EmissionMap);
-            material.SetSafeVector(PropertyName.EmissionMap_ScrollRotate, propertyBlock.EmissionMap_ScrollRotate);
-            material.SetSafeFloat(PropertyName.EmissionMap_UVMode, (int)propertyBlock.EmissionMap_UVMode);
-            material.SetSafeVector(PropertyName.EmissionBlink, propertyBlock.EmissionBlink);
+            material.SetSafeBool(PropertyNameID.UseEmission, propertyBlock.UseEmission);
+            material.SetSafeColor(PropertyNameID.EmissionColor, propertyBlock.EmissionColor);
+            material.SetSafeTexture(PropertyNameID.EmissionMap, propertyBlock.EmissionMap);
+            material.SetSafeVector(PropertyNameID.EmissionMap_ScrollRotate, propertyBlock.EmissionMap_ScrollRotate);
+            material.SetSafeFloat(PropertyNameID.EmissionMap_UVMode, (int)propertyBlock.EmissionMap_UVMode);
+            material.SetSafeVector(PropertyNameID.EmissionBlink, propertyBlock.EmissionBlink);
         }
 
         /// <summary>
@@ -1129,26 +1157,29 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseEmission, propertyBlock.UseEmission);
+            material.SetSafeBool(PropertyNameID.UseEmission, propertyBlock.UseEmission);
 
-            material.SetSafeColor(PropertyName.EmissionColor, propertyBlock.EmissionColor);
-            material.SetSafeTexture(PropertyName.EmissionMap, propertyBlock.EmissionMap);
-            material.SetSafeVector(PropertyName.EmissionMap_ScrollRotate, propertyBlock.EmissionMap_ScrollRotate);
-            material.SetSafeInt(PropertyName.EmissionMap_UVMode, (int)propertyBlock.EmissionMap_UVMode);
+            material.SetSafeColor(PropertyNameID.EmissionColor, propertyBlock.EmissionColor);
+            material.SetSafeTexture(PropertyNameID.EmissionMap, propertyBlock.EmissionMap);
+            material.SetSafeVector(PropertyNameID.EmissionMap_ScrollRotate, propertyBlock.EmissionMap_ScrollRotate);
+            material.SetSafeInt(PropertyNameID.EmissionMap_UVMode, (int)propertyBlock.EmissionMap_UVMode);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.EmissionMainStrength, (int)propertyBlock.EmissionMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.EmissionMainStrength, (int)propertyBlock.EmissionMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
-            material.SetSafeFloat(PropertyName.EmissionBlend, propertyBlock.EmissionBlend, 0.0f, 1.0f, 1.0f);
-            material.SetSafeTexture(PropertyName.EmissionBlendMask, propertyBlock.EmissionBlendMask);
-            material.SetSafeVector(PropertyName.EmissionBlendMask_ScrollRotate, propertyBlock.EmissionBlendMask_ScrollRotate);
-            material.SetSafeVector(PropertyName.EmissionBlink, propertyBlock.EmissionBlink);
+            material.SetSafeFloat(PropertyNameID.EmissionBlend, propertyBlock.EmissionBlend, 0.0f, 1.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.EmissionBlendMask, propertyBlock.EmissionBlendMask);
+            material.SetSafeVector(PropertyNameID.EmissionBlendMask_ScrollRotate, propertyBlock.EmissionBlendMask_ScrollRotate);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeInt(PropertyNameID.EmissionBlendMode, (int)propertyBlock.EmissionBlendMode);  // v1.3.7
+#endif
+            material.SetSafeVector(PropertyNameID.EmissionBlink, propertyBlock.EmissionBlink);
 
-            material.SetSafeBool(PropertyName.EmissionUseGrad, propertyBlock.EmissionUseGrad);
-            material.SetSafeTexture(PropertyName.EmissionGradTex, propertyBlock.EmissionGradTex);
-            material.SetSafeFloat(PropertyName.EmissionGradSpeed, propertyBlock.EmissionGradSpeed, null, null, 1.0f);
+            material.SetSafeBool(PropertyNameID.EmissionUseGrad, propertyBlock.EmissionUseGrad);
+            material.SetSafeTexture(PropertyNameID.EmissionGradTex, propertyBlock.EmissionGradTex);
+            material.SetSafeFloat(PropertyNameID.EmissionGradSpeed, propertyBlock.EmissionGradSpeed, null, null, 1.0f);
 
-            material.SetSafeFloat(PropertyName.EmissionParallaxDepth, propertyBlock.EmissionParallaxDepth, null, null, 0.0f);
-            material.SetSafeFloat(PropertyName.EmissionFluorescence, propertyBlock.EmissionFluorescence, 0.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.EmissionParallaxDepth, propertyBlock.EmissionParallaxDepth, null, null, 0.0f);
+            material.SetSafeFloat(PropertyNameID.EmissionFluorescence, propertyBlock.EmissionFluorescence, 0.0f, 1.0f, 0.0f);
         }
 
         /// <summary>
@@ -1163,26 +1194,26 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.Egci, propertyBlock.Egci, null, null, 2);
-            material.SetSafeInt(PropertyName.Egai, propertyBlock.Egai, null, null, 2);
+            material.SetSafeInt(PropertyNameID.Egci, propertyBlock.Egci, null, null, 2);
+            material.SetSafeInt(PropertyNameID.Egai, propertyBlock.Egai, null, null, 2);
 
-            material.SetSafeColor(PropertyName.Egc0, propertyBlock.Egc0);
-            material.SetSafeColor(PropertyName.Egc1, propertyBlock.Egc1);
-            material.SetSafeColor(PropertyName.Egc2, propertyBlock.Egc2);
-            material.SetSafeColor(PropertyName.Egc3, propertyBlock.Egc3);
-            material.SetSafeColor(PropertyName.Egc4, propertyBlock.Egc4);
-            material.SetSafeColor(PropertyName.Egc5, propertyBlock.Egc5);
-            material.SetSafeColor(PropertyName.Egc6, propertyBlock.Egc6);
-            material.SetSafeColor(PropertyName.Egc7, propertyBlock.Egc7);
+            material.SetSafeColor(PropertyNameID.Egc0, propertyBlock.Egc0);
+            material.SetSafeColor(PropertyNameID.Egc1, propertyBlock.Egc1);
+            material.SetSafeColor(PropertyNameID.Egc2, propertyBlock.Egc2);
+            material.SetSafeColor(PropertyNameID.Egc3, propertyBlock.Egc3);
+            material.SetSafeColor(PropertyNameID.Egc4, propertyBlock.Egc4);
+            material.SetSafeColor(PropertyNameID.Egc5, propertyBlock.Egc5);
+            material.SetSafeColor(PropertyNameID.Egc6, propertyBlock.Egc6);
+            material.SetSafeColor(PropertyNameID.Egc7, propertyBlock.Egc7);
 
-            material.SetSafeColor(PropertyName.Ega0, propertyBlock.Ega0);
-            material.SetSafeColor(PropertyName.Ega1, propertyBlock.Ega1);
-            material.SetSafeColor(PropertyName.Ega2, propertyBlock.Ega2);
-            material.SetSafeColor(PropertyName.Ega3, propertyBlock.Ega3);
-            material.SetSafeColor(PropertyName.Ega4, propertyBlock.Ega4);
-            material.SetSafeColor(PropertyName.Ega5, propertyBlock.Ega5);
-            material.SetSafeColor(PropertyName.Ega6, propertyBlock.Ega6);
-            material.SetSafeColor(PropertyName.Ega7, propertyBlock.Ega7);
+            material.SetSafeColor(PropertyNameID.Ega0, propertyBlock.Ega0);
+            material.SetSafeColor(PropertyNameID.Ega1, propertyBlock.Ega1);
+            material.SetSafeColor(PropertyNameID.Ega2, propertyBlock.Ega2);
+            material.SetSafeColor(PropertyNameID.Ega3, propertyBlock.Ega3);
+            material.SetSafeColor(PropertyNameID.Ega4, propertyBlock.Ega4);
+            material.SetSafeColor(PropertyNameID.Ega5, propertyBlock.Ega5);
+            material.SetSafeColor(PropertyNameID.Ega6, propertyBlock.Ega6);
+            material.SetSafeColor(PropertyNameID.Ega7, propertyBlock.Ega7);
         }
 
         /// <summary>
@@ -1197,26 +1228,29 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseEmission2nd, propertyBlock.UseEmission2nd);
+            material.SetSafeBool(PropertyNameID.UseEmission2nd, propertyBlock.UseEmission2nd);
 
-            material.SetSafeColor(PropertyName.Emission2ndColor, propertyBlock.Emission2ndColor);
-            material.SetSafeTexture(PropertyName.Emission2ndMap, propertyBlock.Emission2ndMap);
-            material.SetSafeVector(PropertyName.Emission2ndMap_ScrollRotate, propertyBlock.Emission2ndMap_ScrollRotate);
-            material.SetSafeInt(PropertyName.Emission2ndMap_UVMode, (int)propertyBlock.Emission2ndMap_UVMode);
+            material.SetSafeColor(PropertyNameID.Emission2ndColor, propertyBlock.Emission2ndColor);
+            material.SetSafeTexture(PropertyNameID.Emission2ndMap, propertyBlock.Emission2ndMap);
+            material.SetSafeVector(PropertyNameID.Emission2ndMap_ScrollRotate, propertyBlock.Emission2ndMap_ScrollRotate);
+            material.SetSafeInt(PropertyNameID.Emission2ndMap_UVMode, (int)propertyBlock.Emission2ndMap_UVMode);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.Emission2ndMainStrength, (int)propertyBlock.Emission2ndMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.Emission2ndMainStrength, (int)propertyBlock.Emission2ndMainStrength, 0.0f, 1.0f, 0.0f);  // v1.3.0
 #endif
-            material.SetSafeFloat(PropertyName.Emission2ndBlend, propertyBlock.Emission2ndBlend, 0.0f, 1.0f, 1.0f);
-            material.SetSafeTexture(PropertyName.Emission2ndBlendMask, propertyBlock.Emission2ndBlendMask);
-            material.SetSafeVector(PropertyName.Emission2ndBlendMask_ScrollRotate, propertyBlock.Emission2ndBlendMask_ScrollRotate);
-            material.SetSafeVector(PropertyName.Emission2ndBlink, propertyBlock.Emission2ndBlink);
+            material.SetSafeFloat(PropertyNameID.Emission2ndBlend, propertyBlock.Emission2ndBlend, 0.0f, 1.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.Emission2ndBlendMask, propertyBlock.Emission2ndBlendMask);
+            material.SetSafeVector(PropertyNameID.Emission2ndBlendMask_ScrollRotate, propertyBlock.Emission2ndBlendMask_ScrollRotate);
+#if LILTOON_1_3_0_OR_NEWER
+            material.SetSafeInt(PropertyNameID.Emission2ndBlendMode, (int)propertyBlock.Emission2ndBlendMode);  // v1.3.7
+#endif
+            material.SetSafeVector(PropertyNameID.Emission2ndBlink, propertyBlock.Emission2ndBlink);
 
-            material.SetSafeBool(PropertyName.Emission2ndUseGrad, propertyBlock.Emission2ndUseGrad);
-            material.SetSafeTexture(PropertyName.Emission2ndGradTex, propertyBlock.Emission2ndGradTex);
-            material.SetSafeFloat(PropertyName.Emission2ndGradSpeed, propertyBlock.Emission2ndGradSpeed, null, null, 1.0f);
+            material.SetSafeBool(PropertyNameID.Emission2ndUseGrad, propertyBlock.Emission2ndUseGrad);
+            material.SetSafeTexture(PropertyNameID.Emission2ndGradTex, propertyBlock.Emission2ndGradTex);
+            material.SetSafeFloat(PropertyNameID.Emission2ndGradSpeed, propertyBlock.Emission2ndGradSpeed, null, null, 1.0f);
 
-            material.SetSafeFloat(PropertyName.Emission2ndParallaxDepth, propertyBlock.Emission2ndParallaxDepth, null, null, 0.0f);
-            material.SetSafeFloat(PropertyName.Emission2ndFluorescence, propertyBlock.Emission2ndFluorescence, 0.0f, 1.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.Emission2ndParallaxDepth, propertyBlock.Emission2ndParallaxDepth, null, null, 0.0f);
+            material.SetSafeFloat(PropertyNameID.Emission2ndFluorescence, propertyBlock.Emission2ndFluorescence, 0.0f, 1.0f, 0.0f);
 
         }
 
@@ -1232,26 +1266,26 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.E2gci, propertyBlock.E2gci, null, null, 2);
-            material.SetSafeInt(PropertyName.E2gai, propertyBlock.E2gai, null, null, 2);
+            material.SetSafeInt(PropertyNameID.E2gci, propertyBlock.E2gci, null, null, 2);
+            material.SetSafeInt(PropertyNameID.E2gai, propertyBlock.E2gai, null, null, 2);
 
-            material.SetSafeColor(PropertyName.E2gc0, propertyBlock.E2gc0);
-            material.SetSafeColor(PropertyName.E2gc1, propertyBlock.E2gc1);
-            material.SetSafeColor(PropertyName.E2gc2, propertyBlock.E2gc2);
-            material.SetSafeColor(PropertyName.E2gc3, propertyBlock.E2gc3);
-            material.SetSafeColor(PropertyName.E2gc4, propertyBlock.E2gc4);
-            material.SetSafeColor(PropertyName.E2gc5, propertyBlock.E2gc5);
-            material.SetSafeColor(PropertyName.E2gc6, propertyBlock.E2gc6);
-            material.SetSafeColor(PropertyName.E2gc7, propertyBlock.E2gc7);
+            material.SetSafeColor(PropertyNameID.E2gc0, propertyBlock.E2gc0);
+            material.SetSafeColor(PropertyNameID.E2gc1, propertyBlock.E2gc1);
+            material.SetSafeColor(PropertyNameID.E2gc2, propertyBlock.E2gc2);
+            material.SetSafeColor(PropertyNameID.E2gc3, propertyBlock.E2gc3);
+            material.SetSafeColor(PropertyNameID.E2gc4, propertyBlock.E2gc4);
+            material.SetSafeColor(PropertyNameID.E2gc5, propertyBlock.E2gc5);
+            material.SetSafeColor(PropertyNameID.E2gc6, propertyBlock.E2gc6);
+            material.SetSafeColor(PropertyNameID.E2gc7, propertyBlock.E2gc7);
 
-            material.SetSafeColor(PropertyName.E2ga0, propertyBlock.E2ga0);
-            material.SetSafeColor(PropertyName.E2ga1, propertyBlock.E2ga1);
-            material.SetSafeColor(PropertyName.E2ga2, propertyBlock.E2ga2);
-            material.SetSafeColor(PropertyName.E2ga3, propertyBlock.E2ga3);
-            material.SetSafeColor(PropertyName.E2ga4, propertyBlock.E2ga4);
-            material.SetSafeColor(PropertyName.E2ga5, propertyBlock.E2ga5);
-            material.SetSafeColor(PropertyName.E2ga6, propertyBlock.E2ga6);
-            material.SetSafeColor(PropertyName.E2ga7, propertyBlock.E2ga7);
+            material.SetSafeColor(PropertyNameID.E2ga0, propertyBlock.E2ga0);
+            material.SetSafeColor(PropertyNameID.E2ga1, propertyBlock.E2ga1);
+            material.SetSafeColor(PropertyNameID.E2ga2, propertyBlock.E2ga2);
+            material.SetSafeColor(PropertyNameID.E2ga3, propertyBlock.E2ga3);
+            material.SetSafeColor(PropertyNameID.E2ga4, propertyBlock.E2ga4);
+            material.SetSafeColor(PropertyNameID.E2ga5, propertyBlock.E2ga5);
+            material.SetSafeColor(PropertyNameID.E2ga6, propertyBlock.E2ga6);
+            material.SetSafeColor(PropertyNameID.E2ga7, propertyBlock.E2ga7);
         }
 
         #endregion
@@ -1270,13 +1304,13 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseParallax, propertyBlock.UseParallax);
+            material.SetSafeBool(PropertyNameID.UseParallax, propertyBlock.UseParallax);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeBool(PropertyName.UsePOM, propertyBlock.UsePOM);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.UsePOM, propertyBlock.UsePOM);  // v1.3.0
 #endif
-            material.SetSafeTexture(PropertyName.ParallaxMap, propertyBlock.ParallaxMap);
-            material.SetSafeFloat(PropertyName.Parallax, propertyBlock.Parallax, null, null, 0.02f);
-            material.SetSafeFloat(PropertyName.ParallaxOffset, propertyBlock.ParallaxOffset, null, null, 0.5f);
+            material.SetSafeTexture(PropertyNameID.ParallaxMap, propertyBlock.ParallaxMap);
+            material.SetSafeFloat(PropertyNameID.Parallax, propertyBlock.Parallax, null, null, 0.02f);
+            material.SetSafeFloat(PropertyNameID.ParallaxOffset, propertyBlock.ParallaxOffset, null, null, 0.5f);
         }
 
         #endregion
@@ -1295,8 +1329,8 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeVector(PropertyName.DistanceFade, propertyBlock.DistanceFade);
-            material.SetSafeColor(PropertyName.DistanceFadeColor, propertyBlock.DistanceFadeColor);
+            material.SetSafeVector(PropertyNameID.DistanceFade, propertyBlock.DistanceFade);
+            material.SetSafeColor(PropertyNameID.DistanceFadeColor, propertyBlock.DistanceFadeColor);
         }
 
         #endregion
@@ -1315,30 +1349,30 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseAudioLink, propertyBlock.UseAudioLink);
+            material.SetSafeBool(PropertyNameID.UseAudioLink, propertyBlock.UseAudioLink);
 
-            material.SetSafeVector(PropertyName.AudioLinkDefaultValue, propertyBlock.AudioLinkDefaultValue);
-            material.SetSafeInt(PropertyName.AudioLinkUVMode, (int)propertyBlock.AudioLinkUVMode);
-            material.SetSafeVector(PropertyName.AudioLinkUVParams, propertyBlock.AudioLinkUVParams);
-            material.SetSafeVector(PropertyName.AudioLinkStart, propertyBlock.AudioLinkStart);
-            material.SetSafeTexture(PropertyName.AudioLinkMask, propertyBlock.AudioLinkMask);
+            material.SetSafeVector(PropertyNameID.AudioLinkDefaultValue, propertyBlock.AudioLinkDefaultValue);
+            material.SetSafeInt(PropertyNameID.AudioLinkUVMode, (int)propertyBlock.AudioLinkUVMode);
+            material.SetSafeVector(PropertyNameID.AudioLinkUVParams, propertyBlock.AudioLinkUVParams);
+            material.SetSafeVector(PropertyNameID.AudioLinkStart, propertyBlock.AudioLinkStart);
+            material.SetSafeTexture(PropertyNameID.AudioLinkMask, propertyBlock.AudioLinkMask);
 
-            material.SetSafeBool(PropertyName.AudioLink2Main2nd, propertyBlock.AudioLink2Main2nd);
-            material.SetSafeBool(PropertyName.AudioLink2Main3rd, propertyBlock.AudioLink2Main3rd);
-            material.SetSafeBool(PropertyName.AudioLink2Emission, propertyBlock.AudioLink2Emission);
-            material.SetSafeBool(PropertyName.AudioLink2EmissionGrad, propertyBlock.AudioLink2EmissionGrad);
-            material.SetSafeBool(PropertyName.AudioLink2Emission2nd, propertyBlock.AudioLink2Emission2nd);
-            material.SetSafeBool(PropertyName.AudioLink2Emission2ndGrad, propertyBlock.AudioLink2Emission2ndGrad);
-            material.SetSafeBool(PropertyName.AudioLink2Vertex, propertyBlock.AudioLink2Vertex);
+            material.SetSafeBool(PropertyNameID.AudioLink2Main2nd, propertyBlock.AudioLink2Main2nd);
+            material.SetSafeBool(PropertyNameID.AudioLink2Main3rd, propertyBlock.AudioLink2Main3rd);
+            material.SetSafeBool(PropertyNameID.AudioLink2Emission, propertyBlock.AudioLink2Emission);
+            material.SetSafeBool(PropertyNameID.AudioLink2EmissionGrad, propertyBlock.AudioLink2EmissionGrad);
+            material.SetSafeBool(PropertyNameID.AudioLink2Emission2nd, propertyBlock.AudioLink2Emission2nd);
+            material.SetSafeBool(PropertyNameID.AudioLink2Emission2ndGrad, propertyBlock.AudioLink2Emission2ndGrad);
+            material.SetSafeBool(PropertyNameID.AudioLink2Vertex, propertyBlock.AudioLink2Vertex);
 
-            material.SetSafeInt(PropertyName.AudioLinkVertexUVMode, (int)propertyBlock.AudioLinkVertexUVMode);
-            material.SetSafeVector(PropertyName.AudioLinkVertexUVParams, propertyBlock.AudioLinkVertexUVParams);
-            material.SetSafeVector(PropertyName.AudioLinkVertexStart, propertyBlock.AudioLinkVertexStart);
-            material.SetSafeVector(PropertyName.AudioLinkVertexStrength, propertyBlock.AudioLinkVertexStrength);
+            material.SetSafeInt(PropertyNameID.AudioLinkVertexUVMode, (int)propertyBlock.AudioLinkVertexUVMode);
+            material.SetSafeVector(PropertyNameID.AudioLinkVertexUVParams, propertyBlock.AudioLinkVertexUVParams);
+            material.SetSafeVector(PropertyNameID.AudioLinkVertexStart, propertyBlock.AudioLinkVertexStart);
+            material.SetSafeVector(PropertyNameID.AudioLinkVertexStrength, propertyBlock.AudioLinkVertexStrength);
 
-            material.SetSafeBool(PropertyName.AudioLinkAsLocal, propertyBlock.AudioLinkAsLocal);
-            material.SetSafeTexture(PropertyName.AudioLinkLocalMap, propertyBlock.AudioLinkLocalMap);
-            material.SetSafeVector(PropertyName.AudioLinkLocalMapParams, propertyBlock.AudioLinkLocalMapParams);
+            material.SetSafeBool(PropertyNameID.AudioLinkAsLocal, propertyBlock.AudioLinkAsLocal);
+            material.SetSafeTexture(PropertyNameID.AudioLinkLocalMap, propertyBlock.AudioLinkLocalMap);
+            material.SetSafeVector(PropertyNameID.AudioLinkLocalMapParams, propertyBlock.AudioLinkLocalMapParams);
         }
 
         #endregion
@@ -1357,13 +1391,13 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeTexture(PropertyName.DissolveMask, propertyBlock.DissolveMask);
-            material.SetSafeTexture(PropertyName.DissolveNoiseMask, propertyBlock.DissolveNoiseMask);
-            material.SetSafeVector(PropertyName.DissolveNoiseMask_ScrollRotate, propertyBlock.DissolveNoiseMask_ScrollRotate);
-            material.SetSafeFloat(PropertyName.DissolveNoiseStrength, propertyBlock.DissolveNoiseStrength, null, null, 0.1f);
-            material.SetSafeColor(PropertyName.DissolveColor, propertyBlock.DissolveColor);
-            material.SetSafeVector(PropertyName.DissolveParams, propertyBlock.DissolveParams);
-            material.SetSafeVector(PropertyName.DissolvePos, propertyBlock.DissolvePos);
+            material.SetSafeTexture(PropertyNameID.DissolveMask, propertyBlock.DissolveMask);
+            material.SetSafeTexture(PropertyNameID.DissolveNoiseMask, propertyBlock.DissolveNoiseMask);
+            material.SetSafeVector(PropertyNameID.DissolveNoiseMask_ScrollRotate, propertyBlock.DissolveNoiseMask_ScrollRotate);
+            material.SetSafeFloat(PropertyNameID.DissolveNoiseStrength, propertyBlock.DissolveNoiseStrength, null, null, 0.1f);
+            material.SetSafeColor(PropertyNameID.DissolveColor, propertyBlock.DissolveColor);
+            material.SetSafeVector(PropertyNameID.DissolveParams, propertyBlock.DissolveParams);
+            material.SetSafeVector(PropertyNameID.DissolvePos, propertyBlock.DissolvePos);
         }
 
         #endregion
@@ -1382,8 +1416,41 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.IgnoreEncryption, propertyBlock.IgnoreEncryption);
-            material.SetSafeVector(PropertyName.Keys, propertyBlock.Keys);
+            material.SetSafeBool(PropertyNameID.IgnoreEncryption, propertyBlock.IgnoreEncryption);
+            material.SetSafeVector(PropertyNameID.Keys, propertyBlock.Keys);
+
+            material.SetSafeFloat(PropertyNameID.BitKey0, propertyBlock.BitKey0, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey1, propertyBlock.BitKey1, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey2, propertyBlock.BitKey2, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey3, propertyBlock.BitKey3, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey4, propertyBlock.BitKey4, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey5, propertyBlock.BitKey5, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey6, propertyBlock.BitKey6, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey7, propertyBlock.BitKey7, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey8, propertyBlock.BitKey8, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey9, propertyBlock.BitKey9, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey10, propertyBlock.BitKey10, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey11, propertyBlock.BitKey11, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey12, propertyBlock.BitKey12, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey13, propertyBlock.BitKey13, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey14, propertyBlock.BitKey14, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey15, propertyBlock.BitKey15, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey16, propertyBlock.BitKey16, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey17, propertyBlock.BitKey17, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey18, propertyBlock.BitKey18, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey19, propertyBlock.BitKey19, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey20, propertyBlock.BitKey20, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey21, propertyBlock.BitKey21, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey22, propertyBlock.BitKey22, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey23, propertyBlock.BitKey23, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey24, propertyBlock.BitKey24, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey25, propertyBlock.BitKey25, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey26, propertyBlock.BitKey26, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey27, propertyBlock.BitKey27, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey28, propertyBlock.BitKey28, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey29, propertyBlock.BitKey29, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey30, propertyBlock.BitKey30, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.BitKey31, propertyBlock.BitKey31, null, null, 0f);
         }
 
         #endregion
@@ -1406,14 +1473,14 @@ namespace LilToonShader
 
             if (isRefraction || isGem)
             {
-                material.SetSafeFloat(PropertyName.RefractionStrength, propertyBlock.RefractionStrength, -1.0f, 1.0f, 0.1f);
-                material.SetSafeFloat(PropertyName.RefractionFresnelPower, propertyBlock.RefractionFresnelPower, 0.01f, 10.0f, 0.5f);
+                material.SetSafeFloat(PropertyNameID.RefractionStrength, propertyBlock.RefractionStrength, -1.0f, 1.0f, 0.1f);
+                material.SetSafeFloat(PropertyNameID.RefractionFresnelPower, propertyBlock.RefractionFresnelPower, 0.01f, 10.0f, 0.5f);
             }
 
             if (isRefraction)
             {
-                material.SetSafeBool(PropertyName.RefractionColorFromMain, propertyBlock.RefractionColorFromMain);
-                material.SetSafeColor(PropertyName.RefractionColor, propertyBlock.RefractionColor);
+                material.SetSafeBool(PropertyNameID.RefractionColorFromMain, propertyBlock.RefractionColorFromMain);
+                material.SetSafeColor(PropertyNameID.RefractionColor, propertyBlock.RefractionColor);
             }
         }
 
@@ -1433,23 +1500,23 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeTexture(PropertyName.FurNoiseMask, propertyBlock.FurNoiseMask);
-            material.SetSafeTexture(PropertyName.FurMask, propertyBlock.FurMask);
-            material.SetSafeTexture(PropertyName.FurLengthMask, propertyBlock.FurLengthMask);
-            material.SetSafeTexture(PropertyName.FurVectorTex, propertyBlock.FurVectorTex);
-            material.SetSafeFloat(PropertyName.FurVectorScale, propertyBlock.FurVectorScale, -10.0f, 10.0f, 1.0f);
-            material.SetSafeVector(PropertyName.FurVector, propertyBlock.FurVector);
-            material.SetSafeBool(PropertyName.VertexColor2FurVector, propertyBlock.VertexColor2FurVector);
-            material.SetSafeFloat(PropertyName.FurGravity, propertyBlock.FurGravity, 0.0f, 1.0f, 0.25f);
-            material.SetSafeFloat(PropertyName.FurRandomize, propertyBlock.FurRandomize, null, null, 0.0f);
-            material.SetSafeFloat(PropertyName.FurAO, propertyBlock.FurAO, 0.0f, 1.0f, 0.0f);
+            material.SetSafeTexture(PropertyNameID.FurNoiseMask, propertyBlock.FurNoiseMask);
+            material.SetSafeTexture(PropertyNameID.FurMask, propertyBlock.FurMask);
+            material.SetSafeTexture(PropertyNameID.FurLengthMask, propertyBlock.FurLengthMask);
+            material.SetSafeTexture(PropertyNameID.FurVectorTex, propertyBlock.FurVectorTex);
+            material.SetSafeFloat(PropertyNameID.FurVectorScale, propertyBlock.FurVectorScale, -10.0f, 10.0f, 1.0f);
+            material.SetSafeVector(PropertyNameID.FurVector, propertyBlock.FurVector);
+            material.SetSafeBool(PropertyNameID.VertexColor2FurVector, propertyBlock.VertexColor2FurVector);
+            material.SetSafeFloat(PropertyNameID.FurGravity, propertyBlock.FurGravity, 0.0f, 1.0f, 0.25f);
+            material.SetSafeFloat(PropertyNameID.FurRandomize, propertyBlock.FurRandomize, null, null, 0.0f);
+            material.SetSafeFloat(PropertyNameID.FurAO, propertyBlock.FurAO, 0.0f, 1.0f, 0.0f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeInt(PropertyName.FurMeshType, (int)propertyBlock.FurMeshType);  // v1.3.0
+            material.SetSafeInt(PropertyNameID.FurMeshType, (int)propertyBlock.FurMeshType);  // v1.3.0
 #endif
-            material.SetSafeInt(PropertyName.FurLayerNum, propertyBlock.FurLayerNum, 1, 6, 2);
-            material.SetSafeFloat(PropertyName.FurRootOffset, propertyBlock.FurRootOffset, -1.0f, 0.0f, 0.0f);
-            material.SetSafeFloat(PropertyName.FurCutoutLength, propertyBlock.FurCutoutLength, null, null, 0.8f);
-            material.SetSafeFloat(PropertyName.FurTouchStrength, propertyBlock.FurTouchStrength, 0.0f, 1.0f, 0.0f);
+            material.SetSafeInt(PropertyNameID.FurLayerNum, propertyBlock.FurLayerNum, 1, 6, 2);
+            material.SetSafeFloat(PropertyNameID.FurRootOffset, propertyBlock.FurRootOffset, -1.0f, 0.0f, 0.0f);
+            material.SetSafeFloat(PropertyNameID.FurCutoutLength, propertyBlock.FurCutoutLength, null, null, 0.8f);
+            material.SetSafeFloat(PropertyNameID.FurTouchStrength, propertyBlock.FurTouchStrength, 0.0f, 1.0f, 0.0f);
         }
 
         #endregion
@@ -1468,17 +1535,17 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.FurCull, (int)propertyBlock.FurCull);
+            material.SetSafeInt(PropertyNameID.FurCull, (int)propertyBlock.FurCull);
 
-            material.SetSafeBool(PropertyName.FurZClip, propertyBlock.FurZClip);
-            material.SetSafeBool(PropertyName.FurZWrite, propertyBlock.FurZWrite);
-            material.SetSafeInt(PropertyName.FurZTest, (int)propertyBlock.FurZTest);
+            material.SetSafeBool(PropertyNameID.FurZClip, propertyBlock.FurZClip);
+            material.SetSafeBool(PropertyNameID.FurZWrite, propertyBlock.FurZWrite);
+            material.SetSafeInt(PropertyNameID.FurZTest, (int)propertyBlock.FurZTest);
 
-            material.SetSafeFloat(PropertyName.FurOffsetFactor, propertyBlock.FurOffsetFactor, null, null, 0.0f);
-            material.SetSafeFloat(PropertyName.FurOffsetUnits, propertyBlock.FurOffsetUnits, null, null, 0.0f);
+            material.SetSafeFloat(PropertyNameID.FurOffsetFactor, propertyBlock.FurOffsetFactor, null, null, 0.0f);
+            material.SetSafeFloat(PropertyNameID.FurOffsetUnits, propertyBlock.FurOffsetUnits, null, null, 0.0f);
 
-            material.SetSafeInt(PropertyName.FurColorMask, propertyBlock.FurColorMask, null, null, 15);
-            material.SetSafeBool(PropertyName.FurAlphaToMask, propertyBlock.FurAlphaToMask);
+            material.SetSafeInt(PropertyNameID.FurColorMask, propertyBlock.FurColorMask, null, null, 15);
+            material.SetSafeBool(PropertyNameID.FurAlphaToMask, propertyBlock.FurAlphaToMask);
         }
 
         /// <summary>
@@ -1493,12 +1560,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.FurSrcBlend, (int)propertyBlock.FurSrcBlend);
-            material.SetSafeInt(PropertyName.FurDstBlend, (int)propertyBlock.FurDstBlend);
-            material.SetSafeInt(PropertyName.FurSrcBlendAlpha, (int)propertyBlock.FurSrcBlendAlpha);
-            material.SetSafeInt(PropertyName.FurDstBlendAlpha, (int)propertyBlock.FurDstBlendAlpha);
-            material.SetSafeInt(PropertyName.FurBlendOp, (int)propertyBlock.FurBlendOp);
-            material.SetSafeInt(PropertyName.FurBlendOpAlpha, (int)propertyBlock.FurBlendOpAlpha);
+            material.SetSafeInt(PropertyNameID.FurSrcBlend, (int)propertyBlock.FurSrcBlend);
+            material.SetSafeInt(PropertyNameID.FurDstBlend, (int)propertyBlock.FurDstBlend);
+            material.SetSafeInt(PropertyNameID.FurSrcBlendAlpha, (int)propertyBlock.FurSrcBlendAlpha);
+            material.SetSafeInt(PropertyNameID.FurDstBlendAlpha, (int)propertyBlock.FurDstBlendAlpha);
+            material.SetSafeInt(PropertyNameID.FurBlendOp, (int)propertyBlock.FurBlendOp);
+            material.SetSafeInt(PropertyNameID.FurBlendOpAlpha, (int)propertyBlock.FurBlendOpAlpha);
         }
 
         /// <summary>
@@ -1513,12 +1580,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.FurSrcBlendFA, (int)propertyBlock.FurSrcBlendFA);
-            material.SetSafeInt(PropertyName.FurDstBlendFA, (int)propertyBlock.FurDstBlendFA);
-            material.SetSafeInt(PropertyName.FurSrcBlendAlphaFA, (int)propertyBlock.FurSrcBlendAlphaFA);
-            material.SetSafeInt(PropertyName.FurDstBlendAlphaFA, (int)propertyBlock.FurDstBlendAlphaFA);
-            material.SetSafeInt(PropertyName.FurBlendOpFA, (int)propertyBlock.FurBlendOpFA);
-            material.SetSafeInt(PropertyName.FurBlendOpAlphaFA, (int)propertyBlock.FurBlendOpAlphaFA);
+            material.SetSafeInt(PropertyNameID.FurSrcBlendFA, (int)propertyBlock.FurSrcBlendFA);
+            material.SetSafeInt(PropertyNameID.FurDstBlendFA, (int)propertyBlock.FurDstBlendFA);
+            material.SetSafeInt(PropertyNameID.FurSrcBlendAlphaFA, (int)propertyBlock.FurSrcBlendAlphaFA);
+            material.SetSafeInt(PropertyNameID.FurDstBlendAlphaFA, (int)propertyBlock.FurDstBlendAlphaFA);
+            material.SetSafeInt(PropertyNameID.FurBlendOpFA, (int)propertyBlock.FurBlendOpFA);
+            material.SetSafeInt(PropertyNameID.FurBlendOpAlphaFA, (int)propertyBlock.FurBlendOpAlphaFA);
         }
 
         /// <summary>
@@ -1533,13 +1600,13 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.FurStencilRef, propertyBlock.FurStencilRef, 0, 255, 0);
-            material.SetSafeInt(PropertyName.FurStencilReadMask, propertyBlock.FurStencilReadMask, 0, 255, 255);
-            material.SetSafeInt(PropertyName.FurStencilWriteMask, propertyBlock.FurStencilWriteMask, 0, 255, 255);
-            material.SetSafeInt(PropertyName.FurStencilComp, (int)propertyBlock.FurStencilComp);
-            material.SetSafeInt(PropertyName.FurStencilPass, (int)propertyBlock.FurStencilPass);
-            material.SetSafeInt(PropertyName.FurStencilFail, (int)propertyBlock.FurStencilFail);
-            material.SetSafeInt(PropertyName.FurStencilZFail, (int)propertyBlock.FurStencilZFail);
+            material.SetSafeInt(PropertyNameID.FurStencilRef, propertyBlock.FurStencilRef, 0, 255, 0);
+            material.SetSafeInt(PropertyNameID.FurStencilReadMask, propertyBlock.FurStencilReadMask, 0, 255, 255);
+            material.SetSafeInt(PropertyNameID.FurStencilWriteMask, propertyBlock.FurStencilWriteMask, 0, 255, 255);
+            material.SetSafeInt(PropertyNameID.FurStencilComp, (int)propertyBlock.FurStencilComp);
+            material.SetSafeInt(PropertyNameID.FurStencilPass, (int)propertyBlock.FurStencilPass);
+            material.SetSafeInt(PropertyNameID.FurStencilFail, (int)propertyBlock.FurStencilFail);
+            material.SetSafeInt(PropertyNameID.FurStencilZFail, (int)propertyBlock.FurStencilZFail);
         }
 
         #endregion
@@ -1558,12 +1625,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeFloat(PropertyName.GemChromaticAberration, propertyBlock.GemChromaticAberration, 0.0f, 1.0f, 0.02f);
-            material.SetSafeFloat(PropertyName.GemEnvContrast, propertyBlock.GemEnvContrast, null, null, 2.0f);
-            material.SetSafeColor(PropertyName.GemEnvColor, propertyBlock.GemEnvColor);
-            material.SetSafeFloat(PropertyName.GemParticleLoop, propertyBlock.GemParticleLoop, null, null, 8);
-            material.SetSafeColor(PropertyName.GemParticleColor, propertyBlock.GemParticleColor);
-            material.SetSafeFloat(PropertyName.GemVRParallaxStrength, propertyBlock.GemVRParallaxStrength, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.GemChromaticAberration, propertyBlock.GemChromaticAberration, 0.0f, 1.0f, 0.02f);
+            material.SetSafeFloat(PropertyNameID.GemEnvContrast, propertyBlock.GemEnvContrast, null, null, 2.0f);
+            material.SetSafeColor(PropertyNameID.GemEnvColor, propertyBlock.GemEnvColor);
+            material.SetSafeFloat(PropertyNameID.GemParticleLoop, propertyBlock.GemParticleLoop, null, null, 8);
+            material.SetSafeColor(PropertyNameID.GemParticleColor, propertyBlock.GemParticleColor);
+            material.SetSafeFloat(PropertyNameID.GemVRParallaxStrength, propertyBlock.GemVRParallaxStrength, 0.0f, 1.0f, 1.0f);
         }
 
         #endregion
@@ -1582,10 +1649,10 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeFloat(PropertyName.TessEdge, propertyBlock.TessEdge, 0, 100, 0);
-            material.SetSafeFloat(PropertyName.TessStrength, propertyBlock.TessStrength, 0.0f, 1.0f, 0.5f);
-            material.SetSafeFloat(PropertyName.TessShrink, propertyBlock.TessShrink, 0.0f, 1.0f, 0.0f);
-            material.SetSafeInt(PropertyName.TessFactorMax, propertyBlock.TessFactorMax, 1, 8, 3);
+            material.SetSafeFloat(PropertyNameID.TessEdge, propertyBlock.TessEdge, 0, 100, 0);
+            material.SetSafeFloat(PropertyNameID.TessStrength, propertyBlock.TessStrength, 0.0f, 1.0f, 0.5f);
+            material.SetSafeFloat(PropertyNameID.TessShrink, propertyBlock.TessShrink, 0.0f, 1.0f, 0.0f);
+            material.SetSafeInt(PropertyNameID.TessFactorMax, propertyBlock.TessFactorMax, 1, 8, 3);
         }
 
         #endregion
@@ -1604,33 +1671,34 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeColor(PropertyName.OutlineColor, propertyBlock.OutlineColor);
-            material.SetSafeTexture(PropertyName.OutlineTex, propertyBlock.OutlineTex);
-            material.SetSafeVector(PropertyName.OutlineTex_ScrollRotate, propertyBlock.OutlineTex_ScrollRotate);
-            material.SetSafeVector(PropertyName.OutlineTexHSVG, propertyBlock.OutlineTexHSVG);
+            material.SetSafeColor(PropertyNameID.OutlineColor, propertyBlock.OutlineColor);
+            material.SetSafeTexture(PropertyNameID.OutlineTex, propertyBlock.OutlineTex);
+            material.SetSafeVector(PropertyNameID.OutlineTex_ScrollRotate, propertyBlock.OutlineTex_ScrollRotate);
+            material.SetSafeVector(PropertyNameID.OutlineTexHSVG, propertyBlock.OutlineTexHSVG);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeColor(PropertyName.OutlineLitColor, propertyBlock.OutlineLitColor);  // v1.3.0
-            material.SetSafeBool(PropertyName.OutlineLitApplyTex, propertyBlock.OutlineLitApplyTex);  // v1.3.0
-            material.SetSafeFloat(PropertyName.OutlineLitScale, propertyBlock.OutlineLitScale, null, null, 10);  // v1.3.0
-            material.SetSafeFloat(PropertyName.OutlineLitOffset, propertyBlock.OutlineLitOffset, null, null, -8);  // v1.3.0
+            material.SetSafeColor(PropertyNameID.OutlineLitColor, propertyBlock.OutlineLitColor);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.OutlineLitApplyTex, propertyBlock.OutlineLitApplyTex);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.OutlineLitScale, propertyBlock.OutlineLitScale, null, null, 10);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.OutlineLitOffset, propertyBlock.OutlineLitOffset, null, null, -8);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.OutlineLitShadowReceive, propertyBlock.OutlineLitShadowReceive);  // v1.3.1
 #endif
-            material.SetSafeFloat(PropertyName.OutlineWidth, propertyBlock.OutlineWidth, 0.0f, 1.0f, 0.08f);
+            material.SetSafeFloat(PropertyNameID.OutlineWidth, propertyBlock.OutlineWidth, 0.0f, 1.0f, 0.08f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.OutlineFixWidth, propertyBlock.OutlineFixWidth, 0.0f, 1.0f, 0.5f);  // v1.3.0 changed int to float
+            material.SetSafeFloat(PropertyNameID.OutlineFixWidth, propertyBlock.OutlineFixWidth, 0.0f, 1.0f, 0.5f);  // v1.3.0 changed int to float
 #elif LILTOON_1_2_12_OR_OLDER
-            material.SetSafeInt(PropertyName.OutlineFixWidth, propertyBlock.OutlineFixWidth, null, null, 1);  // v1.2.12
+            material.SetSafeInt(PropertyNameID.OutlineFixWidth, propertyBlock.OutlineFixWidth, null, null, 1);  // v1.2.12
 #endif
-            material.SetSafeTexture(PropertyName.OutlineWidthMask, propertyBlock.OutlineWidthMask);
-            material.SetSafeInt(PropertyName.OutlineVertexR2Width, (int)propertyBlock.OutlineVertexR2Width);
+            material.SetSafeTexture(PropertyNameID.OutlineWidthMask, propertyBlock.OutlineWidthMask);
+            material.SetSafeInt(PropertyNameID.OutlineVertexR2Width, (int)propertyBlock.OutlineVertexR2Width);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeBool(PropertyName.OutlineDeleteMesh, propertyBlock.OutlineDeleteMesh);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.OutlineDeleteMesh, propertyBlock.OutlineDeleteMesh);  // v1.3.0
 #endif
-            material.SetSafeTexture(PropertyName.OutlineVectorTex, propertyBlock.OutlineVectorTex);
-            material.SetSafeFloat(PropertyName.OutlineVectorScale, propertyBlock.OutlineVectorScale, -10.0f, 10.0f, 1.0f);
-            material.SetSafeFloat(PropertyName.OutlineEnableLighting, propertyBlock.OutlineEnableLighting, 0.0f, 1.0f, 1.0f);
+            material.SetSafeTexture(PropertyNameID.OutlineVectorTex, propertyBlock.OutlineVectorTex);
+            material.SetSafeFloat(PropertyNameID.OutlineVectorScale, propertyBlock.OutlineVectorScale, -10.0f, 10.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.OutlineEnableLighting, propertyBlock.OutlineEnableLighting, 0.0f, 1.0f, 1.0f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.OutlineZBias, propertyBlock.OutlineZBias, null, null, 0);  // v1.3.0
-            material.SetSafeBool(PropertyName.OutlineDisableInVR, propertyBlock.OutlineDisableInVR);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.OutlineZBias, propertyBlock.OutlineZBias, null, null, 0);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.OutlineDisableInVR, propertyBlock.OutlineDisableInVR);  // v1.3.0
 #endif
         }
 
@@ -1646,22 +1714,22 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeColor(PropertyName.OutlineColor, propertyBlock.OutlineColor);
-            material.SetSafeTexture(PropertyName.OutlineTex, propertyBlock.OutlineTex);
-            material.SetSafeFloat(PropertyName.OutlineWidth, propertyBlock.OutlineWidth, 0.0f, 1.0f, 0.05f);
-            material.SetSafeTexture(PropertyName.OutlineWidthMask, propertyBlock.OutlineWidthMask);
+            material.SetSafeColor(PropertyNameID.OutlineColor, propertyBlock.OutlineColor);
+            material.SetSafeTexture(PropertyNameID.OutlineTex, propertyBlock.OutlineTex);
+            material.SetSafeFloat(PropertyNameID.OutlineWidth, propertyBlock.OutlineWidth, 0.0f, 1.0f, 0.05f);
+            material.SetSafeTexture(PropertyNameID.OutlineWidthMask, propertyBlock.OutlineWidthMask);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.OutlineFixWidth, propertyBlock.OutlineFixWidth, 0.0f, 1.0f, 0.5f);  // v1.3.0 changed int to float
+            material.SetSafeFloat(PropertyNameID.OutlineFixWidth, propertyBlock.OutlineFixWidth, 0.0f, 1.0f, 0.5f);  // v1.3.0 changed int to float
 #elif LILTOON_1_2_12_OR_OLDER
-            material.SetSafeInt(PropertyName.OutlineFixWidth, propertyBlock.OutlineFixWidth, null, null, 1);  // v1.2.12
+            material.SetSafeInt(PropertyNameID.OutlineFixWidth, propertyBlock.OutlineFixWidth, null, null, 1);  // v1.2.12
 #endif
-            material.SetSafeInt(PropertyName.OutlineVertexR2Width, (int)propertyBlock.OutlineVertexR2Width);
+            material.SetSafeInt(PropertyNameID.OutlineVertexR2Width, (int)propertyBlock.OutlineVertexR2Width);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeBool(PropertyName.OutlineDeleteMesh, propertyBlock.OutlineDeleteMesh);  // v1.3.0
+            material.SetSafeBool(PropertyNameID.OutlineDeleteMesh, propertyBlock.OutlineDeleteMesh);  // v1.3.0
 #endif
-            material.SetSafeFloat(PropertyName.OutlineEnableLighting, propertyBlock.OutlineEnableLighting, 0.0f, 1.0f, 1.0f);
+            material.SetSafeFloat(PropertyNameID.OutlineEnableLighting, propertyBlock.OutlineEnableLighting, 0.0f, 1.0f, 1.0f);
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.OutlineZBias, propertyBlock.OutlineZBias, null, null, 0);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.OutlineZBias, propertyBlock.OutlineZBias, null, null, 0);  // v1.3.0
 #endif
         }
 
@@ -1681,17 +1749,17 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.OutlineCull, (int)propertyBlock.OutlineCull);
+            material.SetSafeInt(PropertyNameID.OutlineCull, (int)propertyBlock.OutlineCull);
 
-            material.SetSafeBool(PropertyName.OutlineZClip, propertyBlock.OutlineZClip);
-            material.SetSafeBool(PropertyName.OutlineZWrite, propertyBlock.OutlineZWrite);
-            material.SetSafeInt(PropertyName.OutlineZTest, (int)propertyBlock.OutlineZTest);
+            material.SetSafeBool(PropertyNameID.OutlineZClip, propertyBlock.OutlineZClip);
+            material.SetSafeBool(PropertyNameID.OutlineZWrite, propertyBlock.OutlineZWrite);
+            material.SetSafeInt(PropertyNameID.OutlineZTest, (int)propertyBlock.OutlineZTest);
 
-            material.SetSafeFloat(PropertyName.OutlineOffsetFactor, propertyBlock.OutlineOffsetFactor, null, null, 0.0f);
-            material.SetSafeFloat(PropertyName.OutlineOffsetUnits, propertyBlock.OutlineOffsetUnits, null, null, 0.0f);
+            material.SetSafeFloat(PropertyNameID.OutlineOffsetFactor, propertyBlock.OutlineOffsetFactor, null, null, 0.0f);
+            material.SetSafeFloat(PropertyNameID.OutlineOffsetUnits, propertyBlock.OutlineOffsetUnits, null, null, 0.0f);
 
-            material.SetSafeInt(PropertyName.OutlineColorMask, propertyBlock.OutlineColorMask, null, null, 15);
-            material.SetSafeBool(PropertyName.OutlineAlphaToMask, propertyBlock.OutlineAlphaToMask);
+            material.SetSafeInt(PropertyNameID.OutlineColorMask, propertyBlock.OutlineColorMask, null, null, 15);
+            material.SetSafeBool(PropertyNameID.OutlineAlphaToMask, propertyBlock.OutlineAlphaToMask);
         }
 
         /// <summary>
@@ -1706,12 +1774,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.OutlineSrcBlend, (int)propertyBlock.OutlineSrcBlend);
-            material.SetSafeInt(PropertyName.OutlineDstBlend, (int)propertyBlock.OutlineDstBlend);
-            material.SetSafeInt(PropertyName.OutlineSrcBlendAlpha, (int)propertyBlock.OutlineSrcBlendAlpha);
-            material.SetSafeInt(PropertyName.OutlineDstBlendAlpha, (int)propertyBlock.OutlineDstBlendAlpha);
-            material.SetSafeInt(PropertyName.OutlineBlendOp, (int)propertyBlock.OutlineBlendOp);
-            material.SetSafeInt(PropertyName.OutlineBlendOpAlpha, (int)propertyBlock.OutlineBlendOpAlpha);
+            material.SetSafeInt(PropertyNameID.OutlineSrcBlend, (int)propertyBlock.OutlineSrcBlend);
+            material.SetSafeInt(PropertyNameID.OutlineDstBlend, (int)propertyBlock.OutlineDstBlend);
+            material.SetSafeInt(PropertyNameID.OutlineSrcBlendAlpha, (int)propertyBlock.OutlineSrcBlendAlpha);
+            material.SetSafeInt(PropertyNameID.OutlineDstBlendAlpha, (int)propertyBlock.OutlineDstBlendAlpha);
+            material.SetSafeInt(PropertyNameID.OutlineBlendOp, (int)propertyBlock.OutlineBlendOp);
+            material.SetSafeInt(PropertyNameID.OutlineBlendOpAlpha, (int)propertyBlock.OutlineBlendOpAlpha);
         }
 
         /// <summary>
@@ -1726,12 +1794,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.OutlineSrcBlendFA, (int)propertyBlock.OutlineSrcBlendFA);
-            material.SetSafeInt(PropertyName.OutlineDstBlendFA, (int)propertyBlock.OutlineDstBlendFA);
-            material.SetSafeInt(PropertyName.OutlineSrcBlendAlphaFA, (int)propertyBlock.OutlineSrcBlendAlphaFA);
-            material.SetSafeInt(PropertyName.OutlineDstBlendAlphaFA, (int)propertyBlock.OutlineDstBlendAlphaFA);
-            material.SetSafeInt(PropertyName.OutlineBlendOpFA, (int)propertyBlock.OutlineBlendOpFA);
-            material.SetSafeInt(PropertyName.OutlineBlendOpAlphaFA, (int)propertyBlock.OutlineBlendOpAlphaFA);
+            material.SetSafeInt(PropertyNameID.OutlineSrcBlendFA, (int)propertyBlock.OutlineSrcBlendFA);
+            material.SetSafeInt(PropertyNameID.OutlineDstBlendFA, (int)propertyBlock.OutlineDstBlendFA);
+            material.SetSafeInt(PropertyNameID.OutlineSrcBlendAlphaFA, (int)propertyBlock.OutlineSrcBlendAlphaFA);
+            material.SetSafeInt(PropertyNameID.OutlineDstBlendAlphaFA, (int)propertyBlock.OutlineDstBlendAlphaFA);
+            material.SetSafeInt(PropertyNameID.OutlineBlendOpFA, (int)propertyBlock.OutlineBlendOpFA);
+            material.SetSafeInt(PropertyNameID.OutlineBlendOpAlphaFA, (int)propertyBlock.OutlineBlendOpAlphaFA);
         }
 
         /// <summary>
@@ -1746,13 +1814,13 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.OutlineStencilRef, propertyBlock.OutlineStencilRef, 0, 255, 0);
-            material.SetSafeInt(PropertyName.OutlineStencilReadMask, propertyBlock.OutlineStencilReadMask, 0, 255, 255);
-            material.SetSafeInt(PropertyName.OutlineStencilWriteMask, propertyBlock.OutlineStencilWriteMask, 0, 255, 255);
-            material.SetSafeInt(PropertyName.OutlineStencilComp, (int)propertyBlock.OutlineStencilComp);
-            material.SetSafeInt(PropertyName.OutlineStencilPass, (int)propertyBlock.OutlineStencilPass);
-            material.SetSafeInt(PropertyName.OutlineStencilFail, (int)propertyBlock.OutlineStencilFail);
-            material.SetSafeInt(PropertyName.OutlineStencilZFail, (int)propertyBlock.OutlineStencilZFail);
+            material.SetSafeInt(PropertyNameID.OutlineStencilRef, propertyBlock.OutlineStencilRef, 0, 255, 0);
+            material.SetSafeInt(PropertyNameID.OutlineStencilReadMask, propertyBlock.OutlineStencilReadMask, 0, 255, 255);
+            material.SetSafeInt(PropertyNameID.OutlineStencilWriteMask, propertyBlock.OutlineStencilWriteMask, 0, 255, 255);
+            material.SetSafeInt(PropertyNameID.OutlineStencilComp, (int)propertyBlock.OutlineStencilComp);
+            material.SetSafeInt(PropertyNameID.OutlineStencilPass, (int)propertyBlock.OutlineStencilPass);
+            material.SetSafeInt(PropertyNameID.OutlineStencilFail, (int)propertyBlock.OutlineStencilFail);
+            material.SetSafeInt(PropertyNameID.OutlineStencilZFail, (int)propertyBlock.OutlineStencilZFail);
         }
 
         #endregion
@@ -1926,17 +1994,17 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeBool(PropertyName.UseOutline, propertyBlock.UseOutline);
-            material.SetSafeInt(PropertyName.TransparentMode, (int)propertyBlock.TransparentMode);
+            material.SetSafeBool(PropertyNameID.UseOutline, propertyBlock.UseOutline);
+            material.SetSafeInt(PropertyNameID.TransparentMode, (int)propertyBlock.TransparentMode);
 
 #if LILTOON_1_3_0_OR_NEWER
             // v1.3.0 deleted
 #elif LILTOON_1_2_12_OR_OLDER
-            material.SetSafeBool(PropertyName.UsePOM, propertyBlock.UsePOM);
+            material.SetSafeBool(PropertyNameID.UsePOM, propertyBlock.UsePOM);
 #endif
 
-            material.SetSafeBool(PropertyName.UseClippingCanceller, propertyBlock.UseClippingCanceller);
-            material.SetSafeBool(PropertyName.AsOverlay, propertyBlock.AsOverlay);
+            material.SetSafeBool(PropertyNameID.UseClippingCanceller, propertyBlock.UseClippingCanceller);
+            material.SetSafeBool(PropertyNameID.AsOverlay, propertyBlock.AsOverlay);
         }
 
         #endregion
@@ -1958,24 +2026,24 @@ namespace LilToonShader
 
             if (isFakeShadow == false)
             {
-                material.SetSafeFloat(PropertyName.Cutoff, propertyBlock.Cutoff, -0.001f, 1.001f, 0.5f);
-                material.SetSafeFloat(PropertyName.SubpassCutoff, propertyBlock.SubpassCutoff, 0f, 1f, 0.5f);
+                material.SetSafeFloat(PropertyNameID.Cutoff, propertyBlock.Cutoff, -0.001f, 1.001f, 0.5f);
+                material.SetSafeFloat(PropertyNameID.SubpassCutoff, propertyBlock.SubpassCutoff, 0f, 1f, 0.5f);
             }
 
-            material.SetSafeInt(PropertyName.Cull, (int)propertyBlock.Cull);
+            material.SetSafeInt(PropertyNameID.Cull, (int)propertyBlock.Cull);
 
-            material.SetSafeBool(PropertyName.ZClip, propertyBlock.ZClip);
-            material.SetSafeBool(PropertyName.ZWrite, propertyBlock.ZWrite);
-            material.SetSafeInt(PropertyName.ZTest, (int)propertyBlock.ZTest);
+            material.SetSafeBool(PropertyNameID.ZClip, propertyBlock.ZClip);
+            material.SetSafeBool(PropertyNameID.ZWrite, propertyBlock.ZWrite);
+            material.SetSafeInt(PropertyNameID.ZTest, (int)propertyBlock.ZTest);
 
-            material.SetSafeFloat(PropertyName.OffsetFactor, propertyBlock.OffsetFactor, null, null, 0f);
-            material.SetSafeFloat(PropertyName.OffsetUnits, propertyBlock.OffsetUnits, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.OffsetFactor, propertyBlock.OffsetFactor, null, null, 0f);
+            material.SetSafeFloat(PropertyNameID.OffsetUnits, propertyBlock.OffsetUnits, null, null, 0f);
 
-            material.SetSafeInt(PropertyName.ColorMask, propertyBlock.ColorMask, null, null, 15);
-            material.SetSafeBool(PropertyName.AlphaToMask, propertyBlock.AlphaToMask);
+            material.SetSafeInt(PropertyNameID.ColorMask, propertyBlock.ColorMask, null, null, 15);
+            material.SetSafeBool(PropertyNameID.AlphaToMask, propertyBlock.AlphaToMask);
 
 #if LILTOON_1_3_0_OR_NEWER
-            material.SetSafeFloat(PropertyName.LilShadowCasterBias, propertyBlock.LilShadowCasterBias, null, null, 0.0f);  // v1.3.0
+            material.SetSafeFloat(PropertyNameID.LilShadowCasterBias, propertyBlock.LilShadowCasterBias, null, null, 0.0f);  // v1.3.0
 #endif
         }
 
@@ -1991,12 +2059,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.SrcBlend, (int)propertyBlock.SrcBlend);
-            material.SetSafeInt(PropertyName.DstBlend, (int)propertyBlock.DstBlend);
-            material.SetSafeInt(PropertyName.SrcBlendAlpha, (int)propertyBlock.SrcBlendAlpha);
-            material.SetSafeInt(PropertyName.DstBlendAlpha, (int)propertyBlock.DstBlendAlpha);
-            material.SetSafeInt(PropertyName.BlendOp, (int)propertyBlock.BlendOp);
-            material.SetSafeInt(PropertyName.BlendOpAlpha, (int)propertyBlock.BlendOpAlpha);
+            material.SetSafeInt(PropertyNameID.SrcBlend, (int)propertyBlock.SrcBlend);
+            material.SetSafeInt(PropertyNameID.DstBlend, (int)propertyBlock.DstBlend);
+            material.SetSafeInt(PropertyNameID.SrcBlendAlpha, (int)propertyBlock.SrcBlendAlpha);
+            material.SetSafeInt(PropertyNameID.DstBlendAlpha, (int)propertyBlock.DstBlendAlpha);
+            material.SetSafeInt(PropertyNameID.BlendOp, (int)propertyBlock.BlendOp);
+            material.SetSafeInt(PropertyNameID.BlendOpAlpha, (int)propertyBlock.BlendOpAlpha);
         }
 
         /// <summary>
@@ -2011,12 +2079,12 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.SrcBlendFA, (int)propertyBlock.SrcBlendFA);
-            material.SetSafeInt(PropertyName.DstBlendFA, (int)propertyBlock.DstBlendFA);
-            material.SetSafeInt(PropertyName.SrcBlendAlphaFA, (int)propertyBlock.SrcBlendAlphaFA);
-            material.SetSafeInt(PropertyName.DstBlendAlphaFA, (int)propertyBlock.DstBlendAlphaFA);
-            material.SetSafeInt(PropertyName.BlendOpFA, (int)propertyBlock.BlendOpFA);
-            material.SetSafeInt(PropertyName.BlendOpAlphaFA, (int)propertyBlock.BlendOpAlphaFA);
+            material.SetSafeInt(PropertyNameID.SrcBlendFA, (int)propertyBlock.SrcBlendFA);
+            material.SetSafeInt(PropertyNameID.DstBlendFA, (int)propertyBlock.DstBlendFA);
+            material.SetSafeInt(PropertyNameID.SrcBlendAlphaFA, (int)propertyBlock.SrcBlendAlphaFA);
+            material.SetSafeInt(PropertyNameID.DstBlendAlphaFA, (int)propertyBlock.DstBlendAlphaFA);
+            material.SetSafeInt(PropertyNameID.BlendOpFA, (int)propertyBlock.BlendOpFA);
+            material.SetSafeInt(PropertyNameID.BlendOpAlphaFA, (int)propertyBlock.BlendOpAlphaFA);
         }
 
         /// <summary>
@@ -2031,13 +2099,13 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeInt(PropertyName.StencilRef, propertyBlock.StencilRef, 0, 255, 0);
-            material.SetSafeInt(PropertyName.StencilReadMask, propertyBlock.StencilReadMask, 0, 255, 255);
-            material.SetSafeInt(PropertyName.StencilWriteMask, propertyBlock.StencilWriteMask, 0, 255, 255);
-            material.SetSafeInt(PropertyName.StencilComp, (int)propertyBlock.StencilComp);
-            material.SetSafeInt(PropertyName.StencilPass, (int)propertyBlock.StencilPass);
-            material.SetSafeInt(PropertyName.StencilFail, (int)propertyBlock.StencilFail);
-            material.SetSafeInt(PropertyName.StencilZFail, (int)propertyBlock.StencilZFail);
+            material.SetSafeInt(PropertyNameID.StencilRef, propertyBlock.StencilRef, 0, 255, 0);
+            material.SetSafeInt(PropertyNameID.StencilReadMask, propertyBlock.StencilReadMask, 0, 255, 255);
+            material.SetSafeInt(PropertyNameID.StencilWriteMask, propertyBlock.StencilWriteMask, 0, 255, 255);
+            material.SetSafeInt(PropertyNameID.StencilComp, (int)propertyBlock.StencilComp);
+            material.SetSafeInt(PropertyNameID.StencilPass, (int)propertyBlock.StencilPass);
+            material.SetSafeInt(PropertyNameID.StencilFail, (int)propertyBlock.StencilFail);
+            material.SetSafeInt(PropertyNameID.StencilZFail, (int)propertyBlock.StencilZFail);
         }
 
         #endregion
@@ -2056,11 +2124,11 @@ namespace LilToonShader
                 return;
             }
 
-            material.SetSafeColor(PropertyName.BaseColor, propertyBlock.BaseColor);
-            material.SetSafeTexture(PropertyName.BaseMap, propertyBlock.BaseMap);
-            material.SetSafeTexture(PropertyName.BaseColorMap, propertyBlock.BaseColorMap);
+            material.SetSafeColor(PropertyNameID.BaseColor, propertyBlock.BaseColor);
+            material.SetSafeTexture(PropertyNameID.BaseMap, propertyBlock.BaseMap);
+            material.SetSafeTexture(PropertyNameID.BaseColorMap, propertyBlock.BaseColorMap);
 
-            material.SetSafeInt(PropertyName.LilToonVersion, propertyBlock.LilToonVersion);
+            material.SetSafeInt(PropertyNameID.LilToonVersion, propertyBlock.LilToonVersion);
         }
 
         #endregion

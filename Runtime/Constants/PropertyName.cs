@@ -40,6 +40,10 @@ namespace LilToonShader
         /// <remarks>v1.3.0 added</remarks>
         public const string BackfaceColor = "_BackfaceColor";
 
+        /// <summary>AA Strength</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string AAStrength = "_AAStrength";
+
         #endregion
 
         #region Lighting
@@ -114,11 +118,19 @@ namespace LilToonShader
         /// <summary>Main 2nd Texture</summary>
         public const string Main2ndTex = "_Main2ndTex";
 
+        /// <summary>Main 2nd Texture Angle</summary>
+        public const string Main2ndTexAngle = "_Main2ndTexAngle";
+
+        /// <summary>Main 2nd Texture Scroll Rotate</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string Main2ndTex_ScrollRotate = "_Main2ndTex_ScrollRotate";
+
         /// <summary>Main 2nd Texture UV Mode</summary>
         public const string Main2ndTex_UVMode = "_Main2ndTex_UVMode";
 
-        /// <summary>Main 2nd Texture Angle</summary>
-        public const string Main2ndTexAngle = "_Main2ndTexAngle";
+        /// <summary>Main 2nd Texture Cull Mode</summary>
+        /// <remarks>v1.3.1 added</remarks>
+        public const string Main2ndTex_Cull = "_Main2ndTex_Cull";
 
         /// <summary>Main 2nd Texture Decal Animation</summary>
         public const string Main2ndTexDecalAnimation = "_Main2ndTexDecalAnimation";
@@ -193,11 +205,19 @@ namespace LilToonShader
         /// <summary>Main 3rd Texture</summary>
         public const string Main3rdTex = "_Main3rdTex";
 
+        /// <summary>Main 3rd Texture Angle</summary>
+        public const string Main3rdTexAngle = "_Main3rdTexAngle";
+
+        /// <summary>Main 3rd Texture Scroll Rotate</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string Main3rdTex_ScrollRotate = "_Main3rdTex_ScrollRotate";
+
         /// <summary>Main 3rd Texture UV Mode</summary>
         public const string Main3rdTex_UVMode = "_Main3rdTex_UVMode";
 
-        /// <summary>Main 3rd Texture Angle</summary>
-        public const string Main3rdTexAngle = "_Main3rdTexAngle";
+        /// <summary>Main 3rd Texture Cull Mode</summary>
+        /// <remarks>v1.3.1 added</remarks>
+        public const string Main3rdTex_Cull = "_Main3rdTex_Cull";
 
         /// <summary>Main 3rd Texture Decal Animation</summary>
         public const string Main3rdTexDecalAnimation = "_Main3rdTexDecalAnimation";
@@ -297,6 +317,10 @@ namespace LilToonShader
 
         /// <summary>Bump 2nd Map</summary>
         public const string Bump2ndMap = "_Bump2ndMap";
+
+        /// <summary>Bump 2nd Map UV Mode</summary>
+        /// <remarks>v1.3.1 added</remarks>
+        public const string Bump2ndMap_UVMode = "_Bump2ndMap_UVMode";
 
         /// <summary>Bump 2nd Scale</summary>
         public const string Bump2ndScale = "_Bump2ndScale";
@@ -439,6 +463,10 @@ namespace LilToonShader
 
         /// <summary>Shadow Post AO</summary>
         public const string ShadowPostAO = "_ShadowPostAO";
+
+        /// <summary>Shadow Color Type</summary>
+        /// <remarks>v1.3.5 added</remarks>
+        public const string ShadowColorType = "_ShadowColorType";
 
         /// <summary>Shadow Color</summary>
         public const string ShadowColor = "_ShadowColor";
@@ -787,6 +815,10 @@ namespace LilToonShader
         /// <summary>Rim Indir Blur</summary>
         public const string RimIndirBlur = "_RimIndirBlur";
 
+        /// <summary>Rim Blend Mode</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string RimBlendMode = "_RimBlendMode";
+
         #endregion
 
         #region Glitter
@@ -802,6 +834,10 @@ namespace LilToonShader
 
         /// <summary>Glitter Color Texture</summary>
         public const string GlitterColorTex = "_GlitterColorTex";
+
+        /// <summary>Glitter Color Texture UV Mode</summary>
+        /// <remarks>v1.3.2 added</remarks>
+        public const string GlitterColorTex_UVMode = "_GlitterColorTex_UVMode";
 
         /// <summary>Glitter Main Strength</summary>
         public const string GlitterMainStrength = "_GlitterMainStrength";
@@ -888,6 +924,10 @@ namespace LilToonShader
 
         /// <summary>Emission Blend Mask Scroll Rotate</summary>
         public const string EmissionBlendMask_ScrollRotate = "_EmissionBlendMask_ScrollRotate";
+
+        /// <summary>Emission Blend Mode</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string EmissionBlendMode = "_EmissionBlendMode";
 
         /// <summary>Emission Blink</summary>
         public const string EmissionBlink = "_EmissionBlink";
@@ -996,6 +1036,10 @@ namespace LilToonShader
 
         /// <summary>Emission 2nd BlendMask Scroll Rotate</summary>
         public const string Emission2ndBlendMask_ScrollRotate = "_Emission2ndBlendMask_ScrollRotate";
+
+        /// <summary>Emission 2nd Blend Mode</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string Emission2ndBlendMode = "_Emission2ndBlendMode";
 
         /// <summary>Emission 2nd Blink</summary>
         public const string Emission2ndBlink = "_Emission2ndBlink";
@@ -1201,6 +1245,134 @@ namespace LilToonShader
 
         /// <summary>Keys</summary>
         public const string Keys = "_Keys";
+
+        /// <summary>Bit Key 0</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey0 = "_BitKey0";
+
+        /// <summary>Bit Key 1</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey1 = "_BitKey1";
+
+        /// <summary>Bit Key 2</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey2 = "_BitKey2";
+
+        /// <summary>Bit Key 3</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey3 = "_BitKey3";
+
+        /// <summary>Bit Key 4</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey4 = "_BitKey4";
+
+        /// <summary>Bit Key 5</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey5 = "_BitKey5";
+
+        /// <summary>Bit Key 6</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey6 = "_BitKey6";
+
+        /// <summary>Bit Key 7</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey7 = "_BitKey7";
+
+        /// <summary>Bit Key 8</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey8 = "_BitKey8";
+
+        /// <summary>Bit Key 9</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey9 = "_BitKey9";
+
+        /// <summary>Bit Key 10</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey10 = "_BitKey10";
+
+        /// <summary>Bit Key 11</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey11 = "_BitKey11";
+
+        /// <summary>Bit Key 12</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey12 = "_BitKey12";
+
+        /// <summary>Bit Key 13</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey13 = "_BitKey13";
+
+        /// <summary>Bit Key 14</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey14 = "_BitKey14";
+
+        /// <summary>Bit Key 15</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey15 = "_BitKey15";
+
+        /// <summary>Bit Key 16</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey16 = "_BitKey16";
+
+        /// <summary>Bit Key 17</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey17 = "_BitKey17";
+
+        /// <summary>Bit Key 18</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey18 = "_BitKey18";
+
+        /// <summary>Bit Key 19</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey19 = "_BitKey19";
+
+        /// <summary>Bit Key 20</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey20 = "_BitKey20";
+
+        /// <summary>Bit Key 21</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey21 = "_BitKey21";
+
+        /// <summary>Bit Key 22</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey22 = "_BitKey22";
+
+        /// <summary>Bit Key 23</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey23 = "_BitKey23";
+
+        /// <summary>Bit Key 24</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey24 = "_BitKey24";
+
+        /// <summary>Bit Key 25</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey25 = "_BitKey25";
+
+        /// <summary>Bit Key 26</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey26 = "_BitKey26";
+
+        /// <summary>Bit Key 27</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey27 = "_BitKey27";
+
+        /// <summary>Bit Key 28</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey28 = "_BitKey28";
+
+        /// <summary>Bit Key 29</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey29 = "_BitKey29";
+
+        /// <summary>Bit Key 30</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey30 = "_BitKey30";
+
+        /// <summary>Bit Key 31</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        public const string BitKey31 = "_BitKey31";
 
         #endregion
 
@@ -1434,6 +1606,10 @@ namespace LilToonShader
         /// <summary>Outline Lit Offset</summary>
         /// <remarks>v1.3.0 added</remarks>
         public const string OutlineLitOffset = "_OutlineLitOffset";
+
+        /// <summary>Outline Lit Receive Shadow</summary>
+        /// <remarks>v1.3.1 added</remarks>
+        public const string OutlineLitShadowReceive = "_OutlineLitShadowReceive";
 
         /// <summary>Outline Width</summary>
         public const string OutlineWidth = "_OutlineWidth";

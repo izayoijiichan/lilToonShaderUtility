@@ -28,6 +28,12 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(false)]
         bool BackfaceForceShadow { get; set; }
 
+        /// <summary>AA Strength</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        //[Range(0.0f, 1.0f)]
+        //[DefaultValue(1.0)]
+        float AAStrength { get; set; }
+
         /// <summary>Tri Mask</summary>
         /// <remarks>Mat/Rim/Emission</remarks>
         Texture2D TriMask { get; set; }

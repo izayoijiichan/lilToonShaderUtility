@@ -50,6 +50,11 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(0,0,0,0)]
         public Vector4 Emission2ndBlendMask_ScrollRotate { get; set; }
 
+        /// <summary>Emission 2nd Blend Mode</summary>
+        /// <remarks>v1.3.7 added</remarks>
+        //[DefaultValue(LilBlendMode.Add)]
+        public LilBlendMode Emission2ndBlendMode { get; set; }
+
         /// <summary>Emission 2nd Blink</summary>
         /// <remarks>Blink Strength|Blink Type|Blink Speed|Blink Offset</remarks>
         //[DefaultValue(0,0,3.141593,0)]

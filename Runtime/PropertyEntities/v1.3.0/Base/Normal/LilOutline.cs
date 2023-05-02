@@ -5,7 +5,6 @@
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
-    using UnityEngine.Rendering;
 
     /// <summary>
     /// lilToon Outline
@@ -48,6 +47,11 @@ namespace LilToonShader.v1_3_0
         /// <remarks>v1.3.0 added</remarks>
         //[DefaultValue(-8)]
         public float OutlineLitOffset { get; set; }
+
+        /// <summary>Outline Lit Receive Shadow</summary>
+        /// <remarks>v1.3.1 added</remarks>
+        //[DefaultValue(false)]
+        public bool OutlineLitShadowReceive { get; set; }
 
         /// <summary>Outline Width</summary>
         //[Range(0.0f, 1.0f)]

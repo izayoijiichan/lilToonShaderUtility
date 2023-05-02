@@ -61,6 +61,11 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(false)]
         public bool ShadowPostAO { get; set; }
 
+        /// <summary>Shadow Color Type</summary>
+        /// <remarks>v1.3.5 added</remarks>
+        //[DefaultValue(LilShadowColorType.Normal)]
+        public LilShadowColorType ShadowColorType { get; set; }
+
         /// <summary>Shadow Color</summary>
         //[DefaultValue(0.82,0.76,0.85,1.0)]
         public Color ShadowColor { get; set; }
