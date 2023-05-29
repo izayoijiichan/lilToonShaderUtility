@@ -13,5 +13,9 @@ namespace LilToonShader
         Replace = 1,
         /// <summary>Multiply</summary>
         Multiply = 2,
+        /// <summary>Add</summary>
+        Add = 3,
+        /// <summary>Subtract</summary>
+        Sub = 4,
     }
 }

@@ -4,8 +4,6 @@
 // ----------------------------------------------------------------------
 namespace LilToonShader.v1_3_0
 {
-    using UnityEngine;
-
     /// <summary>
     /// lilToon Lighting Advanced Interface
     /// </summary>

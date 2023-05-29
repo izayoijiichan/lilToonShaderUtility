@@ -46,6 +46,22 @@ namespace LilToonShader
 
         #endregion
 
+        #region Base (Cutout)
+
+        /// <summary>Use Dither</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string UseDither = "_UseDither";
+
+        /// <summary>Dither Texture</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string DitherTex = "_DitherTex";
+
+        /// <summary>Dither Max Value</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string DitherMaxValue = "_DitherMaxValueh";
+
+        #endregion
+
         #region Lighting
 
         /// <summary>Light Min Limit</summary>
@@ -165,6 +181,10 @@ namespace LilToonShader
         /// <summary>Main 2nd Texture Blend Mode</summary>
         public const string Main2ndTexBlendMode = "_Main2ndTexBlendMode";
 
+        /// <summary>Main 2nd Texture Alpha Mask Mode</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string Main2ndTexAlphaMode = "_Main2ndTexAlphaMode";
+
         /// <summary>Main 2nd Enable Lighting</summary>
         public const string Main2ndEnableLighting = "_Main2ndEnableLighting";
 
@@ -251,6 +271,10 @@ namespace LilToonShader
 
         /// <summary>Main 3rd Texture Blend Mode</summary>
         public const string Main3rdTexBlendMode = "_Main3rdTexBlendMode";
+
+        /// <summary>Main 3rd Texture Alpha Mask Mode</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string Main3rdTexAlphaMode = "_Main3rdTexAlphaMode";
 
         /// <summary>Main 3rd Enable Lighting</summary>
         public const string Main3rdEnableLighting = "_Main3rdEnableLighting";
@@ -1147,6 +1171,18 @@ namespace LilToonShader
         /// <summary>Distance Fade Color</summary>
         public const string DistanceFadeColor = "_DistanceFadeColor";
 
+        /// <summary>Distance Fade Mode</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string DistanceFadeMode = "_DistanceFadeMode";
+
+        /// <summary>Distance Fade Rim Color</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string DistanceFadeRimColor = "_DistanceFadeRimColor";
+
+        /// <summary>Distance Fade Rim Fresnel Power</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string DistanceFadeRimFresnelPower = "_DistanceFadeRimFresnelPower";
+
         #endregion
 
         #region Audio Link
@@ -1168,6 +1204,14 @@ namespace LilToonShader
 
         /// <summary>Audio Link Mask</summary>
         public const string AudioLinkMask = "_AudioLinkMask";
+
+        /// <summary>Audio Link Mask Scroll Rotate</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string AudioLinkMask_ScrollRotate = "_AudioLinkMask_ScrollRotate";
+
+        /// <summary>Audio Link Mask UV Mode</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string AudioLinkMask_UVMode = "_AudioLinkMask_UVMode";
 
         /// <summary>Audio Link 2 Main 2nd</summary>
         public const string AudioLink2Main2nd = "_AudioLink2Main2nd";
@@ -1235,6 +1279,78 @@ namespace LilToonShader
 
         /// <summary>Dissolve Position</summary>
         public const string DissolvePos = "_DissolvePos";
+
+        #endregion
+
+        #region ID Mask
+
+        /// <summary>ID Mask From</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskFrom = "_IDMaskFrom";
+
+        /// <summary>ID Mask 1</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMask1 = "_IDMask1";
+
+        /// <summary>ID Mask 2</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMask2 = "_IDMask2";
+
+        /// <summary>ID Mask 3</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMask3 = "_IDMask3";
+
+        /// <summary>ID Mask 4</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMask4 = "_IDMask4";
+
+        /// <summary>ID Mask 5</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMask5 = "_IDMask5";
+
+        /// <summary>ID Mask 6</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMask6 = "_IDMask6";
+
+        /// <summary>ID Mask 7</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMask7 = "_IDMask7";
+
+        /// <summary>ID Mask 8</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMask8 = "_IDMask8";
+
+        /// <summary>ID Mask Index 1</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskIndex1 = "_IDMaskIndex1";
+
+        /// <summary>ID Mask Index 2</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskIndex2 = "_IDMaskIndex2";
+
+        /// <summary>ID Mask Index 3</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskIndex3 = "_IDMaskIndex3";
+
+        /// <summary>ID Mask Index 4</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskIndex4 = "_IDMaskIndex4";
+
+        /// <summary>ID Mask Index 5</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskIndex5 = "_IDMaskIndex5";
+
+        /// <summary>ID Mask Index 6</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskIndex6 = "_IDMaskIndex6";
+
+        /// <summary>ID Mask Index 7</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskIndex7 = "_IDMaskIndex7";
+
+        /// <summary>ID Mask Index 8</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public const string IDMaskIndex8 = "_IDMaskIndex8";
 
         #endregion
 

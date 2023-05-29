@@ -2,8 +2,8 @@
 // @Namespace : LilToonShader
 // @Class     : LtsUtility
 // ----------------------------------------------------------------------
-#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER
-#define LILTOON_1_3_0_OR_NEWER
+#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER
+#define LILTOON_1_4_0_OR_NEWER
 #endif
 namespace LilToonShader
 {
@@ -11,7 +11,9 @@ namespace LilToonShader
     using UnityEngine.Rendering;
     using LilToonShader.Extensions;
 
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_4_0_OR_NEWER
+    using LilToonShader.v1_4_0;
+#elif LILTOON_1_3_0_OR_NEWER
     using LilToonShader.v1_3_0;
 #elif LILTOON_1_2_12_OR_OLDER
     using LilToonShader.v1_2_12;

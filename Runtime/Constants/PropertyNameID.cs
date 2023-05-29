@@ -48,6 +48,22 @@ namespace LilToonShader
 
         #endregion
 
+        #region Base (Cutout)
+
+        /// <summary>Use Dither</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int UseDither = Shader.PropertyToID(PropertyName.UseDither);
+
+        /// <summary>Dither Texture</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int DitherTex = Shader.PropertyToID(PropertyName.DitherTex);
+
+        /// <summary>Dither Max Value</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int DitherMaxValue = Shader.PropertyToID(PropertyName.DitherMaxValue);
+
+        #endregion
+
         #region Lighting
 
         /// <summary>Light Min Limit</summary>
@@ -167,6 +183,10 @@ namespace LilToonShader
         /// <summary>Main 2nd Texture Blend Mode</summary>
         public static readonly int Main2ndTexBlendMode = Shader.PropertyToID(PropertyName.Main2ndTexBlendMode);
 
+        /// <summary>Main 2nd Texture Alpha Mask Mode</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int Main2ndTexAlphaMode = Shader.PropertyToID(PropertyName.Main2ndTexAlphaMode);
+
         /// <summary>Main 2nd Enable Lighting</summary>
         public static readonly int Main2ndEnableLighting = Shader.PropertyToID(PropertyName.Main2ndEnableLighting);
 
@@ -253,6 +273,10 @@ namespace LilToonShader
 
         /// <summary>Main 3rd Texture Blend Mode</summary>
         public static readonly int Main3rdTexBlendMode = Shader.PropertyToID(PropertyName.Main3rdTexBlendMode);
+
+        /// <summary>Main 3rd Texture Alpha Mask Mode</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int Main3rdTexAlphaMode = Shader.PropertyToID(PropertyName.Main3rdTexAlphaMode);
 
         /// <summary>Main 3rd Enable Lighting</summary>
         public static readonly int Main3rdEnableLighting = Shader.PropertyToID(PropertyName.Main3rdEnableLighting);
@@ -1149,6 +1173,18 @@ namespace LilToonShader
         /// <summary>Distance Fade Color</summary>
         public static readonly int DistanceFadeColor = Shader.PropertyToID(PropertyName.DistanceFadeColor);
 
+        /// <summary>Distance Fade Mode</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int DistanceFadeMode = Shader.PropertyToID(PropertyName.DistanceFadeMode);
+
+        /// <summary>Distance Fade Rim Color</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int DistanceFadeRimColor = Shader.PropertyToID(PropertyName.DistanceFadeRimColor);
+
+        /// <summary>Distance Fade Rim Fresnel Power</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int DistanceFadeRimFresnelPower = Shader.PropertyToID(PropertyName.DistanceFadeRimFresnelPower);
+
         #endregion
 
         #region Audio Link
@@ -1170,6 +1206,14 @@ namespace LilToonShader
 
         /// <summary>Audio Link Mask</summary>
         public static readonly int AudioLinkMask = Shader.PropertyToID(PropertyName.AudioLinkMask);
+
+        /// <summary>Audio Link Mask Scroll Rotate</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int AudioLinkMask_ScrollRotate = Shader.PropertyToID(PropertyName.AudioLinkMask_ScrollRotate);
+
+        /// <summary>Audio Link Mask UV Mode</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int AudioLinkMask_UVMode = Shader.PropertyToID(PropertyName.AudioLinkMask_UVMode);
 
         /// <summary>Audio Link 2 Main 2nd</summary>
         public static readonly int AudioLink2Main2nd = Shader.PropertyToID(PropertyName.AudioLink2Main2nd);
@@ -1237,6 +1281,78 @@ namespace LilToonShader
 
         /// <summary>Dissolve Position</summary>
         public static readonly int DissolvePos = Shader.PropertyToID(PropertyName.DissolvePos);
+
+        #endregion
+
+        #region IDMask
+
+        /// <summary>ID Mask From</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskFrom = Shader.PropertyToID(PropertyName.IDMaskFrom);
+
+        /// <summary>ID Mask 1</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMask1 = Shader.PropertyToID(PropertyName.IDMask1);
+
+        /// <summary>ID Mask 2</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMask2 = Shader.PropertyToID(PropertyName.IDMask2);
+
+        /// <summary>ID Mask 3</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMask3 = Shader.PropertyToID(PropertyName.IDMask3);
+
+        /// <summary>ID Mask 4</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMask4 = Shader.PropertyToID(PropertyName.IDMask4);
+
+        /// <summary>ID Mask 5</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMask5 = Shader.PropertyToID(PropertyName.IDMask5);
+
+        /// <summary>ID Mask 6</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMask6 = Shader.PropertyToID(PropertyName.IDMask6);
+
+        /// <summary>ID Mask 7</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMask7 = Shader.PropertyToID(PropertyName.IDMask7);
+
+        /// <summary>ID Mask 8</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMask8 = Shader.PropertyToID(PropertyName.IDMask8);
+
+        /// <summary>ID Mask Index 1</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskIndex1 = Shader.PropertyToID(PropertyName.IDMaskIndex1);
+
+        /// <summary>ID Mask Index 2</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskIndex2 = Shader.PropertyToID(PropertyName.IDMaskIndex2);
+
+        /// <summary>ID Mask Index 3</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskIndex3 = Shader.PropertyToID(PropertyName.IDMaskIndex3);
+
+        /// <summary>ID Mask Index 4</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskIndex4 = Shader.PropertyToID(PropertyName.IDMaskIndex4);
+
+        /// <summary>ID Mask Index 5</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskIndex5 = Shader.PropertyToID(PropertyName.IDMaskIndex5);
+
+        /// <summary>ID Mask Index 6</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskIndex6 = Shader.PropertyToID(PropertyName.IDMaskIndex6);
+
+        /// <summary>ID Mask Index 7</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskIndex7 = Shader.PropertyToID(PropertyName.IDMaskIndex7);
+
+        /// <summary>ID Mask Index 8</summary>
+        /// <remarks>v1.4.0 added</remarks>
+        public static readonly int IDMaskIndex8 = Shader.PropertyToID(PropertyName.IDMaskIndex8);
 
         #endregion
 

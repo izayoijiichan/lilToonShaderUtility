@@ -2,8 +2,8 @@
 // @Namespace : LilToonShader
 // @Class     : LilToonMaterialGetter
 // ----------------------------------------------------------------------
-#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER
-#define LILTOON_1_3_0_OR_NEWER
+#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER
+#define LILTOON_1_4_0_OR_NEWER
 #endif
 namespace LilToonShader
 {
@@ -11,7 +11,9 @@ namespace LilToonShader
     using UnityEngine.Rendering;
     using LilToonShader.Extensions;
 
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_4_0_OR_NEWER
+    using LilToonShader.v1_4_0;
+#elif LILTOON_1_3_0_OR_NEWER
     using LilToonShader.v1_3_0;
 #elif LILTOON_1_2_12_OR_OLDER
     using LilToonShader.v1_2_12;
@@ -60,7 +62,7 @@ namespace LilToonShader
                     propertyContainer.TransparentMode = LilTransparentMode.Normal;
                 }
 
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 propertyContainer.NormalProperty = GetLilToonNormalPropertyEntity(material, propertyContainer);
 #elif LILTOON_1_2_12_OR_OLDER
                 propertyContainer.MultiProperty = GetLilToonMultiPropertyEntity(material, propertyContainer);
@@ -167,6 +169,9 @@ namespace LilToonShader
                 DistanceFade = GetLilDistanceFadePropertyValues(material),
                 AudioLink = GetLilAudioLinkPropertyValues(material),
                 Dissolve = GetLilDissolvePropertyValues(material),
+#if LILTOON_1_4_0_OR_NEWER
+                IDMask = GetLilIDMaskPropertyValues(material),  // v1.4.0
+#endif
                 Encryption = GetLilEncryptionPropertyValues(material),
                 Refraction = GetLilRefractionPropertyValues(material, propertyContainer.IsRefraction, propertyContainer.IsGem),
                 Fur = GetLilFurPropertyValues(material, propertyContainer.IsFur),
@@ -181,7 +186,7 @@ namespace LilToonShader
                 OutlineRenderingForward = GetLilOutlineRenderingForwardPropertyValues(material, propertyContainer.IsOutline, propertyContainer.IsRefraction),
                 OutlineRenderingForwardAdd = GetLilOutlineRenderingForwardAddPropertyValues(material, propertyContainer.IsOutline, propertyContainer.IsRefraction),
                 OutlineRenderingStencil = GetLilOutlineRenderingStencilPropertyValues(material, propertyContainer.IsOutline, propertyContainer.IsRefraction),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Multi = GetLilMultiPropertyValues(material, isMulti: propertyContainer.PropertyEntityType == LilPropertyEntityType.Multi),  // v1.3.0
 #endif
                 Rendering = GetLilRenderingPropertyValues(material),
@@ -192,7 +197,7 @@ namespace LilToonShader
             };
         }
 
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
         //
 #elif LILTOON_1_2_12_OR_OLDER
         /// <summary>
@@ -250,9 +255,14 @@ namespace LilToonShader
                 FlipNormal = material.GetSafeBool(PropertyNameID.FlipNormal),
                 ShiftBackfaceUV = material.GetSafeBool(PropertyNameID.ShiftBackfaceUV),
                 BackfaceForceShadow = material.GetSafeBool(PropertyNameID.BackfaceForceShadow),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 BackfaceColor = material.GetSafeColor(PropertyNameID.BackfaceColor),  // v1.3.0
                 AAStrength = material.GetSafeFloat(PropertyNameID.AAStrength),  // v1.3.7
+#endif
+#if LILTOON_1_4_0_OR_NEWER
+                UseDither = material.GetSafeBool(PropertyNameID.UseDither),             // v1.4.0
+                DitherTex = material.GetSafeTexture(PropertyNameID.DitherTex),          // v1.4.0
+                DitherMaxValue = material.GetSafeFloat(PropertyNameID.DitherMaxValue),  // v1.4.0
 #endif
             };
         }
@@ -270,7 +280,7 @@ namespace LilToonShader
                 FlipNormal = material.GetSafeBool(PropertyNameID.FlipNormal),
                 ShiftBackfaceUV = material.GetSafeBool(PropertyNameID.ShiftBackfaceUV),
                 BackfaceForceShadow = material.GetSafeBool(PropertyNameID.BackfaceForceShadow),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 AAStrength = material.GetSafeFloat(PropertyNameID.AAStrength),  // v1.3.7
 #endif
                 TriMask = material.GetSafeTexture(PropertyNameID.TriMask),
@@ -393,11 +403,11 @@ namespace LilToonShader
                 Color2nd = material.GetSafeColor(PropertyNameID.Color2nd),
                 Main2ndTex = material.GetSafeTexture(PropertyNameID.Main2ndTex),
                 Main2ndTexAngle = material.GetSafeFloat(PropertyNameID.Main2ndTexAngle),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Main2ndTex_ScrollRotate = material.GetSafeVector4(PropertyNameID.Main2ndTex_ScrollRotate),  // v1.3.7
 #endif
                 Main2ndTex_UVMode = material.GetSafeEnum<LilMainUVMode>(PropertyNameID.Main2ndTex_UVMode),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Main2ndTex_Cull = material.GetSafeEnum<CullMode>(PropertyNameID.Main2ndTex_Cull),  // v1.3.1
 #endif
                 Main2ndTexDecalAnimation = material.GetSafeVector4(PropertyNameID.Main2ndTexDecalAnimation),
@@ -411,6 +421,9 @@ namespace LilToonShader
                 Main2ndTexIsMSDF = material.GetSafeBool(PropertyNameID.Main2ndTexIsMSDF),
                 Main2ndBlendMask = material.GetSafeTexture(PropertyNameID.Main2ndBlendMask),
                 Main2ndTexBlendMode = material.GetSafeEnum<LilBlendMode>(PropertyNameID.Main2ndTexBlendMode),
+#if LILTOON_1_4_0_OR_NEWER
+                Main2ndTexAlphaMode = material.GetSafeEnum<LilAlphaMaskMode>(PropertyNameID.Main2ndTexAlphaMode),  // v1.4.0
+#endif
                 Main2ndEnableLighting = material.GetSafeBool(PropertyNameID.Main2ndEnableLighting),
                 Main2ndDissolveMask = material.GetSafeTexture(PropertyNameID.Main2ndDissolveMask),
                 Main2ndDissolveNoiseMask = material.GetSafeTexture(PropertyNameID.Main2ndDissolveNoiseMask),
@@ -436,11 +449,11 @@ namespace LilToonShader
                 Color3rd = material.GetSafeColor(PropertyNameID.Color3rd),
                 Main3rdTex = material.GetSafeTexture(PropertyNameID.Main3rdTex),
                 Main3rdTexAngle = material.GetSafeFloat(PropertyNameID.Main3rdTexAngle),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Main3rdTex_ScrollRotate = material.GetSafeVector4(PropertyNameID.Main3rdTex_ScrollRotate),  // v1.3.7
 #endif
                 Main3rdTex_UVMode = material.GetSafeEnum<LilMainUVMode>(PropertyNameID.Main3rdTex_UVMode),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Main3rdTex_Cull = material.GetSafeEnum<CullMode>(PropertyNameID.Main3rdTex_Cull),  // v1.3.1
 #endif
                 Main3rdTexDecalAnimation = material.GetSafeVector4(PropertyNameID.Main3rdTexDecalAnimation),
@@ -453,6 +466,9 @@ namespace LilToonShader
                 Main3rdTexShouldFlipCopy = material.GetSafeBool(PropertyNameID.Main3rdTexShouldFlipCopy),
                 Main3rdTexIsMSDF = material.GetSafeBool(PropertyNameID.Main3rdTexIsMSDF),
                 Main3rdBlendMask = material.GetSafeTexture(PropertyNameID.Main3rdBlendMask),
+#if LILTOON_1_4_0_OR_NEWER
+                Main3rdTexAlphaMode = material.GetSafeEnum<LilAlphaMaskMode>(PropertyNameID.Main3rdTexAlphaMode),  // v1.4.0
+#endif
                 Main3rdTexBlendMode = material.GetSafeEnum<LilBlendMode>(PropertyNameID.Main3rdTexBlendMode),
                 Main3rdEnableLighting = material.GetSafeBool(PropertyNameID.Main3rdEnableLighting),
                 Main3rdDissolveMask = material.GetSafeTexture(PropertyNameID.Main3rdDissolveMask),
@@ -516,7 +532,7 @@ namespace LilToonShader
             {
                 UseBump2ndMap = material.GetSafeBool(PropertyNameID.UseBump2ndMap),
                 Bump2ndMap = material.GetSafeTexture(PropertyNameID.Bump2ndMap),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Bump2ndMap_UVMode = material.GetSafeEnum<LilNormalMapUVMode>(PropertyNameID.Bump2ndMap_UVMode),  // v1.3.1
 #endif
                 Bump2ndScale = material.GetSafeFloat(PropertyNameID.Bump2ndScale),
@@ -574,7 +590,7 @@ namespace LilToonShader
                 UseBacklight = material.GetSafeBool(PropertyNameID.UseBacklight),
                 BacklightColor = material.GetSafeColor(PropertyNameID.BacklightColor),
                 BacklightColorTex = material.GetSafeTexture(PropertyNameID.BacklightColorTex),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 BacklightMainStrength = material.GetSafeFloat(PropertyNameID.BacklightMainStrength),  // v1.3.0
 #endif
                 BacklightNormalStrength = material.GetSafeFloat(PropertyNameID.BacklightNormalStrength),
@@ -626,21 +642,21 @@ namespace LilToonShader
                 //ShadowReceive = material.GetSafeBool(PropertyNameID.ShadowReceive),
                 ShadowStrength = material.GetSafeFloat(PropertyNameID.ShadowStrength),
                 ShadowStrengthMask = material.GetSafeTexture(PropertyNameID.ShadowStrengthMask),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 ShadowStrengthMaskLOD = material.GetSafeFloat(PropertyNameID.ShadowStrengthMaskLOD),  // v1.3.0
 #endif
                 ShadowBorderMask = material.GetSafeTexture(PropertyNameID.ShadowBorderMask),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 ShadowBorderMaskLOD = material.GetSafeFloat(PropertyNameID.ShadowBorderMaskLOD),  // v1.3.0
 #endif
                 ShadowBlurMask = material.GetSafeTexture(PropertyNameID.ShadowBlurMask),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 ShadowBlurMaskLOD = material.GetSafeFloat(PropertyNameID.ShadowBlurMaskLOD),  // v1.3.0
 #endif
                 ShadowAOShift = material.GetSafeVector4(PropertyNameID.ShadowAOShift),
                 ShadowAOShift2 = material.GetSafeVector4(PropertyNameID.ShadowAOShift2),
                 ShadowPostAO = material.GetSafeBool(PropertyNameID.ShadowPostAO),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 ShadowColorType = material.GetSafeEnum<LilShadowColorType>(PropertyNameID.ShadowColorType),  // v1.3.5
 #endif
                 ShadowColor = material.GetSafeColor(PropertyNameID.ShadowColor),
@@ -654,7 +670,7 @@ namespace LilToonShader
                 Shadow2ndNormalStrength = material.GetSafeFloat(PropertyNameID.Shadow2ndNormalStrength),
                 Shadow2ndBorder = material.GetSafeFloat(PropertyNameID.Shadow2ndBorder),
                 Shadow2ndBlur = material.GetSafeFloat(PropertyNameID.Shadow2ndBlur),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Shadow2ndReceive = material.GetSafeBool(PropertyNameID.Shadow2ndReceive),  // v1.3.0
 #endif
                 Shadow3rdColor = material.GetSafeColor(PropertyNameID.Shadow3rdColor),
@@ -662,14 +678,14 @@ namespace LilToonShader
                 Shadow3rdNormalStrength = material.GetSafeFloat(PropertyNameID.Shadow3rdNormalStrength),
                 Shadow3rdBorder = material.GetSafeFloat(PropertyNameID.Shadow3rdBorder),
                 Shadow3rdBlur = material.GetSafeFloat(PropertyNameID.Shadow3rdBlur),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Shadow3rdReceive = material.GetSafeBool(PropertyNameID.Shadow3rdReceive),  // v1.3.0
 #endif
                 ShadowBorderColor = material.GetSafeColor(PropertyNameID.ShadowBorderColor),
                 ShadowBorderRange = material.GetSafeFloat(PropertyNameID.ShadowBorderRange),
                 ShadowMainStrength = material.GetSafeFloat(PropertyNameID.ShadowMainStrength),
                 ShadowEnvStrength = material.GetSafeFloat(PropertyNameID.ShadowEnvStrength),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 ShadowMaskType = material.GetSafeEnum<LilShadowMaskType>(PropertyNameID.ShadowMaskType),  // v1.3.0
                 ShadowFlatBorder = material.GetSafeFloat(PropertyNameID.ShadowFlatBorder),  // v1.3.0
                 ShadowFlatBlur = material.GetSafeFloat(PropertyNameID.ShadowFlatBlur),  // v1.3.0
@@ -696,7 +712,7 @@ namespace LilToonShader
                 Metallic = material.GetSafeFloat(PropertyNameID.Metallic),
                 MetallicGlossMap = material.GetSafeTexture(PropertyNameID.MetallicGlossMap),
                 Reflectance = material.GetSafeFloat(PropertyNameID.Reflectance),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 GSAAStrength = material.GetSafeFloat(PropertyNameID.GSAAStrength),  // v1.3.0
 #endif
                 ApplySpecular = material.GetSafeBool(PropertyNameID.ApplySpecular),
@@ -714,7 +730,7 @@ namespace LilToonShader
                 ReflectionCubeColor = material.GetSafeColor(PropertyNameID.ReflectionCubeColor),
                 ReflectionCubeOverride = material.GetSafeBool(PropertyNameID.ReflectionCubeOverride),
                 ReflectionCubeEnableLighting = material.GetSafeFloat(PropertyNameID.ReflectionCubeEnableLighting),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 ReflectionBlendMode = material.GetSafeEnum<LilBlendMode>(PropertyNameID.ReflectionBlendMode),  // v1.3.0
 #endif
             };
@@ -755,7 +771,7 @@ namespace LilToonShader
                 UseMatCap = material.GetSafeBool(PropertyNameID.UseMatCap),
                 MatCapColor = material.GetSafeColor(PropertyNameID.MatCapColor),
                 MatCapTex = material.GetSafeTexture(PropertyNameID.MatCapTex),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 MatCapMainStrength = material.GetSafeFloat(PropertyNameID.MatCapMainStrength),  // v1.3.0
 #endif
                 MatCapBlendUV1 = material.GetSafeVector4(PropertyNameID.MatCapBlendUV1),
@@ -789,7 +805,7 @@ namespace LilToonShader
                 UseMatCap2nd = material.GetSafeBool(PropertyNameID.UseMatCap2nd),
                 MatCap2ndColor = material.GetSafeColor(PropertyNameID.MatCap2ndColor),
                 MatCap2ndTex = material.GetSafeTexture(PropertyNameID.MatCap2ndTex),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 MatCap2ndMainStrength = material.GetSafeFloat(PropertyNameID.MatCap2ndMainStrength),  // v1.3.0
 #endif
                 MatCap2ndBlendUV1 = material.GetSafeVector4(PropertyNameID.MatCap2ndBlendUV1),
@@ -845,7 +861,7 @@ namespace LilToonShader
                 UseRim = material.GetSafeBool(PropertyNameID.UseRim),
                 RimColor = material.GetSafeColor(PropertyNameID.RimColor),
                 RimColorTex = material.GetSafeTexture(PropertyNameID.RimColorTex),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 RimMainStrength = material.GetSafeFloat(PropertyNameID.RimMainStrength),  // v1.3.0
 #endif
                 RimNormalStrength = material.GetSafeFloat(PropertyNameID.RimNormalStrength),
@@ -863,7 +879,7 @@ namespace LilToonShader
                 RimIndirColor = material.GetSafeColor(PropertyNameID.RimIndirColor),
                 RimIndirBorder = material.GetSafeFloat(PropertyNameID.RimIndirBorder),
                 RimIndirBlur = material.GetSafeFloat(PropertyNameID.RimIndirBlur),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 RimBlendMode = material.GetSafeEnum<LilBlendMode>(PropertyNameID.RimBlendMode),  // v1.3.7
 #endif
             };
@@ -886,12 +902,12 @@ namespace LilToonShader
                 GlitterUVMode = material.GetSafeEnum<LilGlitterUVMode>(PropertyNameID.GlitterUVMode),
                 GlitterColor = material.GetSafeColor(PropertyNameID.GlitterColor),
                 GlitterColorTex = material.GetSafeTexture(PropertyNameID.GlitterColorTex),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 GlitterColorTex_UVMode = material.GetSafeEnum<LilGlitterColorTextureUVMode>(PropertyNameID.GlitterColorTex_UVMode),  // v1.3.2
 #endif
                 GlitterMainStrength = material.GetSafeFloat(PropertyNameID.GlitterMainStrength),
                 GlitterNormalStrength = material.GetSafeFloat(PropertyNameID.GlitterNormalStrength),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 GlitterScaleRandomize = material.GetSafeFloat(PropertyNameID.GlitterScaleRandomize),  // v1.3.0
                 GlitterApplyShape = material.GetSafeBool(PropertyNameID.GlitterApplyShape),  // v1.3.0
                 GlitterShapeTex = material.GetSafeTexture(PropertyNameID.GlitterShapeTex),  // v1.3.0
@@ -901,7 +917,7 @@ namespace LilToonShader
                 GlitterParams1 = material.GetSafeVector4(PropertyNameID.GlitterParams1),
                 GlitterParams2 = material.GetSafeVector4(PropertyNameID.GlitterParams2),
                 GlitterPostContrast = material.GetSafeFloat(PropertyNameID.GlitterPostContrast),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 GlitterSensitivity = material.GetSafeFloat(PropertyNameID.GlitterSensitivity),  // v1.3.0
 #endif
                 GlitterEnableLighting = material.GetSafeFloat(PropertyNameID.GlitterEnableLighting),
@@ -948,13 +964,13 @@ namespace LilToonShader
                 EmissionMap = material.GetSafeTexture(PropertyNameID.EmissionMap),
                 EmissionMap_ScrollRotate = material.GetSafeVector4(PropertyNameID.EmissionMap_ScrollRotate),
                 EmissionMap_UVMode = material.GetSafeEnum<LilEmissionUVMode>(PropertyNameID.EmissionMap_UVMode),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 EmissionMainStrength = material.GetSafeFloat(PropertyNameID.EmissionMainStrength),  // v1.3.0
 #endif
                 EmissionBlend = material.GetSafeFloat(PropertyNameID.EmissionBlend),
                 EmissionBlendMask = material.GetSafeTexture(PropertyNameID.EmissionBlendMask),
                 EmissionBlendMask_ScrollRotate = material.GetSafeVector4(PropertyNameID.EmissionBlendMask_ScrollRotate),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 EmissionBlendMode = material.GetSafeEnum<LilBlendMode>(PropertyNameID.EmissionBlendMode),  // v1.3.7
 #endif
                 EmissionBlink = material.GetSafeVector4(PropertyNameID.EmissionBlink),
@@ -1010,13 +1026,13 @@ namespace LilToonShader
                 Emission2ndMap = material.GetSafeTexture(PropertyNameID.Emission2ndMap),
                 Emission2ndMap_ScrollRotate = material.GetSafeVector4(PropertyNameID.Emission2ndMap_ScrollRotate),
                 Emission2ndMap_UVMode = material.GetSafeEnum<LilEmissionUVMode>(PropertyNameID.Emission2ndMap_UVMode),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Emission2ndMainStrength = material.GetSafeFloat(PropertyNameID.Emission2ndMainStrength),  // v1.3.0
 #endif
                 Emission2ndBlend = material.GetSafeFloat(PropertyNameID.Emission2ndBlend),
                 Emission2ndBlendMask = material.GetSafeTexture(PropertyNameID.Emission2ndBlendMask),
                 Emission2ndBlendMask_ScrollRotate = material.GetSafeVector4(PropertyNameID.Emission2ndBlendMask_ScrollRotate),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 Emission2ndBlendMode = material.GetSafeEnum<LilBlendMode>(PropertyNameID.Emission2ndBlendMode),  // v1.3.7
 #endif
                 Emission2ndBlink = material.GetSafeVector4(PropertyNameID.Emission2ndBlink),
@@ -1072,7 +1088,7 @@ namespace LilToonShader
             return new LilParallax
             {
                 UseParallax = material.GetSafeBool(PropertyNameID.UseParallax),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 UsePOM = material.GetSafeBool(PropertyNameID.UsePOM),  // v1.3.0
 #endif
                 ParallaxMap = material.GetSafeTexture(PropertyNameID.ParallaxMap),
@@ -1096,6 +1112,11 @@ namespace LilToonShader
             {
                 DistanceFade = material.GetSafeVector4(PropertyNameID.DistanceFade),
                 DistanceFadeColor = material.GetSafeColor(PropertyNameID.DistanceFadeColor),
+#if LILTOON_1_4_0_OR_NEWER
+                DistanceFadeMode = material.GetSafeEnum<LilDistanceFadeMode>(PropertyNameID.DistanceFadeMode),    // v1.4.0
+                DistanceFadeRimColor = material.GetSafeColor(PropertyNameID.DistanceFadeRimColor),                // v1.4.0
+                DistanceFadeRimFresnelPower = material.GetSafeFloat(PropertyNameID.DistanceFadeRimFresnelPower),  // v1.4.0
+#endif
             };
         }
 
@@ -1118,6 +1139,10 @@ namespace LilToonShader
                 AudioLinkUVParams = material.GetSafeVector4(PropertyNameID.AudioLinkUVParams),
                 AudioLinkStart = material.GetSafeVector4(PropertyNameID.AudioLinkStart),
                 AudioLinkMask = material.GetSafeTexture(PropertyNameID.AudioLinkMask),
+#if LILTOON_1_4_0_OR_NEWER
+                AudioLinkMask_ScrollRotate = material.GetSafeVector4(PropertyNameID.AudioLinkMask_ScrollRotate),      // v1.4.0
+                AudioLinkMask_UVMode = material.GetSafeEnum<LilAudioLinkMaskUVMode>(PropertyNameID.AudioLinkUVMode),  // v1.4.0
+#endif
                 AudioLink2Main2nd = material.GetSafeBool(PropertyNameID.AudioLink2Main2nd),
                 AudioLink2Main3rd = material.GetSafeBool(PropertyNameID.AudioLink2Main3rd),
                 AudioLink2Emission = material.GetSafeBool(PropertyNameID.AudioLink2Emission),
@@ -1160,6 +1185,40 @@ namespace LilToonShader
 
         #endregion
 
+        #region ID Mask
+
+#if LILTOON_1_4_0_OR_NEWER
+        /// <summary>
+        /// Get the lilToon ID Mask property values from the material.
+        /// </summary>
+        /// <param name="material">A lilToon material.</param>
+        /// <returns></returns>
+        public virtual LilIDMask GetLilIDMaskPropertyValues(Material material)
+        {
+            return new LilIDMask
+            {
+                IDMaskFrom = material.GetSafeEnum<LilIDMaskFrom>(PropertyNameID.IDMaskFrom),  // v1.4.0
+                IDMask1 = material.GetSafeBool(PropertyNameID.IDMask1),  // v1.4.0
+                IDMask2 = material.GetSafeBool(PropertyNameID.IDMask2),  // v1.4.0
+                IDMask3 = material.GetSafeBool(PropertyNameID.IDMask3),  // v1.4.0
+                IDMask4 = material.GetSafeBool(PropertyNameID.IDMask4),  // v1.4.0
+                IDMask5 = material.GetSafeBool(PropertyNameID.IDMask5),  // v1.4.0
+                IDMask6 = material.GetSafeBool(PropertyNameID.IDMask6),  // v1.4.0
+                IDMask7 = material.GetSafeBool(PropertyNameID.IDMask7),  // v1.4.0
+                IDMask8 = material.GetSafeBool(PropertyNameID.IDMask8),  // v1.4.0
+                IDMaskIndex1 = material.GetSafeInt(PropertyNameID.IDMaskIndex1),  // v1.4.0
+                IDMaskIndex2 = material.GetSafeInt(PropertyNameID.IDMaskIndex2),  // v1.4.0
+                IDMaskIndex3 = material.GetSafeInt(PropertyNameID.IDMaskIndex3),  // v1.4.0
+                IDMaskIndex4 = material.GetSafeInt(PropertyNameID.IDMaskIndex4),  // v1.4.0
+                IDMaskIndex5 = material.GetSafeInt(PropertyNameID.IDMaskIndex5),  // v1.4.0
+                IDMaskIndex6 = material.GetSafeInt(PropertyNameID.IDMaskIndex6),  // v1.4.0
+                IDMaskIndex7 = material.GetSafeInt(PropertyNameID.IDMaskIndex7),  // v1.4.0
+                IDMaskIndex8 = material.GetSafeInt(PropertyNameID.IDMaskIndex8),  // v1.4.0
+            };
+        }
+#endif
+        #endregion
+
         #region Encryption
 
         /// <summary>
@@ -1173,7 +1232,7 @@ namespace LilToonShader
             {
                 IgnoreEncryption = material.GetSafeBool(PropertyNameID.IgnoreEncryption),
                 Keys = material.GetSafeVector4(PropertyNameID.Keys),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 BitKey0 = material.GetSafeFloat(PropertyNameID.BitKey0),
                 BitKey1 = material.GetSafeFloat(PropertyNameID.BitKey1),
                 BitKey2 = material.GetSafeFloat(PropertyNameID.BitKey2),
@@ -1292,7 +1351,7 @@ namespace LilToonShader
                 FurGravity = material.GetSafeFloat(PropertyNameID.FurGravity),
                 FurRandomize = material.GetSafeFloat(PropertyNameID.FurRandomize),
                 FurAO = material.GetSafeFloat(PropertyNameID.FurAO),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 FurMeshType = material.GetSafeEnum<LilFurMeshType>(PropertyNameID.FurMeshType),  // v1.3.0
 #endif
                 FurLayerNum = material.GetSafeInt(PropertyNameID.FurLayerNum),
@@ -1535,15 +1594,15 @@ namespace LilToonShader
                 OutlineTex = material.GetSafeTexture(PropertyNameID.OutlineTex),
                 OutlineWidth = material.GetSafeFloat(PropertyNameID.OutlineWidth),
                 OutlineWidthMask = material.GetSafeTexture(PropertyNameID.OutlineWidthMask),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 OutlineFixWidth = material.GetSafeFloat(PropertyNameID.OutlineFixWidth),  // v1.3.0 changed int to float
 #endif
                 OutlineVertexR2Width = material.GetSafeEnum<LilVertexColorMode>(PropertyNameID.OutlineVertexR2Width),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 OutlineDeleteMesh = material.GetSafeBool(PropertyNameID.OutlineDeleteMesh),  // v1.3.0
 #endif
                 OutlineEnableLighting = material.GetSafeFloat(PropertyNameID.OutlineEnableLighting),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 OutlineZBias = material.GetSafeFloat(PropertyNameID.OutlineZBias),  // v1.3.0
 #endif
             };
@@ -1575,7 +1634,7 @@ namespace LilToonShader
                 OutlineTex = material.GetSafeTexture(PropertyNameID.OutlineTex),
                 OutlineTex_ScrollRotate = material.GetSafeVector4(PropertyNameID.OutlineTex_ScrollRotate),
                 OutlineTexHSVG = material.GetSafeVector4(PropertyNameID.OutlineTexHSVG),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 OutlineLitColor = material.GetSafeColor(PropertyNameID.OutlineLitColor),       // v1.3.0
                 OutlineLitApplyTex = material.GetSafeBool(PropertyNameID.OutlineLitApplyTex),  // v1.3.0
                 OutlineLitScale = material.GetSafeFloat(PropertyNameID.OutlineLitScale),       // v1.3.0
@@ -1584,20 +1643,20 @@ namespace LilToonShader
 #endif
                 OutlineWidth = material.GetSafeFloat(PropertyNameID.OutlineWidth),
                 OutlineWidthMask = material.GetSafeTexture(PropertyNameID.OutlineWidthMask),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 OutlineFixWidth = material.GetSafeFloat(PropertyNameID.OutlineFixWidth),  // v1.3.0 changed int to float
 #endif
                 OutlineVertexR2Width = material.GetSafeEnum<LilVertexColorMode>(PropertyNameID.OutlineVertexR2Width),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 OutlineDeleteMesh = material.GetSafeBool(PropertyNameID.OutlineDeleteMesh),  // v1.3.0
 #endif
                 OutlineVectorTex = material.GetSafeTexture(PropertyNameID.OutlineVectorTex),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 OutlineVectorUVMode = material.GetSafeEnum<LilOutlineVectorUVMode>(PropertyNameID.OutlineVectorUVMode),  // v1.3.0
 #endif
                 OutlineVectorScale = material.GetSafeFloat(PropertyNameID.OutlineVectorScale),
                 OutlineEnableLighting = material.GetSafeFloat(PropertyNameID.OutlineEnableLighting),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 OutlineZBias = material.GetSafeFloat(PropertyNameID.OutlineZBias),  // v1.3.0
                 OutlineDisableInVR = material.GetSafeBool(PropertyNameID.OutlineDisableInVR),  // v1.3.0
 #endif
@@ -1790,7 +1849,7 @@ namespace LilToonShader
             {
                 UseOutline = material.GetSafeBool(PropertyNameID.UseOutline),
                 TransparentMode = material.GetSafeEnum<LilRenderingMode>(PropertyNameID.TransparentMode),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 //
 #elif LILTOON_1_2_12_OR_OLDER
                 UsePOM = material.GetSafeBool(PropertyNameID.UsePOM),  // v1.3.0 deleted
@@ -1824,7 +1883,7 @@ namespace LilToonShader
                 OffsetUnits = material.GetSafeFloat(PropertyNameID.OffsetUnits),
                 ColorMask = material.GetSafeInt(PropertyNameID.ColorMask),
                 AlphaToMask = material.GetSafeBool(PropertyNameID.AlphaToMask),
-#if LILTOON_1_3_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
                 LilShadowCasterBias = material.GetSafeFloat(PropertyNameID.LilShadowCasterBias),  // v1.3.0
 #endif
             };
