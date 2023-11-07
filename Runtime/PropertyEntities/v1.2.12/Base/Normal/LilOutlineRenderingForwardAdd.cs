@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilOutlineRenderingForwardAdd
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine.Rendering;
@@ -27,11 +28,11 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(BlendMode.One)]
         public BlendMode OutlineDstBlendAlphaFA { get; set; }
 
-        /// <summary>Outline Blend Op Forward Add</summary>
+        /// <summary>Outline Blend Operation Forward Add</summary>
         //[DefaultValue(BlendOp.Max)]
         public BlendOp OutlineBlendOpFA { get; set; }
 
-        /// <summary>Outline Blend Op Alpha Forward Add</summary>
+        /// <summary>Outline Blend Operation Alpha Forward Add</summary>
         //[DefaultValue(BlendOp.Max)]
         public BlendOp OutlineBlendOpAlphaFA { get; set; }
     }

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_4_0
 // @Class     : ILilDissolve
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_4_0
 {
     /// <summary>

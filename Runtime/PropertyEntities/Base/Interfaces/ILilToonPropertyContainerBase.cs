@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader
 // @Class     : ILilToonPropertyContainerBase
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader
 {
     /// <summary>

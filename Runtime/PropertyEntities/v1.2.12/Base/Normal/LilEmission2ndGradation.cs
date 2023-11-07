@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilEmission2ndGradation
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;

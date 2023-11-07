@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_4_0
 // @Class     : LilLiteOutline
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_4_0
 {
     using UnityEngine;

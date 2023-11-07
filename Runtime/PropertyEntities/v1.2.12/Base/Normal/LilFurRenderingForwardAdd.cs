@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilFurRenderingForwardAdd
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine.Rendering;
@@ -27,11 +28,11 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(BlendMode.One)]
         public BlendMode FurDstBlendAlphaFA { get; set; }
 
-        /// <summary>Fur Blend Op Forward Add</summary>
+        /// <summary>Fur Blend Operation Forward Add</summary>
         //[DefaultValue(BlendOp.Max)]
         public BlendOp FurBlendOpFA { get; set; }
 
-        /// <summary>Fur Blend Op Alpha Forward Add</summary>
+        /// <summary>Fur Blend Operation Alpha Forward Add</summary>
         //[DefaultValue(BlendOp.Max)]
         public BlendOp FurBlendOpAlphaFA { get; set; }
     }

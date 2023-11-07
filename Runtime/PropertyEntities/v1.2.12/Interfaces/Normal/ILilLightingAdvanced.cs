@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : ILilLightingAdvanced
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -25,7 +26,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(0.0f, 0.001f, 0.0f, 0.0f)]
         Vector3 LightDirectionOverride { get; set; }
 
-        /// <summary>Alpha Boost ForwardAdd</summary>
+        /// <summary>Alpha Boost Forward Add</summary>
         /// <remarks>Built-in RP</remarks>
         //[Range(1f, 100f)]
         //[DefaultValue(10f)]

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilToonMultiPropertyEntity
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     /// <summary>
@@ -13,6 +14,6 @@ namespace LilToonShader.v1_2_12
     public class LilToonMultiPropertyEntity : LilToonNormalPropertyEntity
     {
         /// <summary>Multi</summary>
-        public LilMulti Multi { get; set; }
+        public LilMulti? Multi { get; set; }
     }
 }

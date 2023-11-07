@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : ILilMulti
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     /// <summary>
@@ -17,7 +18,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(LilRenderingMode.Opaque)]
         LilRenderingMode TransparentMode { get; set; }
 
-        /// <summary>Use POM</summary>
+        /// <summary>Use Parallax Occlusion Mapping (POM)</summary>
         //[DefaultValue(false)]
         bool UsePOM { get; set; }
 

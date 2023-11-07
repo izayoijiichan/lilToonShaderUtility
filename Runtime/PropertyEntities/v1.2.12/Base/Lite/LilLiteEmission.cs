@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilLiteEmission
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -20,7 +21,7 @@ namespace LilToonShader.v1_2_12
         public Color EmissionColor { get; set; }
 
         /// <summary>Emission Map</summary>
-        public Texture2D EmissionMap { get; set; }
+        public Texture2D? EmissionMap { get; set; }
 
         /// <summary>Emission Map Scroll Rotate</summary>
         /// <remarks>Angle|UV Animation|Scroll|Rotate</remarks>

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilReflection
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -21,7 +22,7 @@ namespace LilToonShader.v1_2_12
         public float Smoothness { get; set; }
 
         /// <summary>Smoothness Texture</summary>
-        public Texture2D SmoothnessTex { get; set; }
+        public Texture2D? SmoothnessTex { get; set; }
 
         /// <summary>Metallic</summary>
         //[Range(0.0f, 1.0f)]
@@ -29,7 +30,7 @@ namespace LilToonShader.v1_2_12
         public float Metallic { get; set; }
 
         /// <summary>Metallic Gloss Map</summary>
-        public Texture2D MetallicGlossMap { get; set; }
+        public Texture2D? MetallicGlossMap { get; set; }
 
         /// <summary>Reflectance</summary>
         //[Range(0.0f, 1.0f)]
@@ -40,7 +41,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(true)]
         public bool ApplySpecular { get; set; }
 
-        /// <summary>Apply Specular in ForwardAdd</summary>
+        /// <summary>Apply Specular in Forward Add</summary>
         //[DefaultValue(true)]
         public bool ApplySpecularFA { get; set; }
 
@@ -77,14 +78,14 @@ namespace LilToonShader.v1_2_12
         public Color ReflectionColor { get; set; }
 
         /// <summary>Reflection Color Texture</summary>
-        public Texture2D ReflectionColorTex { get; set; }
+        public Texture2D? ReflectionColorTex { get; set; }
 
         /// <summary>Reflection Apply Transparency</summary>
         //[DefaultValue(true)]
         public bool ReflectionApplyTransparency { get; set; }
 
-        /// <summary>Reflection Cube Tex</summary>
-        public Texture2D ReflectionCubeTex { get; set; }
+        /// <summary>Reflection Cube Texture</summary>
+        public Texture2D? ReflectionCubeTex { get; set; }
 
         /// <summary>Reflection Cube Color</summary>
         //[DefaultValue(1,1,1,1)]

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilRendering
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine.Rendering;
@@ -51,7 +52,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(15)]
         public int ColorMask { get; set; }
 
-        /// <summary>Alpha To Mask</summary>
+        /// <summary>Alpha to Mask</summary>
         //[DefaultValue(false)]
         public bool AlphaToMask { get; set; }
     }

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : ILilMatCap
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -20,7 +21,7 @@ namespace LilToonShader.v1_3_0
         Color MatCapColor { get; set; }
 
         /// <summary>Mat Cap Texture</summary>
-        Texture2D MatCapTex { get; set; }
+        Texture2D? MatCapTex { get; set; }
 
         /// <summary>Mat Cap Main Strength</summary>
         /// <remarks>v1.3.0 added</remarks>
@@ -51,7 +52,7 @@ namespace LilToonShader.v1_3_0
         float MatCapBlend { get; set; }
 
         /// <summary>Mat Cap Blend Mask</summary>
-        Texture2D MatCapBlendMask { get; set; }
+        Texture2D? MatCapBlendMask { get; set; }
 
         /// <summary>Mat Cap Enable Lighting</summary>
         //[Range(0.0f, 1.0f)]
@@ -90,7 +91,7 @@ namespace LilToonShader.v1_3_0
         bool MatCapCustomNormal { get; set; }
 
         /// <summary>Mat Cap Bump Map</summary>
-        Texture2D MatCapBumpMap { get; set; }
+        Texture2D? MatCapBumpMap { get; set; }
 
         /// <summary>Mat Cap Bump Scale</summary>
         //[Range(-10.0f, 10.0f)]

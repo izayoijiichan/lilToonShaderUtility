@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilLiteMatCap
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -16,7 +17,7 @@ namespace LilToonShader.v1_2_12
         public bool UseMatCap { get; set; }
 
         /// <summary>Mat Cap Texture</summary>
-        public Texture2D MatCapTex { get; set; }
+        public Texture2D? MatCapTex { get; set; }
 
         /// <summary>Mat Cap Blend UV1</summary>
         //[DefaultValue(0,0,0,0)]

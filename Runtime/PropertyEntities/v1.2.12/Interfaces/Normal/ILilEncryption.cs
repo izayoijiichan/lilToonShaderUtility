@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : ILilEncryption
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -11,7 +12,7 @@ namespace LilToonShader.v1_2_12
     /// </summary>
     public interface ILilEncryption
     {
-        /// <summary>IgnoreEncryption</summary>
+        /// <summary>Ignore Encryption</summary>
         //[DefaultValue(false)]
         bool IgnoreEncryption { get; set; }
 

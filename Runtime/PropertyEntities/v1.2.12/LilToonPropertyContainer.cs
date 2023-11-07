@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilToonPropertyContainer
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     /// <summary>
@@ -10,15 +11,15 @@ namespace LilToonShader.v1_2_12
     public class LilToonPropertyContainer : LilToonPropertyContainerBase
     {
         /// <summary>Normal Property Entity</summary>
-        public LilToonNormalPropertyEntity NormalProperty { get; set; }
+        public LilToonNormalPropertyEntity? NormalProperty { get; set; }
 
         /// <summary>Lite Property Entity</summary>
-        public LilToonLitePropertyEntity LiteProperty { get; set; }
+        public LilToonLitePropertyEntity? LiteProperty { get; set; }
 
         /// <summary>Multi Property Entity</summary>
-        public LilToonMultiPropertyEntity MultiProperty { get; set; }
+        public LilToonMultiPropertyEntity? MultiProperty { get; set; }
 
         /// <summary>Fake Shadow Property Entity</summary>
-        public LilToonFakeShadowPropertyEntity FakeShadowProperty { get; set; }
+        public LilToonFakeShadowPropertyEntity? FakeShadowProperty { get; set; }
     }
 }

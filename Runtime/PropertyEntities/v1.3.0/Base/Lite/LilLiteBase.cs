@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : LilLiteBase
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -28,7 +29,7 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(false)]
         public bool BackfaceForceShadow { get; set; }
 
-        /// <summary>AA Strength</summary>
+        /// <summary>Anti-Aliasing Strength</summary>
         /// <remarks>v1.3.7 added</remarks>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(1.0)]
@@ -36,6 +37,6 @@ namespace LilToonShader.v1_3_0
 
         /// <summary>Tri Mask</summary>
         /// <remarks>Mat/Rim/Emission</remarks>
-        public Texture2D TriMask { get; set; }
+        public Texture2D? TriMask { get; set; }
     }
 }

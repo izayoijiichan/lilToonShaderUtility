@@ -26,7 +26,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(255)]
         int OutlineStencilWriteMask { get; set; }
 
-        /// <summary>Outline Stencil Comp</summary>
+        /// <summary>Outline Stencil Compare</summary>
         //[DefaultValue(CompareFunction.Always)]
         CompareFunction OutlineStencilComp { get; set; }
 

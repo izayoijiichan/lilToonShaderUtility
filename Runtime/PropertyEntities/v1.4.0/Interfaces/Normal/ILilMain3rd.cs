@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_4_0
 // @Class     : ILilMain3rd
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_4_0
 {
     using UnityEngine;
@@ -21,7 +22,7 @@ namespace LilToonShader.v1_4_0
         Color Color3rd { get; set; }
 
         /// <summary>Main 3rd Texture</summary>
-        Texture2D Main3rdTex { get; set; }
+        Texture2D? Main3rdTex { get; set; }
 
         /// <summary>Main 3rd Texture Angle</summary>
         //[DefaultValue(0)]
@@ -49,20 +50,20 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(1,1,1,30)]
         Vector4 Main3rdTexDecalAnimation { get; set; }
 
-        /// <summary>Main 3rd Texture Decal Sub Param</summary>
+        /// <summary>Main 3rd Texture Decal Sub Parameter</summary>
         /// <remarks>Ratio X|Ratio Y|Fix Border</remarks>
         //[DefaultValue(1,1,0,1)]
         Vector4 Main3rdTexDecalSubParam { get; set; }
 
-        /// <summary>Main 3rd Texture Is Decal</summary>
+        /// <summary>Main 3rd Texture is Decal</summary>
         //[DefaultValue(false)]
         bool Main3rdTexIsDecal { get; set; }
 
-        /// <summary>Main 3rd Texture Is Left Only</summary>
+        /// <summary>Main 3rd Texture is Left Only</summary>
         //[DefaultValue(false)]
         bool Main3rdTexIsLeftOnly { get; set; }
 
-        /// <summary>Main 3rd Texture Is Right Only</summary>
+        /// <summary>Main 3rd Texture is Right Only</summary>
         //[DefaultValue(false)]
         bool Main3rdTexIsRightOnly { get; set; }
 
@@ -78,12 +79,12 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(false)]
         bool Main3rdTexShouldFlipCopy { get; set; }
 
-        /// <summary>Main 3rd Texture Is MSDF</summary>
+        /// <summary>Main 3rd Texture is MSDF</summary>
         //[DefaultValue(false)]
         bool Main3rdTexIsMSDF { get; set; }
 
         /// <summary>Main 3rd Blend Mask</summary>
-        Texture2D Main3rdBlendMask { get; set; }
+        Texture2D? Main3rdBlendMask { get; set; }
 
         /// <summary>Main 3rd Texture Blend Mode</summary>
         //[DefaultValue(LilBlendMode.Normal)]
@@ -100,10 +101,10 @@ namespace LilToonShader.v1_4_0
         bool Main3rdEnableLighting { get; set; }
 
         /// <summary>Main 3rd Dissolve Mask</summary>
-        Texture2D Main3rdDissolveMask { get; set; }
+        Texture2D? Main3rdDissolveMask { get; set; }
 
         /// <summary>Main 3rd Dissolve Noise Mask</summary>
-        Texture2D Main3rdDissolveNoiseMask { get; set; }
+        Texture2D? Main3rdDissolveNoiseMask { get; set; }
 
         /// <summary>Main 3rd Dissolve Noise Mask Scroll Rotate</summary>
         Vector4 Main3rdDissolveNoiseMask_ScrollRotate { get; set; }
@@ -116,7 +117,7 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(1,1,1,1)]
         Color Main3rdDissolveColor { get; set; }
 
-        /// <summary>Main 3rd Dissolve Params</summary>
+        /// <summary>Main 3rd Dissolve Parameters</summary>
         /// <remarks>Dissolve Mode|Dissolve Shape|Border|Blur</remarks>
         //[DefaultValue(0,0,0.5,0.1)]
         Vector4 Main3rdDissolveParams { get; set; }

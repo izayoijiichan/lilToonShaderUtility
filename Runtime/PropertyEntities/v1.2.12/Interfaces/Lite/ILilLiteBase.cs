@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : ILilLiteBase
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -13,6 +14,6 @@ namespace LilToonShader.v1_2_12
     {
         /// <summary>Tri Mask</summary>
         /// <remarks>Mat/Rim/Emission</remarks>
-        Texture2D TriMask { get; set; }
+        Texture2D? TriMask { get; set; }
     }
 }

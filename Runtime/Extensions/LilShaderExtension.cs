@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.Extensions
 // @Class     : LilShaderExtension
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.Extensions
 {
     using UnityEngine;
@@ -39,7 +40,6 @@ namespace LilToonShader.Extensions
 
             return LilPropertyEntityType.Normal;
         }
-
 
         /// <summary>
         /// Get the lilToon rendering mode from the shader name.
@@ -92,10 +92,10 @@ namespace LilToonShader.Extensions
         }
 
         /// <summary>
-        /// Get the lilToon tranparent mode from the shader name.
+        /// Get the lilToon transparent mode from the shader name.
         /// </summary>
         /// <param name="shader">A shader.</param>
-        /// <returns>The lilToon tranparent mode.</returns>
+        /// <returns>The lilToon transparent mode.</returns>
         public static LilTransparentMode GetTransparentMode(this Shader shader)
         {
             if (shader.IsTwoPass())
@@ -237,7 +237,7 @@ namespace LilToonShader.Extensions
         }
 
         /// <summary>
-        /// Check if it is rafraction from the shader name.
+        /// Check if it is refraction from the shader name.
         /// </summary>
         /// <param name="shader">A shader.</param>
         /// <returns>Returns true if refraction, false otherwise.</returns>

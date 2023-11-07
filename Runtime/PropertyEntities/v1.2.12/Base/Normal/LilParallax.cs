@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilParallax
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -16,7 +17,7 @@ namespace LilToonShader.v1_2_12
         public bool UseParallax { get; set; }
 
         /// <summary>Parallax Map</summary>
-        public Texture2D ParallaxMap { get; set; }
+        public Texture2D? ParallaxMap { get; set; }
 
         /// <summary>Parallax Scale</summary>
         //[DefaultValue(0.02f)]

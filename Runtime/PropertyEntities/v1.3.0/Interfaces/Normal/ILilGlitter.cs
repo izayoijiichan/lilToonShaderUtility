@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : ILilGlitter
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -24,7 +25,7 @@ namespace LilToonShader.v1_3_0
         Color GlitterColor { get; set; }
 
         /// <summary>Glitter Color Texture</summary>
-        Texture2D GlitterColorTex { get; set; }
+        Texture2D? GlitterColorTex { get; set; }
 
         /// <summary>Glitter Color Texture UV Mode</summary>
         /// <remarks>v1.3.2 added</remarks>
@@ -53,7 +54,7 @@ namespace LilToonShader.v1_3_0
 
         /// <summary>Glitter Shape Texture</summary>
         /// <remarks>v1.3.0 added</remarks>
-        Texture2D GlitterShapeTex { get; set; }
+        Texture2D? GlitterShapeTex { get; set; }
 
         /// <summary>Glitter Atras</summary>
         /// <remarks>v1.3.0 added</remarks>
@@ -65,12 +66,12 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(false)]
         bool GlitterAngleRandomize { get; set; }
 
-        /// <summary>Glitter Params1</summary>
+        /// <summary>Glitter Parameters 1</summary>
         /// <remarks>Tiling|Particle Size|Contrast</remarks>
         //[DefaultValue(256,256,0.16f,50)]
         Vector4 GlitterParams1 { get; set; }
 
-        /// <summary>Glitter Params2</summary>
+        /// <summary>Glitter Parameters 2</summary>
         /// <remarks>Blink Speed|Angle|Blend Light Direction|Color Randomness</remarks>
         //[DefaultValue(0.25f,0,0,0)]
         Vector4 GlitterParams2 { get; set; }

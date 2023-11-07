@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader
 // @Class     : ILilToonPropertyEntityBase
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader
 {
     /// <summary>
@@ -10,6 +11,6 @@ namespace LilToonShader
     public interface ILilToonPropertyEntityBase
     {
         /// <summary>Save</summary>
-        LilSave Save { get; set; }
+        LilSave? Save { get; set; }
     }
 }

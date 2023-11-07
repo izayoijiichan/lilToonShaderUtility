@@ -27,11 +27,11 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(BlendMode.OneMinusSrcAlpha)]
         BlendMode DstBlendAlpha { get; set; }
 
-        /// <summary>Blend Op</summary>
+        /// <summary>Blend Operation</summary>
         //[DefaultValue(BlendOp.Add)]
         BlendOp BlendOp { get; set; }
 
-        /// <summary>Blend Op Alpha</summary>
+        /// <summary>Blend Operation Alpha</summary>
         //[DefaultValue(BlendOp.Add)]
         BlendOp BlendOpAlpha { get; set; }
     }

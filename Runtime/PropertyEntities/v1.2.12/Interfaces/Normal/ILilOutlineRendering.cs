@@ -39,7 +39,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(15)]
         int OutlineColorMask { get; set; }
 
-        /// <summary>Outline Alpha To Mask</summary>
+        /// <summary>Outline Alpha to Mask</summary>
         //[DefaultValue(false)]
         bool OutlineAlphaToMask { get; set; }
     }

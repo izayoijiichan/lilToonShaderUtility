@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilNormalMap
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -16,7 +17,7 @@ namespace LilToonShader.v1_2_12
         public bool UseBumpMap { get; set; }
 
         /// <summary>Bump Map</summary>
-        public Texture2D BumpMap { get; set; }
+        public Texture2D? BumpMap { get; set; }
 
         /// <summary>Bump Scale</summary>
         //[Range(-10.0f, 10.0f)]

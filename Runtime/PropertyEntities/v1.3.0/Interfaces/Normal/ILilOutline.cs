@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : ILilOutline
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -16,7 +17,7 @@ namespace LilToonShader.v1_3_0
         Color OutlineColor { get; set; }
 
         /// <summary>Outline Texture</summary>
-        Texture2D OutlineTex { get; set; }
+        Texture2D? OutlineTex { get; set; }
 
         /// <summary>Outline Texture Scroll Rotate</summary>
         /// <remarks>Angle|UV Animation|Scroll|Rotate</remarks>
@@ -59,7 +60,7 @@ namespace LilToonShader.v1_3_0
         float OutlineWidth { get; set; }
 
         /// <summary>Outline Width Mask</summary>
-        Texture2D OutlineWidthMask { get; set; }
+        Texture2D? OutlineWidthMask { get; set; }
 
         /// <summary>Outline Fix Width</summary>
         /// <remarks>v1.3.0 changed int to float</remarks>
@@ -75,7 +76,7 @@ namespace LilToonShader.v1_3_0
         bool OutlineDeleteMesh { get; set; }
 
         /// <summary>Outline Vector Texture</summary>
-        Texture2D OutlineVectorTex { get; set; }
+        Texture2D? OutlineVectorTex { get; set; }
 
         /// <summary>Outline Vector UV Mode</summary>
         /// <remarks>v1.3.0 added</remarks>

@@ -18,6 +18,7 @@ ___
 |1.3.6|32|
 |1.3.7|33|
 |1.4.0|34|
+|1.4.1|35|
 
 ## Shaders
 
@@ -101,6 +102,7 @@ LilToonShader
 |Unity 2021.3|
 |Unity 2022.1|
 |Unity 2022.2|
+|Unity 2023.1|
 
 |render pipeline|description|
 |:---|:---|
@@ -117,8 +119,8 @@ LilToonShader
 ```json
 {
   "dependencies": {
-    "com.izayoi.liltoon.shader.utility": "https://github.com/izayoijiichan/lilToonShaderUtility.git#v1.4.0",
-    "jp.lilxyzw.liltoon": "https://github.com/lilxyzw/lilToon.git?path=Assets/lilToon#1.4.0",
+    "com.izayoi.liltoon.shader.utility": "https://github.com/izayoijiichan/lilToonShaderUtility.git#v1.4.1",
+    "jp.lilxyzw.liltoon": "https://github.com/lilxyzw/lilToon.git?path=Assets/lilToon#1.4.1",
     // --- other packages ---
   }
 }
@@ -195,7 +197,7 @@ public void OneMethod()
 [lilToon](https://lilxyzw.github.io/lilToon)
 
 ___
-Last updated: 30 May, 2023  
+Last updated: 8 Nov, 2023  
 Editor: Izayoi Jiichan
 
 *Copyright (C) 2022 Izayoi Jiichan. All Rights Reserved.*

@@ -51,7 +51,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(15)]
         int ColorMask { get; set; }
 
-        /// <summary>Alpha To Mask</summary>
+        /// <summary>Alpha to Mask</summary>
         //[DefaultValue(false)]
         bool AlphaToMask { get; set; }
     }

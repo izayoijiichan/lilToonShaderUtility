@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader
 // @Class     : Keyword
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader
 {
     /// <summary>
@@ -98,13 +99,13 @@ namespace LilToonShader
         /// <summary>Pixel Snap On</summary>
         public const string PixelSnapOn = "PIXELSNAP_ON";
 
-        /// <summary>Glossy Reflectins Off</summary>
-        public const string GlossyReflectinsOff = "_GLOSSYREFLECTIONS_OFF";
+        /// <summary>Glossy Reflections Off</summary>
+        public const string GlossyReflectionsOff = "_GLOSSYREFLECTIONS_OFF";
 
         /// <summary>Etc 1 External Alpha</summary>
         public const string Etc1ExternalAlpha = "ETC1_EXTERNAL_ALPHA";
 
-        /// <summary>Detail Mulx 2</summary>
+        /// <summary>Detail Multiply x2</summary>
         public const string DetailMulx2 = "_DETAIL_MULX2";
 
         /// <summary>SRP Default Unlit</summary>

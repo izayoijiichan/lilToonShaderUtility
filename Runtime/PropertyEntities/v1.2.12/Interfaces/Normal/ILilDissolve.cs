@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : ILilDissolve
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -12,10 +13,10 @@ namespace LilToonShader.v1_2_12
     public interface ILilDissolve
     {
         /// <summary>Dissolve Mask</summary>
-        Texture2D DissolveMask { get; set; }
+        Texture2D? DissolveMask { get; set; }
 
         /// <summary>Dissolve Noise Mask</summary>
-        Texture2D DissolveNoiseMask { get; set; }
+        Texture2D? DissolveNoiseMask { get; set; }
 
         /// <summary>Dissolve Noise Mask Scroll Rotate</summary>
         //[DefaultValue(0,0,0,0)]
@@ -29,8 +30,8 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(1,1,1,1)]
         Color DissolveColor { get; set; }
 
-        /// <summary>Dissolve Params</summary>
-        /// <remarks>Dissolve Mode|None|Alpha|UV|Position|Dissolve Shape|Point|Line|Border|Blur</remarks>
+        /// <summary>Dissolve Parameters</summary>
+        /// <remarks>Dissolve Mode|Dissolve Shape|Border|Blur</remarks>
         //[DefaultValue(0,0,0.5,0.1)]
         Vector4 DissolveParams { get; set; }
 

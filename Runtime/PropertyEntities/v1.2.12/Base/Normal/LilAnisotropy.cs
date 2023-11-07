@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilAnisotropy
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -16,7 +17,7 @@ namespace LilToonShader.v1_2_12
         public bool UseAnisotropy { get; set; }
 
         /// <summary>Anisotropy Tangent Map</summary>
-        public Texture2D AnisotropyTangentMap { get; set; }
+        public Texture2D? AnisotropyTangentMap { get; set; }
 
         /// <summary>Anisotropy Scale</summary>
         //[Range(-1.0f, 1.0f)]
@@ -24,7 +25,7 @@ namespace LilToonShader.v1_2_12
         public float AnisotropyScale { get; set; }
 
         /// <summary>Anisotropy Scale Mask</summary>
-        public Texture2D AnisotropyScaleMask { get; set; }
+        public Texture2D? AnisotropyScaleMask { get; set; }
 
         /// <summary>Anisotropy Tangent Width</summary>
         //[Range(0.0f, 10.0f)]
@@ -77,7 +78,7 @@ namespace LilToonShader.v1_2_12
         public float Anisotropy2ndSpecularStrength { get; set; }
 
         /// <summary>Anisotropy Shift Noise Mask</summary>
-        public Texture2D AnisotropyShiftNoiseMask { get; set; }
+        public Texture2D? AnisotropyShiftNoiseMask { get; set; }
 
         /// <summary>Anisotropy 2 Reflection</summary>
         //[DefaultValue(false)]

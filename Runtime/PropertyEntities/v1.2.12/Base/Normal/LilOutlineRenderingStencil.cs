@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilOutlineRenderingStencil
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine.Rendering;
@@ -26,7 +27,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(255)]
         public int OutlineStencilWriteMask { get; set; }
 
-        /// <summary>Outline Stencil Comp</summary>
+        /// <summary>Outline Stencil Compare</summary>
         //[DefaultValue(CompareFunction.Always)]
         public CompareFunction OutlineStencilComp { get; set; }
 

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader
 // @Class     : PropertyNameID
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader
 {
     using UnityEngine;
@@ -42,7 +43,7 @@ namespace LilToonShader
         /// <remarks>v1.3.0 added</remarks>
         public static readonly int BackfaceColor = Shader.PropertyToID(PropertyName.BackfaceColor);
 
-        /// <summary>AA Strength</summary>
+        /// <summary>Anti-Aliasing Strength</summary>
         /// <remarks>v1.3.7 added</remarks>
         public static readonly int AAStrength = Shader.PropertyToID(PropertyName.AAStrength);
 
@@ -89,7 +90,7 @@ namespace LilToonShader
         /// <summary>Light Direction Override</summary>
         public static readonly int LightDirectionOverride = Shader.PropertyToID(PropertyName.LightDirectionOverride);
 
-        /// <summary>Alpha Boost ForwardAdd</summary>
+        /// <summary>Alpha Boost Forward Add</summary>
         public static readonly int AlphaBoostFA = Shader.PropertyToID(PropertyName.AlphaBoostFA);
 
         /// <summary>Before Exposure Limit</summary>
@@ -153,16 +154,16 @@ namespace LilToonShader
         /// <summary>Main 2nd Texture Decal Animation</summary>
         public static readonly int Main2ndTexDecalAnimation = Shader.PropertyToID(PropertyName.Main2ndTexDecalAnimation);
 
-        /// <summary>Main 2nd Texture Decal Sub Param</summary>
+        /// <summary>Main 2nd Texture Decal Sub Parameter</summary>
         public static readonly int Main2ndTexDecalSubParam = Shader.PropertyToID(PropertyName.Main2ndTexDecalSubParam);
 
-        /// <summary>Main 2nd Texture Is Decal</summary>
+        /// <summary>Main 2nd Texture is Decal</summary>
         public static readonly int Main2ndTexIsDecal = Shader.PropertyToID(PropertyName.Main2ndTexIsDecal);
 
-        /// <summary>Main 2nd Texture Is Left Only</summary>
+        /// <summary>Main 2nd Texture is Left Only</summary>
         public static readonly int Main2ndTexIsLeftOnly = Shader.PropertyToID(PropertyName.Main2ndTexIsLeftOnly);
 
-        /// <summary>Main 2nd Texture Is Right Only</summary>
+        /// <summary>Main 2nd Texture is Right Only</summary>
         public static readonly int Main2ndTexIsRightOnly = Shader.PropertyToID(PropertyName.Main2ndTexIsRightOnly);
 
         /// <summary>Main 2nd Texture Should Copy</summary>
@@ -174,7 +175,7 @@ namespace LilToonShader
         /// <summary>Main 2nd Texture Should Flip Copy</summary>
         public static readonly int Main2ndTexShouldFlipCopy = Shader.PropertyToID(PropertyName.Main2ndTexShouldFlipCopy);
 
-        /// <summary>Main 2nd Texture Is MSDF</summary>
+        /// <summary>Main 2nd Texture is MSDF</summary>
         public static readonly int Main2ndTexIsMSDF = Shader.PropertyToID(PropertyName.Main2ndTexIsMSDF);
 
         /// <summary>Main 2nd Blend Mask</summary>
@@ -205,7 +206,7 @@ namespace LilToonShader
         /// <summary>Main 2nd Dissolve Color</summary>
         public static readonly int Main2ndDissolveColor = Shader.PropertyToID(PropertyName.Main2ndDissolveColor);
 
-        /// <summary>Main 2nd Dissolve Params</summary>
+        /// <summary>Main 2nd Dissolve Parameters</summary>
         public static readonly int Main2ndDissolveParams = Shader.PropertyToID(PropertyName.Main2ndDissolveParams);
 
         /// <summary>Main 2nd Dissolve Position</summary>
@@ -244,16 +245,16 @@ namespace LilToonShader
         /// <summary>Main 3rd Texture Decal Animation</summary>
         public static readonly int Main3rdTexDecalAnimation = Shader.PropertyToID(PropertyName.Main3rdTexDecalAnimation);
 
-        /// <summary>Main 3rd Texture Decal Sub Param</summary>
+        /// <summary>Main 3rd Texture Decal Sub Parameter</summary>
         public static readonly int Main3rdTexDecalSubParam = Shader.PropertyToID(PropertyName.Main3rdTexDecalSubParam);
 
-        /// <summary>Main 3rd Texture Is Decal</summary>
+        /// <summary>Main 3rd Texture is Decal</summary>
         public static readonly int Main3rdTexIsDecal = Shader.PropertyToID(PropertyName.Main3rdTexIsDecal);
 
-        /// <summary>Main 3rd Texture Is Left Only</summary>
+        /// <summary>Main 3rd Texture is Left Only</summary>
         public static readonly int Main3rdTexIsLeftOnly = Shader.PropertyToID(PropertyName.Main3rdTexIsLeftOnly);
 
-        /// <summary>Main 3rd Texture Is Right Only</summary>
+        /// <summary>Main 3rd Texture is Right Only</summary>
         public static readonly int Main3rdTexIsRightOnly = Shader.PropertyToID(PropertyName.Main3rdTexIsRightOnly);
 
         /// <summary>Main 3rd Texture Should Copy</summary>
@@ -265,7 +266,7 @@ namespace LilToonShader
         /// <summary>Main 3rd Texture Should Flip Copy</summary>
         public static readonly int Main3rdTexShouldFlipCopy = Shader.PropertyToID(PropertyName.Main3rdTexShouldFlipCopy);
 
-        /// <summary>Main 3rd Texture Is MSDF</summary>
+        /// <summary>Main 3rd Texture is MSDF</summary>
         public static readonly int Main3rdTexIsMSDF = Shader.PropertyToID(PropertyName.Main3rdTexIsMSDF);
 
         /// <summary>Main 3rd Blend Mask</summary>
@@ -296,7 +297,7 @@ namespace LilToonShader
         /// <summary>Main 3rd Dissolve Color</summary>
         public static readonly int Main3rdDissolveColor = Shader.PropertyToID(PropertyName.Main3rdDissolveColor);
 
-        /// <summary>Main 3rd Dissolve Params</summary>
+        /// <summary>Main 3rd Dissolve Parameters</summary>
         public static readonly int Main3rdDissolveParams = Shader.PropertyToID(PropertyName.Main3rdDissolveParams);
 
         /// <summary>Main 3rd Dissolve Position</summary>
@@ -422,7 +423,7 @@ namespace LilToonShader
         /// <summary>Backlight Color</summary>
         public static readonly int BacklightColor = Shader.PropertyToID(PropertyName.BacklightColor);
 
-        /// <summary>Backlight Color Tex</summary>
+        /// <summary>Backlight Color Texture</summary>
         public static readonly int BacklightColorTex = Shader.PropertyToID(PropertyName.BacklightColorTex);
 
         /// <summary>Backlight Main Strength</summary>
@@ -463,31 +464,31 @@ namespace LilToonShader
         /// <summary>Shadow Strength Mask</summary>
         public static readonly int ShadowStrengthMask = Shader.PropertyToID(PropertyName.ShadowStrengthMask);
 
-        /// <summary>Shadow Strength Mask LOD</summary>
+        /// <summary>Shadow Strength Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         public static readonly int ShadowStrengthMaskLOD = Shader.PropertyToID(PropertyName.ShadowStrengthMaskLOD);
 
         /// <summary>Shadow Border Mask</summary>
         public static readonly int ShadowBorderMask = Shader.PropertyToID(PropertyName.ShadowBorderMask);
 
-        /// <summary>Shadow Border Mask LOD</summary>
+        /// <summary>Shadow Border Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         public static readonly int ShadowBorderMaskLOD = Shader.PropertyToID(PropertyName.ShadowBorderMaskLOD);
 
         /// <summary>Shadow Blur Mask</summary>
         public static readonly int ShadowBlurMask = Shader.PropertyToID(PropertyName.ShadowBlurMask);
 
-        /// <summary>Shadow Blur Mask LOD</summary>
+        /// <summary>Shadow Blur Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         public static readonly int ShadowBlurMaskLOD = Shader.PropertyToID(PropertyName.ShadowBlurMaskLOD);
 
-        /// <summary>Shadow AO Shift</summary>
+        /// <summary>Shadow Ambient Occlusion Shift</summary>
         public static readonly int ShadowAOShift = Shader.PropertyToID(PropertyName.ShadowAOShift);
 
-        /// <summary>Shadow AO Shift2</summary>
+        /// <summary>Shadow Ambient Occlusion Shift 2</summary>
         public static readonly int ShadowAOShift2 = Shader.PropertyToID(PropertyName.ShadowAOShift2);
 
-        /// <summary>Shadow Post AO</summary>
+        /// <summary>Shadow Post Ambient Occlusion</summary>
         public static readonly int ShadowPostAO = Shader.PropertyToID(PropertyName.ShadowPostAO);
 
         /// <summary>Shadow Color Type</summary>
@@ -497,7 +498,7 @@ namespace LilToonShader
         /// <summary>Shadow Color</summary>
         public static readonly int ShadowColor = Shader.PropertyToID(PropertyName.ShadowColor);
 
-        /// <summary>Shadow Color Tex</summary>
+        /// <summary>Shadow Color Texture</summary>
         public static readonly int ShadowColorTex = Shader.PropertyToID(PropertyName.ShadowColorTex);
 
         /// <summary>Shadow Normal Strength</summary>
@@ -515,7 +516,7 @@ namespace LilToonShader
         /// <summary>Shadow 2nd Color</summary>
         public static readonly int Shadow2ndColor = Shader.PropertyToID(PropertyName.Shadow2ndColor);
 
-        /// <summary>Shadow 2nd Color Tex</summary>
+        /// <summary>Shadow 2nd Color Texture</summary>
         public static readonly int Shadow2ndColorTex = Shader.PropertyToID(PropertyName.Shadow2ndColorTex);
 
         /// <summary>Shadow 2nd Normal Strength</summary>
@@ -534,7 +535,7 @@ namespace LilToonShader
         /// <summary>Shadow 3rd Color</summary>
         public static readonly int Shadow3rdColor = Shader.PropertyToID(PropertyName.Shadow3rdColor);
 
-        /// <summary>Shadow 3rd ColorTex</summary>
+        /// <summary>Shadow 3rd Color Texture</summary>
         public static readonly int Shadow3rdColorTex = Shader.PropertyToID(PropertyName.Shadow3rdColorTex);
 
         /// <summary>Shadow 3rd Normal Strength</summary>
@@ -596,14 +597,14 @@ namespace LilToonShader
         /// <summary>Reflectance</summary>
         public static readonly int Reflectance = Shader.PropertyToID(PropertyName.Reflectance);
 
-        /// <summary>GSAA Strength</summary>
+        /// <summary>Geometric Specular Anti-Aliasing (GSAA) Strength</summary>
         /// <remarks>v1.3.0 added</remarks>
         public static readonly int GSAAStrength = Shader.PropertyToID(PropertyName.GSAAStrength);
 
         /// <summary>Apply Specular</summary>
         public static readonly int ApplySpecular = Shader.PropertyToID(PropertyName.ApplySpecular);
 
-        /// <summary>Apply Specular in ForwardAdd</summary>
+        /// <summary>Apply Specular in Forward Add</summary>
         public static readonly int ApplySpecularFA = Shader.PropertyToID(PropertyName.ApplySpecularFA);
 
         /// <summary>Specular Toon</summary>
@@ -633,7 +634,7 @@ namespace LilToonShader
         /// <summary>Reflection Apply Transparency</summary>
         public static readonly int ReflectionApplyTransparency = Shader.PropertyToID(PropertyName.ReflectionApplyTransparency);
 
-        /// <summary>Reflection Cube Tex</summary>
+        /// <summary>Reflection Cube Texture</summary>
         public static readonly int ReflectionCubeTex = Shader.PropertyToID(PropertyName.ReflectionCubeTex);
 
         /// <summary>Reflection Cube Color</summary>
@@ -740,7 +741,7 @@ namespace LilToonShader
         /// <summary>Mat Cap 2nd Perspective</summary>
         public static readonly int MatCap2ndPerspective = Shader.PropertyToID(PropertyName.MatCap2ndPerspective);
 
-        /// <summary>Mat Ca p2nd VR Parallax Strength</summary>
+        /// <summary>Mat Cap 2nd VR Parallax Strength</summary>
         public static readonly int MatCap2ndVRParallaxStrength = Shader.PropertyToID(PropertyName.MatCap2ndVRParallaxStrength);
 
         /// <summary>Mat Cap 2nd Blend</summary>
@@ -789,7 +790,7 @@ namespace LilToonShader
         /// <summary>Rim Color</summary>
         public static readonly int RimColor = Shader.PropertyToID(PropertyName.RimColor);
 
-        /// <summary>Rim Color Tex</summary>
+        /// <summary>Rim Color Texture</summary>
         public static readonly int RimColorTex = Shader.PropertyToID(PropertyName.RimColorTex);
 
         /// <summary>Rim Main Strength</summary>
@@ -838,7 +839,7 @@ namespace LilToonShader
         /// <summary>Rim Indirection Border</summary>
         public static readonly int RimIndirBorder = Shader.PropertyToID(PropertyName.RimIndirBorder);
 
-        /// <summary>Rim Indir Blur</summary>
+        /// <summary>Rim Indirection Blur</summary>
         public static readonly int RimIndirBlur = Shader.PropertyToID(PropertyName.RimIndirBlur);
 
         /// <summary>Rim Blend Mode</summary>
@@ -891,10 +892,10 @@ namespace LilToonShader
         /// <remarks>v1.3.0 added</remarks>
         public static readonly int GlitterAngleRandomize = Shader.PropertyToID(PropertyName.GlitterAngleRandomize);
 
-        /// <summary>Glitter Params1</summary>
+        /// <summary>Glitter Parameters 1</summary>
         public static readonly int GlitterParams1 = Shader.PropertyToID(PropertyName.GlitterParams1);
 
-        /// <summary>Glitter Params2</summary>
+        /// <summary>Glitter Parameters 2</summary>
         public static readonly int GlitterParams2 = Shader.PropertyToID(PropertyName.GlitterParams2);
 
         /// <summary>Glitter Post Contrast</summary>
@@ -1150,7 +1151,7 @@ namespace LilToonShader
         /// <summary>Use Parallax</summary>
         public static readonly int UseParallax = Shader.PropertyToID(PropertyName.UseParallax);
 
-        /// <summary>Use POM</summary>
+        /// <summary>Use Parallax Occlusion Mapping (POM)</summary>
         /// <remarks>v1.3.0 from Multi</remarks>
         public static readonly int UsePOM = Shader.PropertyToID(PropertyName.UsePOM);
 
@@ -1198,7 +1199,7 @@ namespace LilToonShader
         /// <summary>Audio Link UV Mode</summary>
         public static readonly int AudioLinkUVMode = Shader.PropertyToID(PropertyName.AudioLinkUVMode);
 
-        /// <summary>Audio Link UV Params</summary>
+        /// <summary>Audio Link UV Parameters</summary>
         public static readonly int AudioLinkUVParams = Shader.PropertyToID(PropertyName.AudioLinkUVParams);
 
         /// <summary>Audio Link Start Position</summary>
@@ -1239,7 +1240,7 @@ namespace LilToonShader
         /// <summary>Audio Link Vertex UV Mode</summary>
         public static readonly int AudioLinkVertexUVMode = Shader.PropertyToID(PropertyName.AudioLinkVertexUVMode);
 
-        /// <summary>Audio Link Vertex UV Params</summary>
+        /// <summary>Audio Link Vertex UV Parameters</summary>
         public static readonly int AudioLinkVertexUVParams = Shader.PropertyToID(PropertyName.AudioLinkVertexUVParams);
 
         /// <summary>Audio Link Vertex Start Position</summary>
@@ -1248,13 +1249,13 @@ namespace LilToonShader
         /// <summary>Audio Link Vertex Strength</summary>
         public static readonly int AudioLinkVertexStrength = Shader.PropertyToID(PropertyName.AudioLinkVertexStrength);
 
-        /// <summary>Audio Link As Local</summary>
+        /// <summary>Audio Link as Local</summary>
         public static readonly int AudioLinkAsLocal = Shader.PropertyToID(PropertyName.AudioLinkAsLocal);
 
         /// <summary>Audio Link Local Map</summary>
         public static readonly int AudioLinkLocalMap = Shader.PropertyToID(PropertyName.AudioLinkLocalMap);
 
-        /// <summary>Audio Link Local Map Params</summary>
+        /// <summary>Audio Link Local Map Parameters</summary>
         public static readonly int AudioLinkLocalMapParams = Shader.PropertyToID(PropertyName.AudioLinkLocalMapParams);
 
         #endregion
@@ -1276,7 +1277,7 @@ namespace LilToonShader
         /// <summary>Dissolve Color</summary>
         public static readonly int DissolveColor = Shader.PropertyToID(PropertyName.DissolveColor);
 
-        /// <summary>Dissolve Params</summary>
+        /// <summary>Dissolve Parameters</summary>
         public static readonly int DissolveParams = Shader.PropertyToID(PropertyName.DissolveParams);
 
         /// <summary>Dissolve Position</summary>
@@ -1358,7 +1359,7 @@ namespace LilToonShader
 
         #region Encryption
 
-        /// <summary>IgnoreEncryption</summary>
+        /// <summary>Ignore Encryption</summary>
         public static readonly int IgnoreEncryption = Shader.PropertyToID(PropertyName.IgnoreEncryption);
 
         /// <summary>Keys</summary>
@@ -1539,14 +1540,14 @@ namespace LilToonShader
         /// <summary>Fur Randomize</summary>
         public static readonly int FurRandomize = Shader.PropertyToID(PropertyName.FurRandomize);
 
-        /// <summary>Fur AO</summary>
+        /// <summary>Fur Ambient Occlusion</summary>
         public static readonly int FurAO = Shader.PropertyToID(PropertyName.FurAO);
 
         /// <summary>Fur Mesh Type</summary>
         /// <remarks>v1.3.0 added</remarks>
         public static readonly int FurMeshType = Shader.PropertyToID(PropertyName.FurMeshType);
 
-        /// <summary>Fur Layer Num</summary>
+        /// <summary>Fur Layer Number</summary>
         public static readonly int FurLayerNum = Shader.PropertyToID(PropertyName.FurLayerNum);
 
         /// <summary>Fur Root Offset</summary>
@@ -1583,7 +1584,7 @@ namespace LilToonShader
         /// <summary>Fur Color Mask</summary>
         public static readonly int FurColorMask = Shader.PropertyToID(PropertyName.FurColorMask);
 
-        /// <summary>Fur Alpha To Mask</summary>
+        /// <summary>Fur Alpha to Mask</summary>
         public static readonly int FurAlphaToMask = Shader.PropertyToID(PropertyName.FurAlphaToMask);
 
         #endregion
@@ -1602,32 +1603,32 @@ namespace LilToonShader
         /// <summary>Fur Dst Blend Alpha</summary>
         public static readonly int FurDstBlendAlpha = Shader.PropertyToID(PropertyName.FurDstBlendAlpha);
 
-        /// <summary>Fur Blend Op</summary>
+        /// <summary>Fur Blend Operation</summary>
         public static readonly int FurBlendOp = Shader.PropertyToID(PropertyName.FurBlendOp);
 
-        /// <summary>Fur Blend Op Alpha</summary>
+        /// <summary>Fur Blend Operation Alpha</summary>
         public static readonly int FurBlendOpAlpha = Shader.PropertyToID(PropertyName.FurBlendOpAlpha);
 
         #endregion
 
         #region Fur Rendering Forward Add
 
-        /// <summary>Fur Src Blend ForwardAdd</summary>
+        /// <summary>Fur Src Blend Forward Add</summary>
         public static readonly int FurSrcBlendFA = Shader.PropertyToID(PropertyName.FurSrcBlendFA);
 
-        /// <summary>Fur Dst Blend ForwardAdd</summary>
+        /// <summary>Fur Dst Blend Forward Add</summary>
         public static readonly int FurDstBlendFA = Shader.PropertyToID(PropertyName.FurDstBlendFA);
 
-        /// <summary>Fur Src Blend Alpha ForwardAdd</summary>
+        /// <summary>Fur Src Blend Alpha Forward Add</summary>
         public static readonly int FurSrcBlendAlphaFA = Shader.PropertyToID(PropertyName.FurSrcBlendAlphaFA);
 
-        /// <summary>Fur Dst Blend Alpha ForwardAdd</summary>
+        /// <summary>Fur Dst Blend Alpha Forward Add</summary>
         public static readonly int FurDstBlendAlphaFA = Shader.PropertyToID(PropertyName.FurDstBlendAlphaFA);
 
-        /// <summary>Fur Blend Op ForwardAdd</summary>
+        /// <summary>Fur Blend Operation Forward Add</summary>
         public static readonly int FurBlendOpFA = Shader.PropertyToID(PropertyName.FurBlendOpFA);
 
-        /// <summary>Fur Blend Op Alpha ForwardAdd</summary>
+        /// <summary>Fur Blend Operation Alpha Forward Add</summary>
         public static readonly int FurBlendOpAlphaFA = Shader.PropertyToID(PropertyName.FurBlendOpAlphaFA);
 
         #endregion
@@ -1649,7 +1650,7 @@ namespace LilToonShader
         /// <summary>Fur Stencil Pass</summary>
         public static readonly int FurStencilPass = Shader.PropertyToID(PropertyName.FurStencilPass);
 
-        /// <summary>Fur StencilFail</summary>
+        /// <summary>Fur Stencil Fail</summary>
         public static readonly int FurStencilFail = Shader.PropertyToID(PropertyName.FurStencilFail);
 
         /// <summary>Fur Stencil Z Fail</summary>
@@ -1791,14 +1792,14 @@ namespace LilToonShader
         /// <summary>Outline Color Mask</summary>
         public static readonly int OutlineColorMask = Shader.PropertyToID(PropertyName.OutlineColorMask);
 
-        /// <summary>Outline Alpha To Mask</summary>
+        /// <summary>Outline Alpha to Mask</summary>
         public static readonly int OutlineAlphaToMask = Shader.PropertyToID(PropertyName.OutlineAlphaToMask);
 
         #endregion
 
         #region Outline Rendering Forward
 
-        /// <summary>Outline SrcBlend</summary>
+        /// <summary>Outline Src Blend</summary>
         public static readonly int OutlineSrcBlend = Shader.PropertyToID(PropertyName.OutlineSrcBlend);
 
         /// <summary>Outline Dst Blend</summary>
@@ -1810,32 +1811,32 @@ namespace LilToonShader
         /// <summary>Outline Dst Blend Alpha</summary>
         public static readonly int OutlineDstBlendAlpha = Shader.PropertyToID(PropertyName.OutlineDstBlendAlpha);
 
-        /// <summary>Outline Blend Op</summary>
+        /// <summary>Outline Blend Operation</summary>
         public static readonly int OutlineBlendOp = Shader.PropertyToID(PropertyName.OutlineBlendOp);
 
-        /// <summary>Outline Blend Op Alpha</summary>
+        /// <summary>Outline Blend Operation Alpha</summary>
         public static readonly int OutlineBlendOpAlpha = Shader.PropertyToID(PropertyName.OutlineBlendOpAlpha);
 
         #endregion
 
         #region Outline Rendering Forward Add
 
-        /// <summary>Outline Src Blend FA</summary>
+        /// <summary>Outline Src Blend Forward Add</summary>
         public static readonly int OutlineSrcBlendFA = Shader.PropertyToID(PropertyName.OutlineSrcBlendFA);
 
-        /// <summary>Outline Dst Blend FA</summary>
+        /// <summary>Outline Dst Blend Forward Add</summary>
         public static readonly int OutlineDstBlendFA = Shader.PropertyToID(PropertyName.OutlineDstBlendFA);
 
-        /// <summary>Outline Src Blend Alpha FA</summary>
+        /// <summary>Outline Src Blend Alpha Forward Add</summary>
         public static readonly int OutlineSrcBlendAlphaFA = Shader.PropertyToID(PropertyName.OutlineSrcBlendAlphaFA);
 
-        /// <summary>Outline Dst Blend Alpha FA</summary>
+        /// <summary>Outline Dst Blend Alpha Forward Add</summary>
         public static readonly int OutlineDstBlendAlphaFA = Shader.PropertyToID(PropertyName.OutlineDstBlendAlphaFA);
 
-        /// <summary>Outline Blend Op FA</summary>
+        /// <summary>Outline Blend Operation Forward Add</summary>
         public static readonly int OutlineBlendOpFA = Shader.PropertyToID(PropertyName.OutlineBlendOpFA);
 
-        /// <summary>Outline Blend Op Alpha FA</summary>
+        /// <summary>Outline Blend Operation Alpha Forward Add</summary>
         public static readonly int OutlineBlendOpAlphaFA = Shader.PropertyToID(PropertyName.OutlineBlendOpAlphaFA);
 
         #endregion
@@ -1851,7 +1852,7 @@ namespace LilToonShader
         /// <summary>Outline Stencil Write Mask</summary>
         public static readonly int OutlineStencilWriteMask = Shader.PropertyToID(PropertyName.OutlineStencilWriteMask);
 
-        /// <summary>Outline Stencil Comp</summary>
+        /// <summary>Outline Stencil Compare</summary>
         public static readonly int OutlineStencilComp = Shader.PropertyToID(PropertyName.OutlineStencilComp);
 
         /// <summary>Outline Stencil Pass</summary>
@@ -1890,7 +1891,7 @@ namespace LilToonShader
         /// <summary>Tri Mask</summary>
         public static readonly int TriMask = Shader.PropertyToID(PropertyName.TriMask);
 
-        /// <summary>Mat Cap Mul</summary>
+        /// <summary>Mat Cap Multiply</summary>
         public static readonly int MatCapMul = Shader.PropertyToID(PropertyName.MatCapMul);
 
         #endregion
@@ -1933,7 +1934,7 @@ namespace LilToonShader
         /// <summary>Color Mask</summary>
         public static readonly int ColorMask = Shader.PropertyToID(PropertyName.ColorMask);
 
-        /// <summary>Alpha To Mask</summary>
+        /// <summary>Alpha to Mask</summary>
         public static readonly int AlphaToMask = Shader.PropertyToID(PropertyName.AlphaToMask);
 
         /// <summary>Shadow Caster Bias</summary>
@@ -1956,32 +1957,32 @@ namespace LilToonShader
         /// <summary>Dst Blend Alpha</summary>
         public static readonly int DstBlendAlpha = Shader.PropertyToID(PropertyName.DstBlendAlpha);
 
-        /// <summary>Blend Op</summary>
+        /// <summary>Blend Operation</summary>
         public static readonly int BlendOp = Shader.PropertyToID(PropertyName.BlendOp);
 
-        /// <summary>Blend Op Alpha</summary>
+        /// <summary>Blend Operation Alpha</summary>
         public static readonly int BlendOpAlpha = Shader.PropertyToID(PropertyName.BlendOpAlpha);
 
         #endregion
 
         #region Rendering Forward Add
 
-        /// <summary>Src Blend FA</summary>
+        /// <summary>Src Blend Forward Add</summary>
         public static readonly int SrcBlendFA = Shader.PropertyToID(PropertyName.SrcBlendFA);
 
-        /// <summary>Dst Blend FA</summary>
+        /// <summary>Dst Blend Forward Add</summary>
         public static readonly int DstBlendFA = Shader.PropertyToID(PropertyName.DstBlendFA);
 
-        /// <summary>Src Blend Alpha FA</summary>
+        /// <summary>Src Blend Alpha Forward Add</summary>
         public static readonly int SrcBlendAlphaFA = Shader.PropertyToID(PropertyName.SrcBlendAlphaFA);
 
-        /// <summary>Dst Blend Alpha FA</summary>
+        /// <summary>Dst Blend Alpha Forward Add</summary>
         public static readonly int DstBlendAlphaFA = Shader.PropertyToID(PropertyName.DstBlendAlphaFA);
 
-        /// <summary>Blend Op FA</summary>
+        /// <summary>Blend Operation Forward Add</summary>
         public static readonly int BlendOpFA = Shader.PropertyToID(PropertyName.BlendOpFA);
 
-        /// <summary>Blend Op Alpha FA</summary>
+        /// <summary>Blend Operation Alpha Forward Add</summary>
         public static readonly int BlendOpAlphaFA = Shader.PropertyToID(PropertyName.BlendOpAlphaFA);
 
         #endregion
@@ -1997,7 +1998,7 @@ namespace LilToonShader
         /// <summary>Stencil Write Mask</summary>
         public static readonly int StencilWriteMask = Shader.PropertyToID(PropertyName.StencilWriteMask);
 
-        /// <summary>Stencil Comp</summary>
+        /// <summary>Stencil Compare</summary>
         public static readonly int StencilComp = Shader.PropertyToID(PropertyName.StencilComp);
 
         /// <summary>Stencil Pass</summary>

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilOutlineRendering
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine.Rendering;
@@ -39,7 +40,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(15)]
         public int OutlineColorMask { get; set; }
 
-        /// <summary>Outline Alpha To Mask</summary>
+        /// <summary>Outline Alpha to Mask</summary>
         //[DefaultValue(false)]
         public bool OutlineAlphaToMask { get; set; }
     }

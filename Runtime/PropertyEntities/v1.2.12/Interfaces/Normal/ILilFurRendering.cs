@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : ILilFurRendering
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine.Rendering;
@@ -39,7 +40,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(15)]
         int FurColorMask { get; set; }
 
-        /// <summary>Fur Alpha To Mask</summary>
+        /// <summary>Fur Alpha to Mask</summary>
         //[DefaultValue(false)]
         bool FurAlphaToMask { get; set; }
     }

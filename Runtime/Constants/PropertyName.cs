@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader
 // @Class     : PropertyName
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace LilToonShader
         /// <remarks>v1.3.0 added</remarks>
         public const string BackfaceColor = "_BackfaceColor";
 
-        /// <summary>AA Strength</summary>
+        /// <summary>Anti-Aliasing Strength</summary>
         /// <remarks>v1.3.7 added</remarks>
         public const string AAStrength = "_AAStrength";
 
@@ -87,7 +88,7 @@ namespace LilToonShader
         /// <summary>Light Direction Override</summary>
         public const string LightDirectionOverride = "_LightDirectionOverride";
 
-        /// <summary>Alpha Boost ForwardAdd</summary>
+        /// <summary>Alpha Boost Forward Add</summary>
         public const string AlphaBoostFA = "_AlphaBoostFA";
 
         /// <summary>Before Exposure Limit</summary>
@@ -151,16 +152,16 @@ namespace LilToonShader
         /// <summary>Main 2nd Texture Decal Animation</summary>
         public const string Main2ndTexDecalAnimation = "_Main2ndTexDecalAnimation";
 
-        /// <summary>Main 2nd Texture Decal Sub Param</summary>
+        /// <summary>Main 2nd Texture Decal Sub Parameter</summary>
         public const string Main2ndTexDecalSubParam = "_Main2ndTexDecalSubParam";
 
-        /// <summary>Main 2nd Texture Is Decal</summary>
+        /// <summary>Main 2nd Texture is Decal</summary>
         public const string Main2ndTexIsDecal = "_Main2ndTexIsDecal";
 
-        /// <summary>Main 2nd Texture Is Left Only</summary>
+        /// <summary>Main 2nd Texture is Left Only</summary>
         public const string Main2ndTexIsLeftOnly = "_Main2ndTexIsLeftOnly";
 
-        /// <summary>Main 2nd Texture Is Right Only</summary>
+        /// <summary>Main 2nd Texture is Right Only</summary>
         public const string Main2ndTexIsRightOnly = "_Main2ndTexIsRightOnly";
 
         /// <summary>Main 2nd Texture Should Copy</summary>
@@ -172,7 +173,7 @@ namespace LilToonShader
         /// <summary>Main 2nd Texture Should Flip Copy</summary>
         public const string Main2ndTexShouldFlipCopy = "_Main2ndTexShouldFlipCopy";
 
-        /// <summary>Main 2nd Texture Is MSDF</summary>
+        /// <summary>Main 2nd Texture is MSDF</summary>
         public const string Main2ndTexIsMSDF = "_Main2ndTexIsMSDF";
 
         /// <summary>Main 2nd Blend Mask</summary>
@@ -203,7 +204,7 @@ namespace LilToonShader
         /// <summary>Main 2nd Dissolve Color</summary>
         public const string Main2ndDissolveColor = "_Main2ndDissolveColor";
 
-        /// <summary>Main 2nd Dissolve Params</summary>
+        /// <summary>Main 2nd Dissolve Parameters</summary>
         public const string Main2ndDissolveParams = "_Main2ndDissolveParams";
 
         /// <summary>Main 2nd Dissolve Position</summary>
@@ -242,16 +243,16 @@ namespace LilToonShader
         /// <summary>Main 3rd Texture Decal Animation</summary>
         public const string Main3rdTexDecalAnimation = "_Main3rdTexDecalAnimation";
 
-        /// <summary>Main 3rd Texture Decal Sub Param</summary>
+        /// <summary>Main 3rd Texture Decal Sub Parameter</summary>
         public const string Main3rdTexDecalSubParam = "_Main3rdTexDecalSubParam";
 
-        /// <summary>Main 3rd Texture Is Decal</summary>
+        /// <summary>Main 3rd Texture is Decal</summary>
         public const string Main3rdTexIsDecal = "_Main3rdTexIsDecal";
 
-        /// <summary>Main 3rd Texture Is Left Only</summary>
+        /// <summary>Main 3rd Texture is Left Only</summary>
         public const string Main3rdTexIsLeftOnly = "_Main3rdTexIsLeftOnly";
 
-        /// <summary>Main 3rd Texture Is Right Only</summary>
+        /// <summary>Main 3rd Texture is Right Only</summary>
         public const string Main3rdTexIsRightOnly = "_Main3rdTexIsRightOnly";
 
         /// <summary>Main 3rd Texture Should Copy</summary>
@@ -263,7 +264,7 @@ namespace LilToonShader
         /// <summary>Main 3rd Texture Should Flip Copy</summary>
         public const string Main3rdTexShouldFlipCopy = "_Main3rdTexShouldFlipCopy";
 
-        /// <summary>Main 3rd Texture Is MSDF</summary>
+        /// <summary>Main 3rd Texture is MSDF</summary>
         public const string Main3rdTexIsMSDF = "_Main3rdTexIsMSDF";
 
         /// <summary>Main 3rd Blend Mask</summary>
@@ -294,7 +295,7 @@ namespace LilToonShader
         /// <summary>Main 3rd Dissolve Color</summary>
         public const string Main3rdDissolveColor = "_Main3rdDissolveColor";
 
-        /// <summary>Main 3rd Dissolve Params</summary>
+        /// <summary>Main 3rd Dissolve Parameters</summary>
         public const string Main3rdDissolveParams = "_Main3rdDissolveParams";
 
         /// <summary>Main 3rd Dissolve Position</summary>
@@ -420,7 +421,7 @@ namespace LilToonShader
         /// <summary>Backlight Color</summary>
         public const string BacklightColor = "_BacklightColor";
 
-        /// <summary>Backlight Color Tex</summary>
+        /// <summary>Backlight Color Texture</summary>
         public const string BacklightColorTex = "_BacklightColorTex";
 
         /// <summary>Backlight Main Strength</summary>
@@ -461,31 +462,31 @@ namespace LilToonShader
         /// <summary>Shadow Strength Mask</summary>
         public const string ShadowStrengthMask = "_ShadowStrengthMask";
 
-        /// <summary>Shadow Strength Mask LOD</summary>
+        /// <summary>Shadow Strength Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         public const string ShadowStrengthMaskLOD = "_ShadowStrengthMaskLOD";
 
         /// <summary>Shadow Border Mask</summary>
         public const string ShadowBorderMask = "_ShadowBorderMask";
 
-        /// <summary>Shadow Border Mask LOD</summary>
+        /// <summary>Shadow Border Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         public const string ShadowBorderMaskLOD = "_ShadowBorderMaskLOD";
 
         /// <summary>Shadow Blur Mask</summary>
         public const string ShadowBlurMask = "_ShadowBlurMask";
 
-        /// <summary>Shadow Blur Mask LOD</summary>
+        /// <summary>Shadow Blur Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         public const string ShadowBlurMaskLOD = "_ShadowBlurMaskLOD";
 
-        /// <summary>Shadow AO Shift</summary>
+        /// <summary>Shadow Ambient Occlusion Shift</summary>
         public const string ShadowAOShift = "_ShadowAOShift";
 
-        /// <summary>Shadow AO Shift2</summary>
+        /// <summary>Shadow Ambient Occlusion Shift 2</summary>
         public const string ShadowAOShift2 = "_ShadowAOShift2";
 
-        /// <summary>Shadow Post AO</summary>
+        /// <summary>Shadow Post Ambient Occlusion</summary>
         public const string ShadowPostAO = "_ShadowPostAO";
 
         /// <summary>Shadow Color Type</summary>
@@ -495,7 +496,7 @@ namespace LilToonShader
         /// <summary>Shadow Color</summary>
         public const string ShadowColor = "_ShadowColor";
 
-        /// <summary>Shadow Color Tex</summary>
+        /// <summary>Shadow Color Texture</summary>
         public const string ShadowColorTex = "_ShadowColorTex";
 
         /// <summary>Shadow Normal Strength</summary>
@@ -513,7 +514,7 @@ namespace LilToonShader
         /// <summary>Shadow 2nd Color</summary>
         public const string Shadow2ndColor = "_Shadow2ndColor";
 
-        /// <summary>Shadow 2nd Color Tex</summary>
+        /// <summary>Shadow 2nd Color Texture</summary>
         public const string Shadow2ndColorTex = "_Shadow2ndColorTex";
 
         /// <summary>Shadow 2nd Normal Strength</summary>
@@ -532,7 +533,7 @@ namespace LilToonShader
         /// <summary>Shadow 3rd Color</summary>
         public const string Shadow3rdColor = "_Shadow3rdColor";
 
-        /// <summary>Shadow 3rd ColorTex</summary>
+        /// <summary>Shadow 3rd Color Texture</summary>
         public const string Shadow3rdColorTex = "_Shadow3rdColorTex";
 
         /// <summary>Shadow 3rd Normal Strength</summary>
@@ -594,14 +595,14 @@ namespace LilToonShader
         /// <summary>Reflectance</summary>
         public const string Reflectance = "_Reflectance";
 
-        /// <summary>GSAA Strength</summary>
+        /// <summary>Geometric Specular Anti-Aliasing (GSAA) Strength</summary>
         /// <remarks>v1.3.0 added</remarks>
         public const string GSAAStrength = "_GSAAStrength";
 
         /// <summary>Apply Specular</summary>
         public const string ApplySpecular = "_ApplySpecular";
 
-        /// <summary>Apply Specular in ForwardAdd</summary>
+        /// <summary>Apply Specular in Forward Add</summary>
         public const string ApplySpecularFA = "_ApplySpecularFA";
 
         /// <summary>Specular Toon</summary>
@@ -631,7 +632,7 @@ namespace LilToonShader
         /// <summary>Reflection Apply Transparency</summary>
         public const string ReflectionApplyTransparency = "_ReflectionApplyTransparency";
 
-        /// <summary>Reflection Cube Tex</summary>
+        /// <summary>Reflection Cube Texture</summary>
         public const string ReflectionCubeTex = "_ReflectionCubeTex";
 
         /// <summary>Reflection Cube Color</summary>
@@ -738,7 +739,7 @@ namespace LilToonShader
         /// <summary>Mat Cap 2nd Perspective</summary>
         public const string MatCap2ndPerspective = "_MatCap2ndPerspective";
 
-        /// <summary>Mat Ca p2nd VR Parallax Strength</summary>
+        /// <summary>Mat Cap 2nd VR Parallax Strength</summary>
         public const string MatCap2ndVRParallaxStrength = "_MatCap2ndVRParallaxStrength";
 
         /// <summary>Mat Cap 2nd Blend</summary>
@@ -787,7 +788,7 @@ namespace LilToonShader
         /// <summary>Rim Color</summary>
         public const string RimColor = "_RimColor";
 
-        /// <summary>Rim Color Tex</summary>
+        /// <summary>Rim Color Texture</summary>
         public const string RimColorTex = "_RimColorTex";
 
         /// <summary>Rim Main Strength</summary>
@@ -836,7 +837,7 @@ namespace LilToonShader
         /// <summary>Rim Indirection Border</summary>
         public const string RimIndirBorder = "_RimIndirBorder";
 
-        /// <summary>Rim Indir Blur</summary>
+        /// <summary>Rim Indirection Blur</summary>
         public const string RimIndirBlur = "_RimIndirBlur";
 
         /// <summary>Rim Blend Mode</summary>
@@ -889,10 +890,10 @@ namespace LilToonShader
         /// <remarks>v1.3.0 added</remarks>
         public const string GlitterAngleRandomize = "_GlitterAngleRandomize";
 
-        /// <summary>Glitter Params1</summary>
+        /// <summary>Glitter Parameters 1</summary>
         public const string GlitterParams1 = "_GlitterParams1";
 
-        /// <summary>Glitter Params2</summary>
+        /// <summary>Glitter Parameters 2</summary>
         public const string GlitterParams2 = "_GlitterParams2";
 
         /// <summary>Glitter Post Contrast</summary>
@@ -1148,7 +1149,7 @@ namespace LilToonShader
         /// <summary>Use Parallax</summary>
         public const string UseParallax = "_UseParallax";
 
-        /// <summary>Use POM</summary>
+        /// <summary>Use Parallax Occlusion Mapping (POM)</summary>
         /// <remarks>v1.3.0 from Multi</remarks>
         public const string UsePOM = "_UsePOM";
 
@@ -1196,7 +1197,7 @@ namespace LilToonShader
         /// <summary>Audio Link UV Mode</summary>
         public const string AudioLinkUVMode = "_AudioLinkUVMode";
 
-        /// <summary>Audio Link UV Params</summary>
+        /// <summary>Audio Link UV Parameters</summary>
         public const string AudioLinkUVParams = "_AudioLinkUVParams";
 
         /// <summary>Audio Link Start Position</summary>
@@ -1237,7 +1238,7 @@ namespace LilToonShader
         /// <summary>Audio Link Vertex UV Mode</summary>
         public const string AudioLinkVertexUVMode = "_AudioLinkVertexUVMode";
 
-        /// <summary>Audio Link Vertex UV Params</summary>
+        /// <summary>Audio Link Vertex UV Parameters</summary>
         public const string AudioLinkVertexUVParams = "_AudioLinkVertexUVParams";
 
         /// <summary>Audio Link Vertex Start Position</summary>
@@ -1246,13 +1247,13 @@ namespace LilToonShader
         /// <summary>Audio Link Vertex Strength</summary>
         public const string AudioLinkVertexStrength = "_AudioLinkVertexStrength";
 
-        /// <summary>Audio Link As Local</summary>
+        /// <summary>Audio Link as Local</summary>
         public const string AudioLinkAsLocal = "_AudioLinkAsLocal";
 
         /// <summary>Audio Link Local Map</summary>
         public const string AudioLinkLocalMap = "_AudioLinkLocalMap";
 
-        /// <summary>Audio Link Local Map Params</summary>
+        /// <summary>Audio Link Local Map Parameters</summary>
         public const string AudioLinkLocalMapParams = "_AudioLinkLocalMapParams";
 
         #endregion
@@ -1274,7 +1275,7 @@ namespace LilToonShader
         /// <summary>Dissolve Color</summary>
         public const string DissolveColor = "_DissolveColor";
 
-        /// <summary>Dissolve Params</summary>
+        /// <summary>Dissolve Parameters</summary>
         public const string DissolveParams = "_DissolveParams";
 
         /// <summary>Dissolve Position</summary>
@@ -1356,7 +1357,7 @@ namespace LilToonShader
 
         #region Encryption
 
-        /// <summary>IgnoreEncryption</summary>
+        /// <summary>Ignore Encryption</summary>
         public const string IgnoreEncryption = "_IgnoreEncryption";
 
         /// <summary>Keys</summary>
@@ -1537,14 +1538,14 @@ namespace LilToonShader
         /// <summary>Fur Randomize</summary>
         public const string FurRandomize = "_FurRandomize";
 
-        /// <summary>Fur AO</summary>
+        /// <summary>Fur Ambient Occlusion</summary>
         public const string FurAO = "_FurAO";
 
         /// <summary>Fur Mesh Type</summary>
         /// <remarks>v1.3.0 added</remarks>
         public const string FurMeshType = "_FurMeshType";
 
-        /// <summary>Fur Layer Num</summary>
+        /// <summary>Fur Layer Number</summary>
         public const string FurLayerNum = "_FurLayerNum";
 
         /// <summary>Fur Root Offset</summary>
@@ -1581,7 +1582,7 @@ namespace LilToonShader
         /// <summary>Fur Color Mask</summary>
         public const string FurColorMask = "_FurColorMask";
 
-        /// <summary>Fur Alpha To Mask</summary>
+        /// <summary>Fur Alpha to Mask</summary>
         public const string FurAlphaToMask = "_FurAlphaToMask";
 
         #endregion
@@ -1600,32 +1601,32 @@ namespace LilToonShader
         /// <summary>Fur Dst Blend Alpha</summary>
         public const string FurDstBlendAlpha = "_FurDstBlendAlpha";
 
-        /// <summary>Fur Blend Op</summary>
+        /// <summary>Fur Blend Operation</summary>
         public const string FurBlendOp = "_FurBlendOp";
 
-        /// <summary>Fur Blend Op Alpha</summary>
+        /// <summary>Fur Blend Operation Alpha</summary>
         public const string FurBlendOpAlpha = "_FurBlendOpAlpha";
 
         #endregion
 
         #region Fur Rendering Forward Add
 
-        /// <summary>Fur Src Blend ForwardAdd</summary>
+        /// <summary>Fur Src Blend Forward Add</summary>
         public const string FurSrcBlendFA = "_FurSrcBlendFA";
 
-        /// <summary>Fur Dst Blend ForwardAdd</summary>
+        /// <summary>Fur Dst Blend Forward Add</summary>
         public const string FurDstBlendFA = "_FurDstBlendFA";
 
-        /// <summary>Fur Src Blend Alpha ForwardAdd</summary>
+        /// <summary>Fur Src Blend Alpha Forward Add</summary>
         public const string FurSrcBlendAlphaFA = "_FurSrcBlendAlphaFA";
 
-        /// <summary>Fur Dst Blend Alpha ForwardAdd</summary>
+        /// <summary>Fur Dst Blend Alpha Forward Add</summary>
         public const string FurDstBlendAlphaFA = "_FurDstBlendAlphaFA";
 
-        /// <summary>Fur Blend Op ForwardAdd</summary>
+        /// <summary>Fur Blend Operation Forward Add</summary>
         public const string FurBlendOpFA = "_FurBlendOpFA";
 
-        /// <summary>Fur Blend Op Alpha ForwardAdd</summary>
+        /// <summary>Fur Blend Operation Alpha Forward Add</summary>
         public const string FurBlendOpAlphaFA = "_FurBlendOpAlphaFA";
 
         #endregion
@@ -1647,7 +1648,7 @@ namespace LilToonShader
         /// <summary>Fur Stencil Pass</summary>
         public const string FurStencilPass = "_FurStencilPass";
 
-        /// <summary>Fur StencilFail</summary>
+        /// <summary>Fur Stencil Fail</summary>
         public const string FurStencilFail = "_FurStencilFail";
 
         /// <summary>Fur Stencil Z Fail</summary>
@@ -1789,7 +1790,7 @@ namespace LilToonShader
         /// <summary>Outline Color Mask</summary>
         public const string OutlineColorMask = "_OutlineColorMask";
 
-        /// <summary>Outline Alpha To Mask</summary>
+        /// <summary>Outline Alpha to Mask</summary>
         public const string OutlineAlphaToMask = "_OutlineAlphaToMask";
 
         #endregion
@@ -1808,32 +1809,32 @@ namespace LilToonShader
         /// <summary>Outline Dst Blend Alpha</summary>
         public const string OutlineDstBlendAlpha = "_OutlineDstBlendAlpha";
 
-        /// <summary>Outline Blend Op</summary>
+        /// <summary>Outline Blend Operation</summary>
         public const string OutlineBlendOp = "_OutlineBlendOp";
 
-        /// <summary>Outline Blend Op Alpha</summary>
+        /// <summary>Outline Blend Operation Alpha</summary>
         public const string OutlineBlendOpAlpha = "_OutlineBlendOpAlpha";
 
         #endregion
 
         #region Outline Rendering Forward Add
 
-        /// <summary>Outline Src Blend FA</summary>
+        /// <summary>Outline Src Blend Forward Add</summary>
         public const string OutlineSrcBlendFA = "_OutlineSrcBlendFA";
 
-        /// <summary>Outline Dst Blend FA</summary>
+        /// <summary>Outline Dst Blend Forward Add</summary>
         public const string OutlineDstBlendFA = "_OutlineDstBlendFA";
 
-        /// <summary>Outline Src Blend Alpha FA</summary>
+        /// <summary>Outline Src Blend Alpha Forward Add</summary>
         public const string OutlineSrcBlendAlphaFA = "_OutlineSrcBlendAlphaFA";
 
-        /// <summary>Outline Dst Blend Alpha FA</summary>
+        /// <summary>Outline Dst Blend Alpha Forward Add</summary>
         public const string OutlineDstBlendAlphaFA = "_OutlineDstBlendAlphaFA";
 
-        /// <summary>Outline Blend Op FA</summary>
+        /// <summary>Outline Blend Operation Forward Add</summary>
         public const string OutlineBlendOpFA = "_OutlineBlendOpFA";
 
-        /// <summary>Outline Blend Op Alpha FA</summary>
+        /// <summary>Outline Blend Operation Alpha Forward Add</summary>
         public const string OutlineBlendOpAlphaFA = "_OutlineBlendOpAlphaFA";
 
         #endregion
@@ -1849,7 +1850,7 @@ namespace LilToonShader
         /// <summary>Outline Stencil Write Mask</summary>
         public const string OutlineStencilWriteMask = "_OutlineStencilWriteMask";
 
-        /// <summary>Outline Stencil Comp</summary>
+        /// <summary>Outline Stencil Compare</summary>
         public const string OutlineStencilComp = "_OutlineStencilComp";
 
         /// <summary>Outline Stencil Pass</summary>
@@ -1871,7 +1872,7 @@ namespace LilToonShader
         /// <summary>Transparent Mode</summary>
         public const string TransparentMode = "_TransparentMode";
 
-        ///// <summary>Use POM</summary>
+        ///// <summary>Use Parallax Occlusion Mapping (POM)</summary>
         ///// <remarks>v1.3.0 to Parallax</remarks>
         //public const string UsePOM = "_UsePOM";
 
@@ -1888,7 +1889,7 @@ namespace LilToonShader
         /// <summary>Tri Mask</summary>
         public const string TriMask = "_TriMask";
 
-        /// <summary>Mat Cap Mul</summary>
+        /// <summary>Mat Cap Multiply</summary>
         public const string MatCapMul = "_MatCapMul";
 
         #endregion
@@ -1931,7 +1932,7 @@ namespace LilToonShader
         /// <summary>Color Mask</summary>
         public const string ColorMask = "_ColorMask";
 
-        /// <summary>Alpha To Mask</summary>
+        /// <summary>Alpha to Mask</summary>
         public const string AlphaToMask = "_AlphaToMask";
 
         /// <summary>Shadow Caster Bias</summary>
@@ -1954,32 +1955,32 @@ namespace LilToonShader
         /// <summary>Dst Blend Alpha</summary>
         public const string DstBlendAlpha = "_DstBlendAlpha";
 
-        /// <summary>Blend Op</summary>
+        /// <summary>Blend Operation</summary>
         public const string BlendOp = "_BlendOp";
 
-        /// <summary>Blend Op Alpha</summary>
+        /// <summary>Blend Operation Alpha</summary>
         public const string BlendOpAlpha = "_BlendOpAlpha";
 
         #endregion
 
         #region Rendering Forward Add
 
-        /// <summary>Src Blend FA</summary>
+        /// <summary>Src Blend Forward Add</summary>
         public const string SrcBlendFA = "_SrcBlendFA";
 
-        /// <summary>Dst Blend FA</summary>
+        /// <summary>Dst Blend Forward Add</summary>
         public const string DstBlendFA = "_DstBlendFA";
 
-        /// <summary>Src Blend Alpha FA</summary>
+        /// <summary>Src Blend Alpha Forward Add</summary>
         public const string SrcBlendAlphaFA = "_SrcBlendAlphaFA";
 
-        /// <summary>Dst Blend Alpha FA</summary>
+        /// <summary>Dst Blend Alpha Forward Add</summary>
         public const string DstBlendAlphaFA = "_DstBlendAlphaFA";
 
-        /// <summary>Blend Op FA</summary>
+        /// <summary>Blend Operation Forward Add</summary>
         public const string BlendOpFA = "_BlendOpFA";
 
-        /// <summary>Blend Op Alpha FA</summary>
+        /// <summary>Blend Operation Alpha Forward Add</summary>
         public const string BlendOpAlphaFA = "_BlendOpAlphaFA";
 
         #endregion
@@ -1995,7 +1996,7 @@ namespace LilToonShader
         /// <summary>Stencil Write Mask</summary>
         public const string StencilWriteMask = "_StencilWriteMask";
 
-        /// <summary>Stencil Comp</summary>
+        /// <summary>Stencil Compare</summary>
         public const string StencilComp = "_StencilComp";
 
         /// <summary>Stencil Pass</summary>

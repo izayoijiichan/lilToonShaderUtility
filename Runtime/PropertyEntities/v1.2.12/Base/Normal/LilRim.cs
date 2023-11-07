@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilRim
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -20,7 +21,7 @@ namespace LilToonShader.v1_2_12
         public Color RimColor { get; set; }
 
         /// <summary>Rim Color Texture</summary>
-        public Texture2D RimColorTex { get; set; }
+        public Texture2D? RimColorTex { get; set; }
 
         /// <summary>Rim Normal Strength</summary>
         //[Range(0.0f, 1.0f)]

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : ILilShadow
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -21,43 +22,43 @@ namespace LilToonShader.v1_3_0
         float ShadowStrength { get; set; }
 
         /// <summary>Shadow Strength Mask</summary>
-        Texture2D ShadowStrengthMask { get; set; }
+        Texture2D? ShadowStrengthMask { get; set; }
 
-        /// <summary>Shadow Strength Mask LOD</summary>
+        /// <summary>Shadow Strength Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.0f)]
         float ShadowStrengthMaskLOD { get; set; }
 
         /// <summary>Shadow Border Mask</summary>
-        Texture2D ShadowBorderMask { get; set; }
+        Texture2D? ShadowBorderMask { get; set; }
 
-        /// <summary>Shadow Border Mask LOD</summary>
+        /// <summary>Shadow Border Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.0f)]
         float ShadowBorderMaskLOD { get; set; }
 
         /// <summary>Shadow Blur Mask</summary>
-        Texture2D ShadowBlurMask { get; set; }
+        Texture2D? ShadowBlurMask { get; set; }
 
-        /// <summary>Shadow Blur Mask LOD</summary>
+        /// <summary>Shadow Blur Mask Level of Detail (LOD)</summary>
         /// <remarks>v1.3.0 added</remarks>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.0f)]
         float ShadowBlurMaskLOD { get; set; }
 
-        /// <summary>Shadow AO Shift</summary>
+        /// <summary>Shadow Ambient Occlusion Shift</summary>
         /// <remarks>1st Scale|1st Offset|2nd Scale|2nd Offset</remarks>
         //[DefaultValue(1,0,1,0)]
         Vector4 ShadowAOShift { get; set; }
 
-        /// <summary>Shadow AO Shift2</summary>
+        /// <summary>Shadow Ambient Occlusion Shift 2</summary>
         /// <remarks>3rd Scale|3rd Offset</remarks>
         //[DefaultValue(1,0,1,0)]
         Vector4 ShadowAOShift2 { get; set; }
 
-        /// <summary>Shadow Post AO</summary>
+        /// <summary>Shadow Post Ambient Occlusion</summary>
         //[DefaultValue(false)]
         bool ShadowPostAO { get; set; }
 
@@ -70,8 +71,8 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(0.82,0.76,0.85,1.0)]
         Color ShadowColor { get; set; }
 
-        /// <summary>Shadow Color Tex</summary>
-        Texture2D ShadowColorTex { get; set; }
+        /// <summary>Shadow Color Texture</summary>
+        Texture2D? ShadowColorTex { get; set; }
 
         /// <summary>Shadow Normal Strength</summary>
         //[Range(0.0f, 1.0f)]
@@ -96,8 +97,8 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(0.68,0.66,0.79,1)]
         Color Shadow2ndColor { get; set; }
 
-        /// <summary>Shadow 2nd Color Tex</summary>
-        Texture2D Shadow2ndColorTex { get; set; }
+        /// <summary>Shadow 2nd Color Texture</summary>
+        Texture2D? Shadow2ndColorTex { get; set; }
 
         /// <summary>Shadow 2nd Normal Strength</summary>
         //[Range(0.0f, 1.0f)]
@@ -123,8 +124,8 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(0,0,0,0)]
         Color Shadow3rdColor { get; set; }
 
-        /// <summary>Shadow 3rd ColorTex</summary>
-        Texture2D Shadow3rdColorTex { get; set; }
+        /// <summary>Shadow 3rd Color Texture</summary>
+        Texture2D? Shadow3rdColorTex { get; set; }
 
         /// <summary>Shadow 3rd Normal Strength</summary>
         //[Range(0.0f, 1.0f)]

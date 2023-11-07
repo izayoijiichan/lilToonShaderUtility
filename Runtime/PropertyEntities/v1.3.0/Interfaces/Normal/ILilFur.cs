@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : ILilFur
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -12,16 +13,16 @@ namespace LilToonShader.v1_3_0
     public interface ILilFur
     {
         /// <summary>Fur Noise Mask</summary>
-        Texture2D FurNoiseMask { get; set; }
+        Texture2D? FurNoiseMask { get; set; }
 
         /// <summary>Fur Mask</summary>
-        Texture2D FurMask { get; set; }
+        Texture2D? FurMask { get; set; }
 
         /// <summary>Fur Length Mask</summary>
-        Texture2D FurLengthMask { get; set; }
+        Texture2D? FurLengthMask { get; set; }
 
         /// <summary>Fur Vector Texture</summary>
-        Texture2D FurVectorTex { get; set; }
+        Texture2D? FurVectorTex { get; set; }
 
         /// <summary>Fur Vector Scale</summary>
         //[Range(-10.0f, 10.0f)]
@@ -46,7 +47,7 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(0.0f)]
         float FurRandomize { get; set; }
 
-        /// <summary>Fur AO</summary>
+        /// <summary>Fur Ambient Occlusion</summary>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.0f)]
         float FurAO { get; set; }
@@ -56,7 +57,7 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(LilFurMeshType.Shrink)]
         LilFurMeshType FurMeshType { get; set; }
 
-        /// <summary>Fur Layer Num</summary>
+        /// <summary>Fur Layer Number</summary>
         //[Range(1, 6)]
         //[DefaultValue(2)]
         int FurLayerNum { get; set; }

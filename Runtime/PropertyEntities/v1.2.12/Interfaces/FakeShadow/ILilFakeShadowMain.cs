@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : ILilFakeShadowMain
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -16,7 +17,7 @@ namespace LilToonShader.v1_2_12
         Color Color { get; set; }
 
         /// <summary>Main Texture</summary>
-        Texture2D MainTex { get; set; }
+        Texture2D? MainTex { get; set; }
 
         /// <summary>Fake Shadow Vector</summary>
         /// <remarks>Offset|Vector</remarks>

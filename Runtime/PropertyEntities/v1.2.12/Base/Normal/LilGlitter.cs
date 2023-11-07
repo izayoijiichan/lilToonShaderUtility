@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilGlitter
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -24,7 +25,7 @@ namespace LilToonShader.v1_2_12
         public Color GlitterColor { get; set; }
 
         /// <summary>Glitter Color Texture</summary>
-        public Texture2D GlitterColorTex { get; set; }
+        public Texture2D? GlitterColorTex { get; set; }
 
         /// <summary>Glitter Main Strength</summary>
         //[Range(0.0f, 1.0f)]
@@ -36,12 +37,12 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(1.0f)]
         public float GlitterNormalStrength { get; set; }
 
-        /// <summary>Glitter Params1</summary>
+        /// <summary>Glitter Parameters 1</summary>
         /// <remarks>Tiling|Particle Size|Contrast</remarks>
         //[DefaultValue(256,256,0.16f,50)]
         public Vector4 GlitterParams1 { get; set; }
 
-        /// <summary>Glitter Params2</summary>
+        /// <summary>Glitter Parameters 2</summary>
         /// <remarks>Blink Speed|Angle|Blend Light Direction|Color Randomness</remarks>
         //[DefaultValue(0.25f,0,0,0)]
         public Vector4 GlitterParams2 { get; set; }

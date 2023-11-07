@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_4_0
 // @Class     : ILilBase
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_4_0
 {
     using UnityEngine;
@@ -33,7 +34,7 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(0,0,0,0)]
         Color BackfaceColor { get; set; }
 
-        /// <summary>AA Strength</summary>
+        /// <summary>Anti-Aliasing Strength</summary>
         /// <remarks>v1.3.7 added</remarks>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(1.0)]
@@ -46,7 +47,7 @@ namespace LilToonShader.v1_4_0
 
         /// <summary>Dither Texture</summary>
         /// <remarks>v1.4.0 added</remarks>
-        Texture2D DitherTex { get; set; }
+        Texture2D? DitherTex { get; set; }
 
         /// <summary>Dither Max Value</summary>
         /// <remarks>v1.4.0 added</remarks>

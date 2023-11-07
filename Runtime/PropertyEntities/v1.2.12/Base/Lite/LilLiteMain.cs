@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilLiteMain
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -16,7 +17,7 @@ namespace LilToonShader.v1_2_12
         public Color Color { get; set; }
 
         /// <summary>Main Texture</summary>
-        public Texture2D MainTex { get; set; }
+        public Texture2D? MainTex { get; set; }
 
         /// <summary>Main Tex Scroll Rotate</summary>
         /// <remarks>Angle|UV Animation|Scroll|Rotate</remarks>

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader
 // @Class     : ShaderName
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader
 {
     /// <summary>

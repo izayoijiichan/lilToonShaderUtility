@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : LilMatCap2nd
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -20,7 +21,7 @@ namespace LilToonShader.v1_3_0
         public Color MatCap2ndColor { get; set; }
 
         /// <summary>Mat Cap 2nd Texture</summary>
-        public Texture2D MatCap2ndTex { get; set; }
+        public Texture2D? MatCap2ndTex { get; set; }
 
         /// <summary>Mat Cap 2nd Main Strength</summary>
         /// <remarks>v1.3.0 added</remarks>
@@ -40,7 +41,7 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(true)]
         public bool MatCap2ndPerspective { get; set; }
 
-        /// <summary>Mat Ca p2nd VR Parallax Strength</summary>
+        /// <summary>Mat Cap 2nd VR Parallax Strength</summary>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(1.0f)]
         public float MatCap2ndVRParallaxStrength { get; set; }
@@ -51,7 +52,7 @@ namespace LilToonShader.v1_3_0
         public float MatCap2ndBlend { get; set; }
 
         /// <summary>Mat Cap 2nd Blend Mask</summary>
-        public Texture2D MatCap2ndBlendMask { get; set; }
+        public Texture2D? MatCap2ndBlendMask { get; set; }
 
         /// <summary>Mat Cap 2nd Enable Lighting</summary>
         //[Range(0.0f, 1.0f)]
@@ -90,7 +91,7 @@ namespace LilToonShader.v1_3_0
         public bool MatCap2ndCustomNormal { get; set; }
 
         /// <summary>Mat Cap 2nd Bump Map</summary>
-        public Texture2D MatCap2ndBumpMap { get; set; }
+        public Texture2D? MatCap2ndBumpMap { get; set; }
 
         /// <summary>Mat Cap 2nd Bump Scale</summary>
         //[Range(-10.0f, 10.0f)]

@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilRenderingStencil
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine.Rendering;
@@ -26,20 +27,20 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(255)]
         public int StencilWriteMask { get; set; }
 
-        /// <summary>Stencil Comp</summary>
+        /// <summary>Stencil Compare</summary>
         //[DefaultValue(CompareFunction.Always)]
         public CompareFunction StencilComp { get; set; }
 
         /// <summary>Stencil Pass</summary>
-        //[DefaultValue(BlendOp.Add)]
+        //[DefaultValue(StencilOp.Keep)]
         public StencilOp StencilPass { get; set; }
 
         /// <summary>Stencil Fail</summary>
-        //[DefaultValue(BlendOp.Add)]
+        //[DefaultValue(StencilOp.Keep)]
         public StencilOp StencilFail { get; set; }
 
         /// <summary>Stencil Z Fail</summary>
-        //[DefaultValue(BlendOp.Add)]
+        //[DefaultValue(StencilOp.Keep)]
         public StencilOp StencilZFail { get; set; }
     }
 }

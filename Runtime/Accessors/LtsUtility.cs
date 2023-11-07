@@ -5,6 +5,7 @@
 #if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER
 #define LILTOON_1_4_0_OR_NEWER
 #endif
+#nullable enable
 namespace LilToonShader
 {
     using UnityEngine;
@@ -26,11 +27,13 @@ namespace LilToonShader
     {
         #region Fields
 
+#pragma warning disable IDE0090
         /// <summary>A lilToon material getter.</summary>
         protected readonly LilToonMaterialGetter _MaterialGetter = new LilToonMaterialGetter();
 
         /// <summary>A lilToon material setter.</summary>
         protected readonly LilToonMaterialSetter _MaterialSetter = new LilToonMaterialSetter();
+#pragma warning restore IDE0090
 
         #endregion
 
@@ -91,9 +94,9 @@ namespace LilToonShader
         /// </remarks>
         public virtual LilRenderPipeline CheckRenderPipeline()
         {
-            RenderPipelineAsset renderPipelineAsset = GraphicsSettings.renderPipelineAsset;
+            RenderPipelineAsset? renderPipelineAsset = GraphicsSettings.renderPipelineAsset;
 
-            if (renderPipelineAsset is null)
+            if (renderPipelineAsset == null)
             {
                 return LilRenderPipeline.BRP;
             }

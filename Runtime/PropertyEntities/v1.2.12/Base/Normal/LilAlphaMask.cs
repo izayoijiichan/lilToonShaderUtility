@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilAlphaMask
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -12,10 +13,11 @@ namespace LilToonShader.v1_2_12
     public class LilAlphaMask : ILilAlphaMask
     {
         /// <summary>Alpha Mask Mode</summary>
+        //[DefaultValue(LilAlphaMaskMode.None)]
         public LilAlphaMaskMode AlphaMaskMode { get; set; }
 
         /// <summary>Alpha Mask</summary>
-        public Texture2D AlphaMask { get; set; }
+        public Texture2D? AlphaMask { get; set; }
 
         /// <summary>Alpha Mask Scale</summary>
         //[DefaultValue(1.0f)]

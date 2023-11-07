@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader
 // @Class     : LilSave
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader
 {
     using UnityEngine;
@@ -16,10 +17,10 @@ namespace LilToonShader
         public Color BaseColor { get; set; }
 
         /// <summary>Base Map</summary>
-        public Texture2D BaseMap { get; set; }
+        public Texture2D? BaseMap { get; set; }
 
         /// <summary>Base Color Map</summary>
-        public Texture2D BaseColorMap { get; set; }
+        public Texture2D? BaseColorMap { get; set; }
 
         /// <summary>lilToon Version</summary>
         //[DefaultValue(0)]

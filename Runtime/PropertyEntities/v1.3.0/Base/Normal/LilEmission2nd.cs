@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : LilEmission2nd
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -20,7 +21,7 @@ namespace LilToonShader.v1_3_0
         public Color Emission2ndColor { get; set; }
 
         /// <summary>Emission 2nd Map</summary>
-        public Texture2D Emission2ndMap { get; set; }
+        public Texture2D? Emission2ndMap { get; set; }
 
         /// <summary>Emission 2nd Map Scroll Rotate</summary>
         /// <remarks>Angle|UV Animation|Scroll|Rotate</remarks>
@@ -43,7 +44,7 @@ namespace LilToonShader.v1_3_0
         public float Emission2ndBlend { get; set; }
 
         /// <summary>Emission 2nd Blend Mask</summary>
-        public Texture2D Emission2ndBlendMask { get; set; }
+        public Texture2D? Emission2ndBlendMask { get; set; }
 
         /// <summary>Emission 2nd BlendMask Scroll Rotate</summary>
         /// <remarks>Angle|UV Animation|Scroll|Rotate</remarks>
@@ -65,7 +66,7 @@ namespace LilToonShader.v1_3_0
         public bool Emission2ndUseGrad { get; set; }
 
         /// <summary>Emission 2nd Gradation Texture</summary>
-        public Texture2D Emission2ndGradTex { get; set; }
+        public Texture2D? Emission2ndGradTex { get; set; }
 
         /// <summary>Emission 2nd Gradation Speed</summary>
         //[DefaultValue(1.0f)]

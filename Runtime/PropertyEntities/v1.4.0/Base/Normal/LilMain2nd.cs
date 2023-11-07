@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_4_0
 // @Class     : LilMain2nd
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_4_0
 {
     using UnityEngine;
@@ -21,7 +22,7 @@ namespace LilToonShader.v1_4_0
         public Color Color2nd { get; set; }
 
         /// <summary>Main 2nd Texture</summary>
-        public Texture2D Main2ndTex { get; set; }
+        public Texture2D? Main2ndTex { get; set; }
 
         /// <summary>Main 2nd Texture Angle</summary>
         //[DefaultValue(0)]
@@ -49,20 +50,20 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(1,1,1,30)]
         public Vector4 Main2ndTexDecalAnimation { get; set; }
 
-        /// <summary>Main 2nd Texture Decal Sub Param</summary>
+        /// <summary>Main 2nd Texture Decal Sub Parameter</summary>
         /// <remarks>Ratio X|Ratio Y|Fix Border</remarks>
         //[DefaultValue(1,1,0,1)]
         public Vector4 Main2ndTexDecalSubParam { get; set; }
 
-        /// <summary>Main 2nd Texture Is Decal</summary>
+        /// <summary>Main 2nd Texture is Decal</summary>
         //[DefaultValue(false)]
         public bool Main2ndTexIsDecal { get; set; }
 
-        /// <summary>Main 2nd Texture Is Left Only</summary>
+        /// <summary>Main 2nd Texture is Left Only</summary>
         //[DefaultValue(false)]
         public bool Main2ndTexIsLeftOnly { get; set; }
 
-        /// <summary>Main 2nd Texture Is Right Only</summary>
+        /// <summary>Main 2nd Texture is Right Only</summary>
         //[DefaultValue(false)]
         public bool Main2ndTexIsRightOnly { get; set; }
 
@@ -78,12 +79,12 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(false)]
         public bool Main2ndTexShouldFlipCopy { get; set; }
 
-        /// <summary>Main 2nd Texture Is MSDF</summary>
+        /// <summary>Main 2nd Texture is MSDF</summary>
         //[DefaultValue(false)]
         public bool Main2ndTexIsMSDF { get; set; }
 
         /// <summary>Main 2nd Blend Mask</summary>
-        public Texture2D Main2ndBlendMask { get; set; }
+        public Texture2D? Main2ndBlendMask { get; set; }
 
         /// <summary>Main 2nd Texture Blend Mode</summary>
         //[DefaultValue(LilBlendMode.Normal)]
@@ -100,10 +101,10 @@ namespace LilToonShader.v1_4_0
         public bool Main2ndEnableLighting { get; set; }
 
         /// <summary>Main 2nd Dissolve Mask</summary>
-        public Texture2D Main2ndDissolveMask { get; set; }
+        public Texture2D? Main2ndDissolveMask { get; set; }
 
         /// <summary>Main 2nd Dissolve Noise Mask</summary>
-        public Texture2D Main2ndDissolveNoiseMask { get; set; }
+        public Texture2D? Main2ndDissolveNoiseMask { get; set; }
 
         /// <summary>Main 2nd Dissolve Noise Mask Scroll Rotate</summary>
         public Vector4 Main2ndDissolveNoiseMask_ScrollRotate { get; set; }
@@ -116,8 +117,8 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(1,1,1,1)]
         public Color Main2ndDissolveColor { get; set; }
 
-        /// <summary>Main 2nd Dissolve Params</summary>
-        /// <remarks>Dissolve Mode|None|Alpha|UV|Position|Dissolve Shape|Point|Line|Border|Blur</remarks>
+        /// <summary>Main 2nd Dissolve Parameters</summary>
+        /// <remarks>Dissolve Mode|Dissolve Shape|Border|Blur</remarks>
         //[DefaultValue(0,0,0.5,0.1)]
         public Vector4 Main2ndDissolveParams { get; set; }
 

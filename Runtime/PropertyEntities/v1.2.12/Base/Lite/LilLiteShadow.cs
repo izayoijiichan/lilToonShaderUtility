@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : LilLiteShadow
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine;
@@ -15,8 +16,8 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(false)]
         public bool UseShadow { get; set; }
 
-        /// <summary>Shadow Color Tex</summary>
-        public Texture2D ShadowColorTex { get; set; }
+        /// <summary>Shadow Color Texture</summary>
+        public Texture2D? ShadowColorTex { get; set; }
 
         /// <summary>Shadow Border</summary>
         //[Range(0.0f, 1.0f)]
@@ -28,8 +29,8 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(0.1f)]
         public float ShadowBlur { get; set; }
 
-        /// <summary>Shadow 2nd Color Tex</summary>
-        public Texture2D Shadow2ndColorTex { get; set; }
+        /// <summary>Shadow 2nd Color Texture</summary>
+        public Texture2D? Shadow2ndColorTex { get; set; }
 
         /// <summary>Shadow 2nd Border</summary>
         //[Range(0.0f, 1.0f)]

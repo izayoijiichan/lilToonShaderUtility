@@ -26,20 +26,20 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(255)]
         int StencilWriteMask { get; set; }
 
-        /// <summary>Stencil Comp</summary>
+        /// <summary>Stencil Compare</summary>
         //[DefaultValue(CompareFunction.Always)]
         CompareFunction StencilComp { get; set; }
 
         /// <summary>Stencil Pass</summary>
-        //[DefaultValue(BlendOp.Add)]
+        //[DefaultValue(StencilOp.Keep)]
         StencilOp StencilPass { get; set; }
 
         /// <summary>Stencil Fail</summary>
-        //[DefaultValue(BlendOp.Add)]
+        //[DefaultValue(StencilOp.Keep)]
         StencilOp StencilFail { get; set; }
 
         /// <summary>Stencil Z Fail</summary>
-        //[DefaultValue(BlendOp.Add)]
+        //[DefaultValue(StencilOp.Keep)]
         StencilOp StencilZFail { get; set; }
     }
 }

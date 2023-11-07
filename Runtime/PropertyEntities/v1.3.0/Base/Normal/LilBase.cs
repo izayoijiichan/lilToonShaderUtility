@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : LilBase
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -33,7 +34,7 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(0,0,0,0)]
         public Color BackfaceColor { get; set; }
 
-        /// <summary>AA Strength</summary>
+        /// <summary>Anti-Aliasing Strength</summary>
         /// <remarks>v1.3.7 added</remarks>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(1.0)]

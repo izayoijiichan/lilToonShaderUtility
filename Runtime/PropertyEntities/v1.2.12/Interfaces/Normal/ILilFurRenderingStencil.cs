@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_2_12
 // @Class     : ILilFurRenderingStencil
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_2_12
 {
     using UnityEngine.Rendering;
@@ -34,7 +35,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(StencilOp.Keep)]
         StencilOp FurStencilPass { get; set; }
 
-        /// <summary>Fur StencilFail</summary>
+        /// <summary>Fur Stencil Fail</summary>
         //[DefaultValue(StencilOp.Keep)]
         StencilOp FurStencilFail { get; set; }
 

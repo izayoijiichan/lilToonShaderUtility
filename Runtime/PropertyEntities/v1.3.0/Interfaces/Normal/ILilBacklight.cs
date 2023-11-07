@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : ILilBacklight
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -19,8 +20,8 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(0.85,0.8,0.7,1.0)]
         Color BacklightColor { get; set; }
 
-        /// <summary>Backlight Color Tex</summary>
-        Texture2D BacklightColorTex { get; set; }
+        /// <summary>Backlight Color Texture</summary>
+        Texture2D? BacklightColorTex { get; set; }
 
         /// <summary>Backlight Main Strength</summary>
         /// <remarks>v1.3.0 added</remarks>

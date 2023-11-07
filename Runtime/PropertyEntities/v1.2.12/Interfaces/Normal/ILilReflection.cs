@@ -40,7 +40,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(true)]
         bool ApplySpecular { get; set; }
 
-        /// <summary>Apply Specular in ForwardAdd</summary>
+        /// <summary>Apply Specular in Forward Add</summary>
         //[DefaultValue(true)]
         bool ApplySpecularFA { get; set; }
 
@@ -83,7 +83,7 @@ namespace LilToonShader.v1_2_12
         //[DefaultValue(true)]
         bool ReflectionApplyTransparency { get; set; }
 
-        /// <summary>Reflection Cube Tex</summary>
+        /// <summary>Reflection Cube Texture</summary>
         Texture2D ReflectionCubeTex { get; set; }
 
         /// <summary>Reflection Cube Color</summary>

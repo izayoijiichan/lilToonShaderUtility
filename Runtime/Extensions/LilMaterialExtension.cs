@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.Extensions
 // @Class     : LilMaterialExtension
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.Extensions
 {
     using UnityEngine;

@@ -2,7 +2,7 @@
   "name": "com.izayoi.liltoon.shader.utility",
   "displayName": "lilToon Shader Utility",
   "description": "This package is utility scripts to get/set lilToon shader property values.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "type": "tool",
   "category": "",
   "keywords": [

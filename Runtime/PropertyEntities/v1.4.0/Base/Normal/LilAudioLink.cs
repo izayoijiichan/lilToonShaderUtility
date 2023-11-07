@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_4_0
 // @Class     : LilAudioLink
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_4_0
 {
     using UnityEngine;
@@ -24,7 +25,7 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(LilAudioLinkUVMode.Rim)]
         public LilAudioLinkUVMode AudioLinkUVMode { get; set; }
 
-        /// <summary>Audio Link UV Params</summary>
+        /// <summary>Audio Link UV Parameters</summary>
         /// <remarks>Scale|Offset|Angle|Band</remarks>
         //[DefaultValue(0.25,0,0,0.125)]
         public Vector4 AudioLinkUVParams { get; set; }
@@ -34,7 +35,7 @@ namespace LilToonShader.v1_4_0
         public Vector4 AudioLinkStart { get; set; }
 
         /// <summary>Audio Link Mask</summary>
-        public Texture2D AudioLinkMask { get; set; }
+        public Texture2D? AudioLinkMask { get; set; }
 
         /// <summary>Audio Link Mask Scroll Rotate</summary>
         /// <remarks>
@@ -85,7 +86,7 @@ namespace LilToonShader.v1_4_0
         //[DefaultValue(LilAudioLinkVertexUVMode.Position)]
         public LilAudioLinkVertexUVMode AudioLinkVertexUVMode { get; set; }
 
-        /// <summary>Audio Link Vertex UV Params</summary>
+        /// <summary>Audio Link Vertex UV Parameters</summary>
         /// <remarks>Scale|Offset|Angle|Band</remarks>
         //[DefaultValue(0.25,0,0,0.125)]
         public Vector4 AudioLinkVertexUVParams { get; set; }
@@ -103,14 +104,14 @@ namespace LilToonShader.v1_4_0
 
         #region As Local
 
-        /// <summary>Audio Link As Local</summary>
+        /// <summary>Audio Link as Local</summary>
         //[DefaultValue(false)]
         public bool AudioLinkAsLocal { get; set; }
 
         /// <summary>Audio Link Local Map</summary>
-        public Texture2D AudioLinkLocalMap { get; set; }
+        public Texture2D? AudioLinkLocalMap { get; set; }
 
-        /// <summary>Audio Link Local Map Params</summary>
+        /// <summary>Audio Link Local Map Parameters</summary>
         /// <remarks>BPM|Notes|Offset</remarks>
         //[DefaultValue(120,1,0,0)]
         public Vector4 AudioLinkLocalMapParams { get; set; }

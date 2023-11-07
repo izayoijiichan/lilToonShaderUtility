@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader
 // @Class     : LilToonPropertyContainerBase
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader
 {
     /// <summary>
@@ -30,6 +31,7 @@ namespace LilToonShader
         /// <summary>Whether the shader tessellation is enabled.</summary>
         public bool IsTessellation { get; set; }
 
+#pragma warning disable IDE0078
         /// <summary>Whether the shader refraction is enabled.</summary>
         public bool IsRefraction =>
             (RenderingMode == LilRenderingMode.Refraction) ||
@@ -40,6 +42,7 @@ namespace LilToonShader
             (RenderingMode == LilRenderingMode.Fur) ||
             (RenderingMode == LilRenderingMode.FurCutout) ||
             (RenderingMode == LilRenderingMode.FurTwoPass);
+#pragma warning restore IDE0078
 
         /// <summary>Whether the shader rendering mode is gem.</summary>
         public bool IsGem => RenderingMode == LilRenderingMode.Gem;

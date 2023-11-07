@@ -2,6 +2,7 @@
 // @Namespace : LilToonShader.v1_3_0
 // @Class     : ILilReflection
 // ----------------------------------------------------------------------
+#nullable enable
 namespace LilToonShader.v1_3_0
 {
     using UnityEngine;
@@ -21,7 +22,7 @@ namespace LilToonShader.v1_3_0
         float Smoothness { get; set; }
 
         /// <summary>Smoothness Texture</summary>
-        Texture2D SmoothnessTex { get; set; }
+        Texture2D? SmoothnessTex { get; set; }
 
         /// <summary>Metallic</summary>
         //[Range(0.0f, 1.0f)]
@@ -29,14 +30,14 @@ namespace LilToonShader.v1_3_0
         float Metallic { get; set; }
 
         /// <summary>Metallic Gloss Map</summary>
-        Texture2D MetallicGlossMap { get; set; }
+        Texture2D? MetallicGlossMap { get; set; }
 
         /// <summary>Reflectance</summary>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.04f)]
         float Reflectance { get; set; }
 
-        /// <summary>GSAA Strength</summary>
+        /// <summary>Geometric Specular Anti-Aliasing (GSAA) Strength</summary>
         /// <remarks>v1.3.0 added</remarks>
         //[Range(0.0f, 1.0f)]
         //[DefaultValue(0.0f)]
@@ -46,7 +47,7 @@ namespace LilToonShader.v1_3_0
         //[DefaultValue(true)]
         bool ApplySpecular { get; set; }
 
-        /// <summary>Apply Specular in ForwardAdd</summary>
+        /// <summary>Apply Specular in Forward Add</summary>
         //[DefaultValue(true)]
         bool ApplySpecularFA { get; set; }
 
@@ -83,14 +84,14 @@ namespace LilToonShader.v1_3_0
         Color ReflectionColor { get; set; }
 
         /// <summary>Reflection Color Texture</summary>
-        Texture2D ReflectionColorTex { get; set; }
+        Texture2D? ReflectionColorTex { get; set; }
 
         /// <summary>Reflection Apply Transparency</summary>
         //[DefaultValue(true)]
         bool ReflectionApplyTransparency { get; set; }
 
-        /// <summary>Reflection Cube Tex</summary>
-        Texture2D ReflectionCubeTex { get; set; }
+        /// <summary>Reflection Cube Texture</summary>
+        Texture2D? ReflectionCubeTex { get; set; }
 
         /// <summary>Reflection Cube Color</summary>
         //[DefaultValue(1,1,1,1)]
