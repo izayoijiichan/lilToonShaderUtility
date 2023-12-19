@@ -1285,7 +1285,7 @@ namespace LilToonShader
 
         #endregion
 
-        #region IDMask
+        #region ID Mask
 
         /// <summary>ID Mask From</summary>
         /// <remarks>v1.4.0 added</remarks>
@@ -1323,6 +1323,10 @@ namespace LilToonShader
         /// <remarks>v1.4.0 added</remarks>
         public static readonly int IDMask8 = Shader.PropertyToID(PropertyName.IDMask8);
 
+        /// <summary>ID Mask is Bitmap</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskIsBitmap = Shader.PropertyToID(PropertyName.IDMaskIsBitmap);
+
         /// <summary>ID Mask Index 1</summary>
         /// <remarks>v1.4.0 added</remarks>
         public static readonly int IDMaskIndex1 = Shader.PropertyToID(PropertyName.IDMaskIndex1);
@@ -1354,6 +1358,42 @@ namespace LilToonShader
         /// <summary>ID Mask Index 8</summary>
         /// <remarks>v1.4.0 added</remarks>
         public static readonly int IDMaskIndex8 = Shader.PropertyToID(PropertyName.IDMaskIndex8);
+
+        /// <summary>ID Mask Controls Dissolve</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskControlsDissolve = Shader.PropertyToID(PropertyName.IDMaskControlsDissolve);
+
+        /// <summary>ID Mask Prior 1</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskPrior1 = Shader.PropertyToID(PropertyName.IDMaskPrior1);
+
+        /// <summary>ID Mask Prior 2</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskPrior2 = Shader.PropertyToID(PropertyName.IDMaskPrior2);
+
+        /// <summary>ID Mask Prior 3</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskPrior3 = Shader.PropertyToID(PropertyName.IDMaskPrior3);
+
+        /// <summary>ID Mask Prior 4</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskPrior4 = Shader.PropertyToID(PropertyName.IDMaskPrior4);
+
+        /// <summary>ID Mask Prior 5</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskPrior5 = Shader.PropertyToID(PropertyName.IDMaskPrior5);
+
+        /// <summary>ID Mask Prior 6</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskPrior6 = Shader.PropertyToID(PropertyName.IDMaskPrior6);
+
+        /// <summary>ID Mask Prior 7</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskPrior7 = Shader.PropertyToID(PropertyName.IDMaskPrior7);
+
+        /// <summary>ID Mask Prior 8</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public static readonly int IDMaskPrior8 = Shader.PropertyToID(PropertyName.IDMaskPrior8);
 
         #endregion
 

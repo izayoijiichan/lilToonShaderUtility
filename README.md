@@ -19,6 +19,7 @@ ___
 |1.3.7|33|
 |1.4.0|34|
 |1.4.1|35|
+|1.5.0|36|
 
 ## Shaders
 
@@ -103,6 +104,7 @@ LilToonShader
 |Unity 2022.1|
 |Unity 2022.2|
 |Unity 2023.1|
+|Unity 2023.2|
 
 |render pipeline|description|
 |:---|:---|
@@ -119,8 +121,8 @@ LilToonShader
 ```json
 {
   "dependencies": {
-    "com.izayoi.liltoon.shader.utility": "https://github.com/izayoijiichan/lilToonShaderUtility.git#v1.4.1",
-    "jp.lilxyzw.liltoon": "https://github.com/lilxyzw/lilToon.git?path=Assets/lilToon#1.4.1",
+    "com.izayoi.liltoon.shader.utility": "https://github.com/izayoijiichan/lilToonShaderUtility.git#v1.5.0",
+    "jp.lilxyzw.liltoon": "https://github.com/lilxyzw/lilToon.git?path=Assets/lilToon#1.5.0",
     // --- other packages ---
   }
 }
@@ -135,6 +137,7 @@ Used to specify a specific version.
 
 |Scripting Define Symbols|description|
 |:---|:---|
+|LILTOON_1_5_0_OR_NEWER|Define when using lilToon version 1.5.0 or higher.|
 |LILTOON_1_4_0_OR_NEWER|Define when using lilToon version 1.4.0 or higher.|
 |LILTOON_1_3_0_OR_NEWER|Define when using lilToon version 1.3.0 or higher.|
 |LILTOON_1_2_12_OR_OLDER|Define when using lilToon version 1.2.12 or lower.|
@@ -197,7 +200,7 @@ public void OneMethod()
 [lilToon](https://lilxyzw.github.io/lilToon)
 
 ___
-Last updated: 8 Nov, 2023  
+Last updated: 20 Dec, 2023  
 Editor: Izayoi Jiichan
 
 *Copyright (C) 2022 Izayoi Jiichan. All Rights Reserved.*

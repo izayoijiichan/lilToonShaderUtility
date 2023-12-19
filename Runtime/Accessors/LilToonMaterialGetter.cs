@@ -2,8 +2,8 @@
 // @Namespace : LilToonShader
 // @Class     : LilToonMaterialGetter
 // ----------------------------------------------------------------------
-#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER
-#define LILTOON_1_4_0_OR_NEWER
+#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER
+#define LILTOON_1_5_0_OR_NEWER
 #endif
 #nullable enable
 namespace LilToonShader
@@ -12,7 +12,9 @@ namespace LilToonShader
     using LilToonShader.Extensions;
     using LilToonShader.Proxies;
 
-#if LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_5_0_OR_NEWER
+    using LilToonShader.v1_5_0;
+#elif LILTOON_1_4_0_OR_NEWER
     using LilToonShader.v1_4_0;
 #elif LILTOON_1_3_0_OR_NEWER
     using LilToonShader.v1_3_0;
@@ -63,7 +65,7 @@ namespace LilToonShader
                     propertyContainer.TransparentMode = LilTransparentMode.Normal;
                 }
 
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 propertyContainer.NormalProperty = GetLilToonNormalPropertyEntity(material, propertyContainer);
 #elif LILTOON_1_2_12_OR_OLDER
                 propertyContainer.MultiProperty = GetLilToonMultiPropertyEntity(material, propertyContainer);
@@ -187,7 +189,7 @@ namespace LilToonShader
                 OutlineRenderingForward = GetLilOutlineRenderingForwardPropertyValues(material, propertyContainer.IsOutline, propertyContainer.IsRefraction),
                 OutlineRenderingForwardAdd = GetLilOutlineRenderingForwardAddPropertyValues(material, propertyContainer.IsOutline, propertyContainer.IsRefraction),
                 OutlineRenderingStencil = GetLilOutlineRenderingStencilPropertyValues(material, propertyContainer.IsOutline, propertyContainer.IsRefraction),
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Multi = GetLilMultiPropertyValues(material, isMulti: propertyContainer.PropertyEntityType == LilPropertyEntityType.Multi),  // v1.3.0
 #endif
                 Rendering = GetLilRenderingPropertyValues(material),
@@ -198,7 +200,7 @@ namespace LilToonShader
             };
         }
 
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
         //
 #elif LILTOON_1_2_12_OR_OLDER
         /// <summary>
@@ -263,7 +265,7 @@ namespace LilToonShader
                 FlipNormal = materialProxy.FlipNormal,
                 ShiftBackfaceUV = materialProxy.ShiftBackfaceUV,
                 BackfaceForceShadow = materialProxy.BackfaceForceShadow,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 BackfaceColor = materialProxy.BackfaceColor,  // v1.3.0
                 AAStrength = materialProxy.AAStrength,        // v1.3.7
 #endif
@@ -290,7 +292,7 @@ namespace LilToonShader
                 FlipNormal = materialProxy.FlipNormal,
                 ShiftBackfaceUV = materialProxy.ShiftBackfaceUV,
                 BackfaceForceShadow = materialProxy.BackfaceForceShadow,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 AAStrength = materialProxy.AAStrength,  // v1.3.7
 #endif
                 TriMask = materialProxy.TriMask,
@@ -427,11 +429,11 @@ namespace LilToonShader
                 Color2nd = materialProxy.Color2nd,
                 Main2ndTex = materialProxy.Main2ndTex,
                 Main2ndTexAngle = materialProxy.Main2ndTexAngle,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Main2ndTex_ScrollRotate = materialProxy.Main2ndTex_ScrollRotate,  // v1.3.7
 #endif
                 Main2ndTex_UVMode = materialProxy.Main2ndTex_UVMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Main2ndTex_Cull = materialProxy.Main2ndTex_Cull,  // v1.3.1
 #endif
                 Main2ndTexDecalAnimation = materialProxy.Main2ndTexDecalAnimation,
@@ -475,11 +477,11 @@ namespace LilToonShader
                 Color3rd = materialProxy.Color3rd,
                 Main3rdTex = materialProxy.Main3rdTex,
                 Main3rdTexAngle = materialProxy.Main3rdTexAngle,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Main3rdTex_ScrollRotate = materialProxy.Main3rdTex_ScrollRotate,  // v1.3.7
 #endif
                 Main3rdTex_UVMode = materialProxy.Main3rdTex_UVMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Main3rdTex_Cull = materialProxy.Main3rdTex_Cull,  // v1.3.1
 #endif
                 Main3rdTexDecalAnimation = materialProxy.Main3rdTexDecalAnimation,
@@ -564,7 +566,7 @@ namespace LilToonShader
             {
                 UseBump2ndMap = materialProxy.UseBump2ndMap,
                 Bump2ndMap = materialProxy.Bump2ndMap,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Bump2ndMap_UVMode = materialProxy.Bump2ndMap_UVMode,  // v1.3.1
 #endif
                 Bump2ndScale = materialProxy.Bump2ndScale,
@@ -626,7 +628,7 @@ namespace LilToonShader
                 UseBacklight = materialProxy.UseBacklight,
                 BacklightColor = materialProxy.BacklightColor,
                 BacklightColorTex = materialProxy.BacklightColorTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 BacklightMainStrength = materialProxy.BacklightMainStrength,  // v1.3.0
 #endif
                 BacklightNormalStrength = materialProxy.BacklightNormalStrength,
@@ -682,21 +684,21 @@ namespace LilToonShader
                 //ShadowReceive = materialProxy.ShadowReceive,
                 ShadowStrength = materialProxy.ShadowStrength,
                 ShadowStrengthMask = materialProxy.ShadowStrengthMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowStrengthMaskLOD = materialProxy.ShadowStrengthMaskLOD,  // v1.3.0
 #endif
                 ShadowBorderMask = materialProxy.ShadowBorderMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowBorderMaskLOD = materialProxy.ShadowBorderMaskLOD,  // v1.3.0
 #endif
                 ShadowBlurMask = materialProxy.ShadowBlurMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowBlurMaskLOD = materialProxy.ShadowBlurMaskLOD,  // v1.3.0
 #endif
                 ShadowAOShift = materialProxy.ShadowAOShift,
                 ShadowAOShift2 = materialProxy.ShadowAOShift2,
                 ShadowPostAO = materialProxy.ShadowPostAO,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowColorType = materialProxy.ShadowColorType,  // v1.3.5
 #endif
                 ShadowColor = materialProxy.ShadowColor,
@@ -710,7 +712,7 @@ namespace LilToonShader
                 Shadow2ndNormalStrength = materialProxy.Shadow2ndNormalStrength,
                 Shadow2ndBorder = materialProxy.Shadow2ndBorder,
                 Shadow2ndBlur = materialProxy.Shadow2ndBlur,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Shadow2ndReceive = materialProxy.Shadow2ndReceive,  // v1.3.0
 #endif
                 Shadow3rdColor = materialProxy.Shadow3rdColor,
@@ -718,14 +720,14 @@ namespace LilToonShader
                 Shadow3rdNormalStrength = materialProxy.Shadow3rdNormalStrength,
                 Shadow3rdBorder = materialProxy.Shadow3rdBorder,
                 Shadow3rdBlur = materialProxy.Shadow3rdBlur,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Shadow3rdReceive = materialProxy.Shadow3rdReceive,  // v1.3.0
 #endif
                 ShadowBorderColor = materialProxy.ShadowBorderColor,
                 ShadowBorderRange = materialProxy.ShadowBorderRange,
                 ShadowMainStrength = materialProxy.ShadowMainStrength,
                 ShadowEnvStrength = materialProxy.ShadowEnvStrength,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowMaskType = materialProxy.ShadowMaskType,      // v1.3.0
                 ShadowFlatBorder = materialProxy.ShadowFlatBorder,  // v1.3.0
                 ShadowFlatBlur = materialProxy.ShadowFlatBlur,      // v1.3.0
@@ -754,7 +756,7 @@ namespace LilToonShader
                 Metallic = materialProxy.Metallic,
                 MetallicGlossMap = materialProxy.MetallicGlossMap,
                 Reflectance = materialProxy.Reflectance,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 GSAAStrength = materialProxy.GSAAStrength,  // v1.3.0
 #endif
                 ApplySpecular = materialProxy.ApplySpecular,
@@ -772,7 +774,7 @@ namespace LilToonShader
                 ReflectionCubeColor = materialProxy.ReflectionCubeColor,
                 ReflectionCubeOverride = materialProxy.ReflectionCubeOverride,
                 ReflectionCubeEnableLighting = materialProxy.ReflectionCubeEnableLighting,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ReflectionBlendMode = materialProxy.ReflectionBlendMode,  // v1.3.0
 #endif
             };
@@ -817,7 +819,7 @@ namespace LilToonShader
                 UseMatCap = materialProxy.UseMatCap,
                 MatCapColor = materialProxy.MatCapColor,
                 MatCapTex = materialProxy.MatCapTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 MatCapMainStrength = materialProxy.MatCapMainStrength,  // v1.3.0
 #endif
                 MatCapBlendUV1 = materialProxy.MatCapBlendUV1,
@@ -853,7 +855,7 @@ namespace LilToonShader
                 UseMatCap2nd = materialProxy.UseMatCap2nd,
                 MatCap2ndColor = materialProxy.MatCap2ndColor,
                 MatCap2ndTex = materialProxy.MatCap2ndTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 MatCap2ndMainStrength = materialProxy.MatCap2ndMainStrength,  // v1.3.0
 #endif
                 MatCap2ndBlendUV1 = materialProxy.MatCap2ndBlendUV1,
@@ -913,7 +915,7 @@ namespace LilToonShader
                 UseRim = materialProxy.UseRim,
                 RimColor = materialProxy.RimColor,
                 RimColorTex = materialProxy.RimColorTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 RimMainStrength = materialProxy.RimMainStrength,  // v1.3.0
 #endif
                 RimNormalStrength = materialProxy.RimNormalStrength,
@@ -931,7 +933,7 @@ namespace LilToonShader
                 RimIndirColor = materialProxy.RimIndirColor,
                 RimIndirBorder = materialProxy.RimIndirBorder,
                 RimIndirBlur = materialProxy.RimIndirBlur,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 RimBlendMode = materialProxy.RimBlendMode,  // v1.3.7
 #endif
             };
@@ -956,12 +958,12 @@ namespace LilToonShader
                 GlitterUVMode = materialProxy.GlitterUVMode,
                 GlitterColor = materialProxy.GlitterColor,
                 GlitterColorTex = materialProxy.GlitterColorTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 GlitterColorTex_UVMode = materialProxy.GlitterColorTex_UVMode,  // v1.3.2
 #endif
                 GlitterMainStrength = materialProxy.GlitterMainStrength,
                 GlitterNormalStrength = materialProxy.GlitterNormalStrength,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 GlitterScaleRandomize = materialProxy.GlitterScaleRandomize,  // v1.3.0
                 GlitterApplyShape = materialProxy.GlitterApplyShape,          // v1.3.0
                 GlitterShapeTex = materialProxy.GlitterShapeTex,              // v1.3.0
@@ -971,7 +973,7 @@ namespace LilToonShader
                 GlitterParams1 = materialProxy.GlitterParams1,
                 GlitterParams2 = materialProxy.GlitterParams2,
                 GlitterPostContrast = materialProxy.GlitterPostContrast,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 GlitterSensitivity = materialProxy.GlitterSensitivity,  // v1.3.0
 #endif
                 GlitterEnableLighting = materialProxy.GlitterEnableLighting,
@@ -1022,13 +1024,13 @@ namespace LilToonShader
                 EmissionMap = materialProxy.EmissionMap,
                 EmissionMap_ScrollRotate = materialProxy.EmissionMap_ScrollRotate,
                 EmissionMap_UVMode = materialProxy.EmissionMap_UVMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 EmissionMainStrength = materialProxy.EmissionMainStrength,  // v1.3.0
 #endif
                 EmissionBlend = materialProxy.EmissionBlend,
                 EmissionBlendMask = materialProxy.EmissionBlendMask,
                 EmissionBlendMask_ScrollRotate = materialProxy.EmissionBlendMask_ScrollRotate,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 EmissionBlendMode = materialProxy.EmissionBlendMode,  // v1.3.7
 #endif
                 EmissionBlink = materialProxy.EmissionBlink,
@@ -1088,13 +1090,13 @@ namespace LilToonShader
                 Emission2ndMap = materialProxy.Emission2ndMap,
                 Emission2ndMap_ScrollRotate = materialProxy.Emission2ndMap_ScrollRotate,
                 Emission2ndMap_UVMode = materialProxy.Emission2ndMap_UVMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Emission2ndMainStrength = materialProxy.Emission2ndMainStrength,  // v1.3.0
 #endif
                 Emission2ndBlend = materialProxy.Emission2ndBlend,
                 Emission2ndBlendMask = materialProxy.Emission2ndBlendMask,
                 Emission2ndBlendMask_ScrollRotate = materialProxy.Emission2ndBlendMask_ScrollRotate,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Emission2ndBlendMode = materialProxy.Emission2ndBlendMode,  // v1.3.7
 #endif
                 Emission2ndBlink = materialProxy.Emission2ndBlink,
@@ -1154,7 +1156,7 @@ namespace LilToonShader
             return new LilParallax
             {
                 UseParallax = materialProxy.UseParallax,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 UsePOM = materialProxy.UsePOM,  // v1.3.0
 #endif
                 ParallaxMap = materialProxy.ParallaxMap,
@@ -1272,6 +1274,7 @@ namespace LilToonShader
             return new LilIDMask
             {
                 IDMaskFrom = materialProxy.IDMaskFrom,  // v1.4.0
+
                 IDMask1 = materialProxy.IDMask1,  // v1.4.0
                 IDMask2 = materialProxy.IDMask2,  // v1.4.0
                 IDMask3 = materialProxy.IDMask3,  // v1.4.0
@@ -1280,6 +1283,10 @@ namespace LilToonShader
                 IDMask6 = materialProxy.IDMask6,  // v1.4.0
                 IDMask7 = materialProxy.IDMask7,  // v1.4.0
                 IDMask8 = materialProxy.IDMask8,  // v1.4.0
+
+#if LILTOON_1_5_0_OR_NEWER
+                IDMaskIsBitmap = materialProxy.IDMaskIsBitmap,  // v1.5.0
+#endif
                 IDMaskIndex1 = materialProxy.IDMaskIndex1,  // v1.4.0
                 IDMaskIndex2 = materialProxy.IDMaskIndex2,  // v1.4.0
                 IDMaskIndex3 = materialProxy.IDMaskIndex3,  // v1.4.0
@@ -1288,6 +1295,19 @@ namespace LilToonShader
                 IDMaskIndex6 = materialProxy.IDMaskIndex6,  // v1.4.0
                 IDMaskIndex7 = materialProxy.IDMaskIndex7,  // v1.4.0
                 IDMaskIndex8 = materialProxy.IDMaskIndex8,  // v1.4.0
+
+#if LILTOON_1_5_0_OR_NEWER
+                IDMaskControlsDissolve = materialProxy.IDMaskControlsDissolve,  // v1.5.0
+
+                IDMaskPrior1 = materialProxy.IDMaskPrior1,  // v1.5.0
+                IDMaskPrior2 = materialProxy.IDMaskPrior2,  // v1.5.0
+                IDMaskPrior3 = materialProxy.IDMaskPrior3,  // v1.5.0
+                IDMaskPrior4 = materialProxy.IDMaskPrior4,  // v1.5.0
+                IDMaskPrior5 = materialProxy.IDMaskPrior5,  // v1.5.0
+                IDMaskPrior6 = materialProxy.IDMaskPrior6,  // v1.5.0
+                IDMaskPrior7 = materialProxy.IDMaskPrior7,  // v1.5.0
+                IDMaskPrior8 = materialProxy.IDMaskPrior8,  // v1.5.0
+#endif
             };
         }
 #endif
@@ -1308,7 +1328,7 @@ namespace LilToonShader
             {
                 IgnoreEncryption = materialProxy.IgnoreEncryption,
                 Keys = materialProxy.Keys,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 BitKey0 = materialProxy.BitKey0,  // v1.3.7
                 BitKey1 = materialProxy.BitKey1,  // v1.3.7
                 BitKey2 = materialProxy.BitKey2,  // v1.3.7
@@ -1431,7 +1451,7 @@ namespace LilToonShader
                 FurGravity = materialProxy.FurGravity,
                 FurRandomize = materialProxy.FurRandomize,
                 FurAO = materialProxy.FurAO,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 FurMeshType = materialProxy.FurMeshType,  // v1.3.0
 #endif
                 FurLayerNum = materialProxy.FurLayerNum,
@@ -1688,17 +1708,17 @@ namespace LilToonShader
                 OutlineTex_ScrollRotate = materialProxy.OutlineTex_ScrollRotate,
                 OutlineWidth = materialProxy.OutlineWidth,
                 OutlineWidthMask = materialProxy.OutlineWidthMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineFixWidth = materialProxy.OutlineFixWidth,  // v1.3.0 changed int to float
 #elif LILTOON_1_2_12_OR_OLDER
                 OutlineFixWidth = material.GetSafeInt(PropertyNameID.OutlineFixWidth),  // v1.2.12
 #endif
                 OutlineVertexR2Width = materialProxy.OutlineVertexR2Width,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineDeleteMesh = materialProxy.OutlineDeleteMesh,  // v1.3.0
 #endif
                 OutlineEnableLighting = materialProxy.OutlineEnableLighting,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineZBias = materialProxy.OutlineZBias,  // v1.3.0
 #endif
             };
@@ -1732,7 +1752,7 @@ namespace LilToonShader
                 OutlineTex = materialProxy.OutlineTex,
                 OutlineTex_ScrollRotate = materialProxy.OutlineTex_ScrollRotate,
                 OutlineTexHSVG = materialProxy.OutlineTexHSVG,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineLitColor = materialProxy.OutlineLitColor,        // v1.3.0
                 OutlineLitApplyTex = materialProxy.OutlineLitApplyTex,  // v1.3.0
                 OutlineLitScale = materialProxy.OutlineLitScale,        // v1.3.0
@@ -1741,22 +1761,22 @@ namespace LilToonShader
 #endif
                 OutlineWidth = materialProxy.OutlineWidth,
                 OutlineWidthMask = materialProxy.OutlineWidthMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineFixWidth = materialProxy.OutlineFixWidth,  // v1.3.0 changed int to float
 #elif LILTOON_1_2_12_OR_OLDER
                 OutlineFixWidth = material.GetSafeInt(PropertyNameID.OutlineFixWidth),  // v1.2.12
 #endif
                 OutlineVertexR2Width = materialProxy.OutlineVertexR2Width,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineDeleteMesh = materialProxy.OutlineDeleteMesh,  // v1.3.0
 #endif
                 OutlineVectorTex = materialProxy.OutlineVectorTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineVectorUVMode = materialProxy.OutlineVectorUVMode,  // v1.3.0
 #endif
                 OutlineVectorScale = materialProxy.OutlineVectorScale,
                 OutlineEnableLighting = materialProxy.OutlineEnableLighting,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineZBias = materialProxy.OutlineZBias,  // v1.3.0
                 OutlineDisableInVR = materialProxy.OutlineDisableInVR,  // v1.3.0
 #endif
@@ -1959,7 +1979,7 @@ namespace LilToonShader
             {
                 UseOutline = materialProxy.UseOutline,
                 TransparentMode = materialProxy.TransparentMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 // v1.3.0 deleted
 #elif LILTOON_1_2_12_OR_OLDER
                 UsePOM = materialProxy.UsePOM,
@@ -1995,7 +2015,7 @@ namespace LilToonShader
                 OffsetUnits = materialProxy.OffsetUnits,
                 ColorMask = materialProxy.ColorMask,
                 AlphaToMask = materialProxy.AlphaToMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 LilShadowCasterBias = materialProxy.LilShadowCasterBias,  // v1.3.0
 #endif
             };

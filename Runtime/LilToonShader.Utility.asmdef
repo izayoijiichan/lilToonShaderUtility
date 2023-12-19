@@ -8,13 +8,18 @@
         },
         {
             "name": "jp.lilxyzw.liltoon",
-            "expression": "[1.3.0,1.3.7]",
+            "expression": "1.3.0",
             "define": "LILTOON_1_3_0_OR_NEWER"
         },
         {
             "name": "jp.lilxyzw.liltoon",
             "expression": "1.4.0",
             "define": "LILTOON_1_4_0_OR_NEWER"
+        },
+        {
+            "name": "jp.lilxyzw.liltoon",
+            "expression": "1.5.0",
+            "define": "LILTOON_1_5_0_OR_NEWER"
         }
     ]
 }

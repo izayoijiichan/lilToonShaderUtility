@@ -1321,6 +1321,10 @@ namespace LilToonShader
         /// <remarks>v1.4.0 added</remarks>
         public const string IDMask8 = "_IDMask8";
 
+        /// <summary>ID Mask is Bitmap</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskIsBitmap = "_IDMaskIsBitmap";
+
         /// <summary>ID Mask Index 1</summary>
         /// <remarks>v1.4.0 added</remarks>
         public const string IDMaskIndex1 = "_IDMaskIndex1";
@@ -1352,6 +1356,42 @@ namespace LilToonShader
         /// <summary>ID Mask Index 8</summary>
         /// <remarks>v1.4.0 added</remarks>
         public const string IDMaskIndex8 = "_IDMaskIndex8";
+
+        /// <summary>ID Mask Controls Dissolve</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskControlsDissolve = "_IDMaskControlsDissolve";
+
+        /// <summary>ID Mask Prior 1</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskPrior1 = "_IDMaskPrior1";
+
+        /// <summary>ID Mask Prior 2</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskPrior2 = "_IDMaskPrior2";
+
+        /// <summary>ID Mask Prior 3</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskPrior3 = "_IDMaskPrior3";
+
+        /// <summary>ID Mask Prior 4</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskPrior4 = "_IDMaskPrior4";
+
+        /// <summary>ID Mask Prior 5</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskPrior5 = "_IDMaskPrior5";
+
+        /// <summary>ID Mask Prior 6</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskPrior6 = "_IDMaskPrior6";
+
+        /// <summary>ID Mask Prior 7</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskPrior7 = "_IDMaskPrior7";
+
+        /// <summary>ID Mask Prior 8</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        public const string IDMaskPrior8 = "_IDMaskPrior8";
 
         #endregion
 

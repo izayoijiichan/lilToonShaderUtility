@@ -96,6 +96,15 @@ namespace LilToonShader.Proxies
             set => _Material.SetSafeBool(PropertyNameID.IDMask8, value);
         }
 
+        /// <summary>ID Mask is Bitmap</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskIsBitmap
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskIsBitmap, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskIsBitmap, value);
+        }
+
         /// <summary>ID Mask Index 1</summary>
         /// <remarks>v1.4.0 added</remarks>
         //[DefaultValue(0)]
@@ -166,6 +175,87 @@ namespace LilToonShader.Proxies
         {
             get => _Material.GetSafeInt(PropertyNameID.IDMaskIndex8, 0);
             set => _Material.SetSafeInt(PropertyNameID.IDMaskIndex8, value);
+        }
+
+        /// <summary>ID Mask Controls Dissolve</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskControlsDissolve
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskControlsDissolve, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskControlsDissolve, value);
+        }
+
+        /// <summary>ID Mask Prior 1</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskPrior1
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskPrior1, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskPrior1, value);
+        }
+
+        /// <summary>ID Mask Prior 2</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskPrior2
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskPrior2, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskPrior2, value);
+        }
+
+        /// <summary>ID Mask Prior 3</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskPrior3
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskPrior3, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskPrior3, value);
+        }
+
+        /// <summary>ID Mask Prior 4</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskPrior4
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskPrior4, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskPrior4, value);
+        }
+
+        /// <summary>ID Mask Prior 5</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskPrior5
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskPrior5, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskPrior5, value);
+        }
+
+        /// <summary>ID Mask Prior 6</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskPrior6
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskPrior6, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskPrior6, value);
+        }
+
+        /// <summary>ID Mask Prior 7</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskPrior7
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskPrior7, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskPrior7, value);
+        }
+
+        /// <summary>ID Mask Prior 8</summary>
+        /// <remarks>v1.5.0 added</remarks>
+        //[DefaultValue(false)]
+        public bool IDMaskPrior8
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskPrior8, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskPrior8, value);
         }
 
         #endregion

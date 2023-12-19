@@ -2,8 +2,8 @@
 // @Namespace : LilToonShader
 // @Class     : LilToonMaterialSetter
 // ----------------------------------------------------------------------
-#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER
-#define LILTOON_1_4_0_OR_NEWER
+#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER
+#define LILTOON_1_5_0_OR_NEWER
 #endif
 #nullable enable
 namespace LilToonShader
@@ -13,7 +13,9 @@ namespace LilToonShader
     using LilToonShader.Extensions;
     using LilToonShader.Proxies;
 
-#if LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_5_0_OR_NEWER
+    using LilToonShader.v1_5_0;
+#elif LILTOON_1_4_0_OR_NEWER
     using LilToonShader.v1_4_0;
 #elif LILTOON_1_3_0_OR_NEWER
     using LilToonShader.v1_3_0;
@@ -317,7 +319,7 @@ namespace LilToonShader
         /// <param name="propertyContainer">A lilToon property container.</param>
         public virtual void SetLilToonMultiPropertyEntity(Material material, LilToonPropertyContainer propertyContainer)
         {
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
             if (propertyContainer.NormalProperty is null)
             {
                 throw new Exception();
@@ -401,7 +403,7 @@ namespace LilToonShader
                 FlipNormal = propertyBlock.FlipNormal,
                 ShiftBackfaceUV = propertyBlock.ShiftBackfaceUV,
                 BackfaceForceShadow = propertyBlock.BackfaceForceShadow,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 BackfaceColor = propertyBlock.BackfaceColor,  // v1.3.0
                 AAStrength = propertyBlock.AAStrength,        // v1.3.7
 #endif
@@ -431,7 +433,7 @@ namespace LilToonShader
                 FlipNormal = propertyBlock.FlipNormal,
                 ShiftBackfaceUV = propertyBlock.ShiftBackfaceUV,
                 BackfaceForceShadow = propertyBlock.BackfaceForceShadow,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 AAStrength = propertyBlock.AAStrength,  // v1.3.7
 #endif
                 TriMask = propertyBlock.TriMask,  // Lite only
@@ -591,11 +593,11 @@ namespace LilToonShader
                 Main2ndTex = propertyBlock.Main2ndTex,
                 Main2ndTexAngle = propertyBlock.Main2ndTexAngle,
 
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Main2ndTex_ScrollRotate = propertyBlock.Main2ndTex_ScrollRotate,  // v1.3.7
 #endif
                 Main2ndTex_UVMode = propertyBlock.Main2ndTex_UVMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Main2ndTex_Cull = propertyBlock.Main2ndTex_Cull,  // v1.3.1
 #endif
                 Main2ndTexDecalAnimation = propertyBlock.Main2ndTexDecalAnimation,
@@ -645,11 +647,11 @@ namespace LilToonShader
                 Main3rdTex = propertyBlock.Main3rdTex,
                 Main3rdTexAngle = propertyBlock.Main3rdTexAngle,
 
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Main3rdTex_ScrollRotate = propertyBlock.Main3rdTex_ScrollRotate,  // v1.3.7
 #endif
                 Main3rdTex_UVMode = propertyBlock.Main3rdTex_UVMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Main3rdTex_Cull = propertyBlock.Main3rdTex_Cull,  // v1.3.1
 #endif
                 Main3rdTexDecalAnimation = propertyBlock.Main3rdTexDecalAnimation,
@@ -746,7 +748,7 @@ namespace LilToonShader
                 UseBump2ndMap = propertyBlock.UseBump2ndMap,
 
                 Bump2ndMap = propertyBlock.Bump2ndMap,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Bump2ndMap_UVMode = propertyBlock.Bump2ndMap_UVMode,  // v1.3.1
 #endif
                 Bump2ndScale = propertyBlock.Bump2ndScale,
@@ -819,7 +821,7 @@ namespace LilToonShader
 
                 BacklightColor = propertyBlock.BacklightColor,
                 BacklightColorTex = propertyBlock.BacklightColorTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 BacklightMainStrength = propertyBlock.BacklightMainStrength,  // v1.3.0
 #endif
                 BacklightNormalStrength = propertyBlock.BacklightNormalStrength,
@@ -884,22 +886,22 @@ namespace LilToonShader
                 //ShadowReceive= propertyBlock.ShadowReceive,
                 ShadowStrength = propertyBlock.ShadowStrength,
                 ShadowStrengthMask = propertyBlock.ShadowStrengthMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowStrengthMaskLOD = propertyBlock.ShadowStrengthMaskLOD,  // v1.3.0
 #endif
                 ShadowBorderMask = propertyBlock.ShadowBorderMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowBorderMaskLOD = propertyBlock.ShadowBorderMaskLOD,  // v1.3.0
 #endif
                 ShadowBlurMask = propertyBlock.ShadowBlurMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowBlurMaskLOD = propertyBlock.ShadowBlurMaskLOD,  // v1.3.0
 #endif
                 ShadowAOShift = propertyBlock.ShadowAOShift,
                 ShadowAOShift2 = propertyBlock.ShadowAOShift2,
                 ShadowPostAO = propertyBlock.ShadowPostAO,
 
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowColorType = propertyBlock.ShadowColorType,  // v1.3.5
 #endif
                 ShadowColor = propertyBlock.ShadowColor,
@@ -914,7 +916,7 @@ namespace LilToonShader
                 Shadow2ndNormalStrength = propertyBlock.Shadow2ndNormalStrength,
                 Shadow2ndBorder = propertyBlock.Shadow2ndBorder,
                 Shadow2ndBlur = propertyBlock.Shadow2ndBlur,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Shadow2ndReceive = propertyBlock.Shadow2ndReceive,  // v1.3.0
 #endif
 
@@ -923,7 +925,7 @@ namespace LilToonShader
                 Shadow3rdNormalStrength = propertyBlock.Shadow3rdNormalStrength,
                 Shadow3rdBorder = propertyBlock.Shadow3rdBorder,
                 Shadow3rdBlur = propertyBlock.Shadow3rdBlur,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Shadow3rdReceive = propertyBlock.Shadow3rdReceive,  // v1.3.0
 #endif
 
@@ -933,7 +935,7 @@ namespace LilToonShader
                 ShadowMainStrength = propertyBlock.ShadowMainStrength,
                 ShadowEnvStrength = propertyBlock.ShadowEnvStrength,
 
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ShadowMaskType = propertyBlock.ShadowMaskType,      // v1.3.0
                 ShadowFlatBorder = propertyBlock.ShadowFlatBorder,  // v1.3.0
                 ShadowFlatBlur = propertyBlock.ShadowFlatBlur,      // v1.3.0
@@ -968,7 +970,7 @@ namespace LilToonShader
                 MetallicGlossMap = propertyBlock.MetallicGlossMap,
 
                 Reflectance = propertyBlock.Reflectance,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 GSAAStrength = propertyBlock.GSAAStrength,  // v1.3.0
 #endif
                 ApplySpecular = propertyBlock.ApplySpecular,
@@ -988,7 +990,7 @@ namespace LilToonShader
                 ReflectionCubeColor = propertyBlock.ReflectionCubeColor,
                 ReflectionCubeOverride = propertyBlock.ReflectionCubeOverride,
                 ReflectionCubeEnableLighting = propertyBlock.ReflectionCubeEnableLighting,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 ReflectionBlendMode = propertyBlock.ReflectionBlendMode,  // v1.3.0
 #endif
             };
@@ -1039,7 +1041,7 @@ namespace LilToonShader
                 UseMatCap = propertyBlock.UseMatCap,
                 MatCapColor = propertyBlock.MatCapColor,
                 MatCapTex = propertyBlock.MatCapTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 MatCapMainStrength = propertyBlock.MatCapMainStrength,  // v1.3.0
 #endif
                 MatCapBlendUV1 = propertyBlock.MatCapBlendUV1,
@@ -1081,7 +1083,7 @@ namespace LilToonShader
                 UseMatCap2nd = propertyBlock.UseMatCap2nd,
                 MatCap2ndColor = propertyBlock.MatCap2ndColor,
                 MatCap2ndTex = propertyBlock.MatCap2ndTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 MatCap2ndMainStrength = propertyBlock.MatCap2ndMainStrength,
 #endif
                 MatCap2ndBlendUV1 = propertyBlock.MatCap2ndBlendUV1,
@@ -1151,7 +1153,7 @@ namespace LilToonShader
 
                 RimColor = propertyBlock.RimColor,
                 RimColorTex = propertyBlock.RimColorTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 RimMainStrength = propertyBlock.RimMainStrength,  // v1.3.0
 #endif
                 RimNormalStrength = propertyBlock.RimNormalStrength,
@@ -1172,7 +1174,7 @@ namespace LilToonShader
                 RimIndirBorder = propertyBlock.RimIndirBorder,
                 RimIndirBlur = propertyBlock.RimIndirBlur,
 
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 RimBlendMode = propertyBlock.RimBlendMode,  // v1.3.7
 #endif
             };
@@ -1201,12 +1203,12 @@ namespace LilToonShader
                 GlitterUVMode = propertyBlock.GlitterUVMode,
                 GlitterColor = propertyBlock.GlitterColor,
                 GlitterColorTex = propertyBlock.GlitterColorTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 GlitterColorTex_UVMode = propertyBlock.GlitterColorTex_UVMode,  // v1.3.2
 #endif
                 GlitterMainStrength = propertyBlock.GlitterMainStrength,
                 GlitterNormalStrength = propertyBlock.GlitterNormalStrength,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 GlitterScaleRandomize = propertyBlock.GlitterScaleRandomize,  // v1.3.0
                 GlitterApplyShape = propertyBlock.GlitterApplyShape,          // v1.3.0
                 GlitterShapeTex = propertyBlock.GlitterShapeTex,              // v1.3.0
@@ -1216,7 +1218,7 @@ namespace LilToonShader
                 GlitterParams1 = propertyBlock.GlitterParams1,
                 GlitterParams2 = propertyBlock.GlitterParams2,
                 GlitterPostContrast = propertyBlock.GlitterPostContrast,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 GlitterSensitivity = propertyBlock.GlitterSensitivity,  // v1.3.0
 #endif
                 GlitterEnableLighting = propertyBlock.GlitterEnableLighting,
@@ -1274,13 +1276,13 @@ namespace LilToonShader
                 EmissionMap = propertyBlock.EmissionMap,
                 EmissionMap_ScrollRotate = propertyBlock.EmissionMap_ScrollRotate,
                 EmissionMap_UVMode = propertyBlock.EmissionMap_UVMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 EmissionMainStrength = propertyBlock.EmissionMainStrength,  // v1.3.0
 #endif
                 EmissionBlend = propertyBlock.EmissionBlend,
                 EmissionBlendMask = propertyBlock.EmissionBlendMask,
                 EmissionBlendMask_ScrollRotate = propertyBlock.EmissionBlendMask_ScrollRotate,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 EmissionBlendMode = propertyBlock.EmissionBlendMode,  // v1.3.7
 #endif
                 EmissionBlink = propertyBlock.EmissionBlink,
@@ -1351,13 +1353,13 @@ namespace LilToonShader
                 Emission2ndMap = propertyBlock.Emission2ndMap,
                 Emission2ndMap_ScrollRotate = propertyBlock.Emission2ndMap_ScrollRotate,
                 Emission2ndMap_UVMode = propertyBlock.Emission2ndMap_UVMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Emission2ndMainStrength = propertyBlock.Emission2ndMainStrength,  // v1.3.0
 #endif
                 Emission2ndBlend = propertyBlock.Emission2ndBlend,
                 Emission2ndBlendMask = propertyBlock.Emission2ndBlendMask,
                 Emission2ndBlendMask_ScrollRotate = propertyBlock.Emission2ndBlendMask_ScrollRotate,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 Emission2ndBlendMode = propertyBlock.Emission2ndBlendMode,  // v1.3.7
 #endif
                 Emission2ndBlink = propertyBlock.Emission2ndBlink,
@@ -1427,7 +1429,7 @@ namespace LilToonShader
             _ = new LilParallaxMaterialProxy(material)
             {
                 UseParallax = propertyBlock.UseParallax,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 UsePOM = propertyBlock.UsePOM,  // v1.3.0
 #endif
                 ParallaxMap = propertyBlock.ParallaxMap,
@@ -1571,6 +1573,9 @@ namespace LilToonShader
                 IDMask7 = propertyBlock.IDMask7,  // v1.4.0
                 IDMask8 = propertyBlock.IDMask8,  // v1.4.0
 
+#if LILTOON_1_5_0_OR_NEWER
+                IDMaskIsBitmap = propertyBlock.IDMaskIsBitmap,  // v1.5.0
+#endif
                 IDMaskIndex1 = propertyBlock.IDMaskIndex1,  // v1.4.0
                 IDMaskIndex2 = propertyBlock.IDMaskIndex2,  // v1.4.0
                 IDMaskIndex3 = propertyBlock.IDMaskIndex3,  // v1.4.0
@@ -1579,6 +1584,19 @@ namespace LilToonShader
                 IDMaskIndex6 = propertyBlock.IDMaskIndex6,  // v1.4.0
                 IDMaskIndex7 = propertyBlock.IDMaskIndex7,  // v1.4.0
                 IDMaskIndex8 = propertyBlock.IDMaskIndex8,  // v1.4.0
+
+#if LILTOON_1_5_0_OR_NEWER
+                IDMaskControlsDissolve = propertyBlock.IDMaskControlsDissolve,  // v1.5.0
+
+                IDMaskPrior1 = propertyBlock.IDMaskPrior1,  // v1.5.0
+                IDMaskPrior2 = propertyBlock.IDMaskPrior2,  // v1.5.0
+                IDMaskPrior3 = propertyBlock.IDMaskPrior3,  // v1.5.0
+                IDMaskPrior4 = propertyBlock.IDMaskPrior4,  // v1.5.0
+                IDMaskPrior5 = propertyBlock.IDMaskPrior5,  // v1.5.0
+                IDMaskPrior6 = propertyBlock.IDMaskPrior6,  // v1.5.0
+                IDMaskPrior7 = propertyBlock.IDMaskPrior7,  // v1.5.0
+                IDMaskPrior8 = propertyBlock.IDMaskPrior8,  // v1.5.0
+#endif
             };
         }
 #endif
@@ -1602,7 +1620,7 @@ namespace LilToonShader
             {
                 IgnoreEncryption = propertyBlock.IgnoreEncryption,
                 Keys = propertyBlock.Keys,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 BitKey0 = propertyBlock.BitKey0,  // v1.3.7
                 BitKey1 = propertyBlock.BitKey1,  // v1.3.7
                 BitKey2 = propertyBlock.BitKey2,  // v1.3.7
@@ -1706,7 +1724,7 @@ namespace LilToonShader
                 FurGravity = propertyBlock.FurGravity,
                 FurRandomize = propertyBlock.FurRandomize,
                 FurAO = propertyBlock.FurAO,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 FurMeshType = propertyBlock.FurMeshType,  // v1.3.0
 #endif
                 FurLayerNum = propertyBlock.FurLayerNum,
@@ -1892,7 +1910,7 @@ namespace LilToonShader
                 OutlineTex = propertyBlock.OutlineTex,
                 OutlineTex_ScrollRotate = propertyBlock.OutlineTex_ScrollRotate,
                 OutlineTexHSVG = propertyBlock.OutlineTexHSVG,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineLitColor = propertyBlock.OutlineLitColor,        // v1.3.0
                 OutlineLitApplyTex = propertyBlock.OutlineLitApplyTex,  // v1.3.0
                 OutlineLitScale = propertyBlock.OutlineLitScale,        // v1.3.0
@@ -1901,20 +1919,20 @@ namespace LilToonShader
 #endif
                 OutlineWidth = propertyBlock.OutlineWidth,
                 OutlineWidthMask = propertyBlock.OutlineWidthMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineFixWidth = propertyBlock.OutlineFixWidth,  // v1.3.0 changed int to float
 #endif
                 OutlineVertexR2Width = propertyBlock.OutlineVertexR2Width,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineDeleteMesh = propertyBlock.OutlineDeleteMesh,  // v1.3.0
 #endif
                 OutlineVectorTex = propertyBlock.OutlineVectorTex,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineVectorUVMode = propertyBlock.OutlineVectorUVMode,  // v1.3.0
 #endif
                 OutlineVectorScale = propertyBlock.OutlineVectorScale,
                 OutlineEnableLighting = propertyBlock.OutlineEnableLighting,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineZBias = propertyBlock.OutlineZBias,  // v1.3.0
                 OutlineDisableInVR = propertyBlock.OutlineDisableInVR,  // v1.3.0
 #endif
@@ -1944,15 +1962,15 @@ namespace LilToonShader
                 OutlineTex_ScrollRotate = propertyBlock.OutlineTex_ScrollRotate,
                 OutlineWidth = propertyBlock.OutlineWidth,
                 OutlineWidthMask = propertyBlock.OutlineWidthMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineFixWidth = propertyBlock.OutlineFixWidth,  // v1.3.0 changed int to float
 #endif
                 OutlineVertexR2Width = propertyBlock.OutlineVertexR2Width,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineDeleteMesh = propertyBlock.OutlineDeleteMesh,  // v1.3.0
 #endif
                 OutlineEnableLighting = propertyBlock.OutlineEnableLighting,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 OutlineZBias = propertyBlock.OutlineZBias,  // v1.3.0
 #endif
             };
@@ -2072,7 +2090,7 @@ namespace LilToonShader
         /// Set the lilToon Multi Keywords to the material.
         /// </summary>
         /// <param name="material">A lilToon Multi material.</param>
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
         /// <param name="propertyBlock">A lilToon Normal propertyBlock.</param>
         public virtual void SetLilMultiKeywords(Material material, LilToonNormalPropertyEntity? propertyBlock)
 #elif LILTOON_1_2_12_OR_OLDER
@@ -2171,7 +2189,7 @@ namespace LilToonShader
                 material.SetKeyword(Keyword.AntiFlicker, propertyBlock.Backlight != null && propertyBlock.Backlight.UseBacklight);
                 material.SetKeyword(Keyword.ParallaxMap, propertyBlock.Parallax != null && propertyBlock.Parallax.UseParallax);
 
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 material.SetKeyword(Keyword.PixelSnapOn,
                     (propertyBlock.Parallax != null && propertyBlock.Parallax.UseParallax) &&
                     (propertyBlock.Parallax != null && propertyBlock.Parallax.UsePOM)  // v1.3.0
@@ -2204,7 +2222,7 @@ namespace LilToonShader
         /// Set the lilToon Multi Passes to the material.
         /// </summary>
         /// <param name="material">A lilToon Multi material.</param>
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
         /// <param name="propertyBlock">A lilToon Normal propertyBlock.</param>
         public virtual void SetLilMultiPasses(Material material, LilToonNormalPropertyEntity? propertyBlock)
 #elif LILTOON_1_2_12_OR_OLDER
@@ -2244,7 +2262,7 @@ namespace LilToonShader
             {
                 UseOutline = propertyBlock.UseOutline,
                 TransparentMode = propertyBlock.TransparentMode,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 // v1.3.0 deleted
 #elif LILTOON_1_2_12_OR_OLDER
                 UsePOM = propertyBlock.UsePOM,
@@ -2288,7 +2306,7 @@ namespace LilToonShader
 
                 ColorMask = propertyBlock.ColorMask,
                 AlphaToMask = propertyBlock.AlphaToMask,
-#if LILTOON_1_3_0_OR_NEWER || LILTOON_1_4_0_OR_NEWER
+#if LILTOON_1_3_0_OR_NEWER
                 LilShadowCasterBias = propertyBlock.LilShadowCasterBias,  // v1.3.0
 #endif
             };
