@@ -10,6 +10,11 @@ namespace LilToonShader.v1_5_0
     /// </summary>
     public interface ILilIDMask
     {
+        /// <summary>ID Mask Compile</summary>
+        /// <remarks>v1.5.1 added</remarks>
+        //[DefaultValue(false)]
+        bool IDMaskCompile { get; set; }
+
         /// <summary>ID Mask From</summary>
         /// <remarks>v1.4.0 added</remarks>
         //[DefaultValue(LilIDMaskFrom.VertexID)]

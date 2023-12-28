@@ -1562,6 +1562,9 @@ namespace LilToonShader
 
             _ = new LilIDMaskMaterialProxy(material)
             {
+#if LILTOON_1_5_0_OR_NEWER
+                IDMaskCompile = propertyBlock.IDMaskCompile,  // v1.5.1
+#endif
                 IDMaskFrom = propertyBlock.IDMaskFrom,  // v1.4.0
 
                 IDMask1 = propertyBlock.IDMask1,  // v1.4.0

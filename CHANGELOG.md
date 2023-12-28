@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.5.1] - 2023-12-29
+
+- Features
+  - lilToon version 1.5.1 is now supported.
+
 ## [1.5.0] - 2023-12-20
 
 - Features

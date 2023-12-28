@@ -1287,6 +1287,10 @@ namespace LilToonShader
 
         #region ID Mask
 
+        /// <summary>ID Mask Compile</summary>
+        /// <remarks>v1.5.1 added</remarks>
+        public static readonly int IDMaskCompile = Shader.PropertyToID(PropertyName.IDMaskCompile);
+
         /// <summary>ID Mask From</summary>
         /// <remarks>v1.4.0 added</remarks>
         public static readonly int IDMaskFrom = Shader.PropertyToID(PropertyName.IDMaskFrom);

@@ -1285,6 +1285,10 @@ namespace LilToonShader
 
         #region ID Mask
 
+        /// <summary>ID Mask Compile</summary>
+        /// <remarks>v1.5.1 added</remarks>
+        public const string IDMaskCompile = "_IDMaskCompile";
+
         /// <summary>ID Mask From</summary>
         /// <remarks>v1.4.0 added</remarks>
         public const string IDMaskFrom = "_IDMaskFrom";

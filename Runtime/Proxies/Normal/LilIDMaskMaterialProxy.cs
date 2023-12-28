@@ -15,6 +15,14 @@ namespace LilToonShader.Proxies
     {
         #region Properties
 
+        /// <summary>ID Mask Compile</summary>
+        /// <remarks>v1.5.1 added</remarks>
+        public bool IDMaskCompile
+        {
+            get => _Material.GetSafeBool(PropertyNameID.IDMaskCompile, false);
+            set => _Material.SetSafeBool(PropertyNameID.IDMaskCompile, value);
+        }
+
         /// <summary>ID Mask From</summary>
         /// <remarks>v1.4.0 added</remarks>
         //[DefaultValue(LilIDMaskFrom.VertexID)]

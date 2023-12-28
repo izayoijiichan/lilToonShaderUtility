@@ -20,6 +20,7 @@ ___
 |1.4.0|34|
 |1.4.1|35|
 |1.5.0|36|
+|1.5.1|37|
 
 ## Shaders
 
@@ -121,8 +122,8 @@ LilToonShader
 ```json
 {
   "dependencies": {
-    "com.izayoi.liltoon.shader.utility": "https://github.com/izayoijiichan/lilToonShaderUtility.git#v1.5.0",
-    "jp.lilxyzw.liltoon": "https://github.com/lilxyzw/lilToon.git?path=Assets/lilToon#1.5.0",
+    "com.izayoi.liltoon.shader.utility": "https://github.com/izayoijiichan/lilToonShaderUtility.git#v1.5.1",
+    "jp.lilxyzw.liltoon": "https://github.com/lilxyzw/lilToon.git?path=Assets/lilToon#1.5.1",
     // --- other packages ---
   }
 }
@@ -200,7 +201,7 @@ public void OneMethod()
 [lilToon](https://lilxyzw.github.io/lilToon)
 
 ___
-Last updated: 20 Dec, 2023  
+Last updated: 29 Dec, 2023  
 Editor: Izayoi Jiichan
 
 *Copyright (C) 2022 Izayoi Jiichan. All Rights Reserved.*
