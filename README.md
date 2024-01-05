@@ -21,6 +21,8 @@ ___
 |1.4.1|35|
 |1.5.0|36|
 |1.5.1|37|
+|1.5.2|38|
+|1.6.0|39|
 
 ## Shaders
 
@@ -138,6 +140,7 @@ Used to specify a specific version.
 
 |Scripting Define Symbols|description|
 |:---|:---|
+|LILTOON_1_6_0_OR_NEWER|Define when using lilToon version 1.6.0 or higher.|
 |LILTOON_1_5_0_OR_NEWER|Define when using lilToon version 1.5.0 or higher.|
 |LILTOON_1_4_0_OR_NEWER|Define when using lilToon version 1.4.0 or higher.|
 |LILTOON_1_3_0_OR_NEWER|Define when using lilToon version 1.3.0 or higher.|
@@ -201,7 +204,7 @@ public void OneMethod()
 [lilToon](https://lilxyzw.github.io/lilToon)
 
 ___
-Last updated: 29 Dec, 2023  
+Last updated: 6 Jan, 2024  
 Editor: Izayoi Jiichan
 
 *Copyright (C) 2022 Izayoi Jiichan. All Rights Reserved.*

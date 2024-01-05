@@ -577,6 +577,38 @@ namespace LilToonShader
 
         #endregion
 
+        #region Rim Shade
+
+        /// <summary>Use Rim Shade</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static readonly int UseRimShade = Shader.PropertyToID(PropertyName.UseRimShade);
+
+        /// <summary>Rim Shade Color</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static readonly int RimShadeColor = Shader.PropertyToID(PropertyName.RimShadeColor);
+
+        /// <summary>Rim Shade Mask</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static readonly int RimShadeMask = Shader.PropertyToID(PropertyName.RimShadeMask);
+
+        /// <summary>Rim Shade Normal Strength</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static readonly int RimShadeNormalStrength = Shader.PropertyToID(PropertyName.RimShadeNormalStrength);
+
+        /// <summary>Rim Shade Border</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static readonly int RimShadeBorder = Shader.PropertyToID(PropertyName.RimShadeBorder);
+
+        /// <summary>Rim Shade Blur</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static readonly int RimShadeBlur = Shader.PropertyToID(PropertyName.RimShadeBlur);
+
+        /// <summary>Rim Shade Fresnel Power</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static readonly int RimShadeFresnelPower = Shader.PropertyToID(PropertyName.RimShadeFresnelPower);
+
+        #endregion
+
         #region Reflection
 
         /// <summary>Use Reflection</summary>

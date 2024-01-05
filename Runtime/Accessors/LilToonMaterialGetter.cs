@@ -2,8 +2,8 @@
 // @Namespace : LilToonShader
 // @Class     : LilToonMaterialGetter
 // ----------------------------------------------------------------------
-#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER
-#define LILTOON_1_5_0_OR_NEWER
+#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER && !LILTOON_1_6_0_OR_NEWER
+#define LILTOON_1_6_0_OR_NEWER
 #endif
 #nullable enable
 namespace LilToonShader
@@ -12,7 +12,9 @@ namespace LilToonShader
     using LilToonShader.Extensions;
     using LilToonShader.Proxies;
 
-#if LILTOON_1_5_0_OR_NEWER
+#if LILTOON_1_6_0_OR_NEWER
+    using LilToonShader.v1_6_0;
+#elif LILTOON_1_5_0_OR_NEWER
     using LilToonShader.v1_5_0;
 #elif LILTOON_1_4_0_OR_NEWER
     using LilToonShader.v1_4_0;
@@ -159,6 +161,9 @@ namespace LilToonShader
                 Anisotropy = GetLilAnisotropyPropertyValues(material),
                 Backlight = GetLilBacklightPropertyValues(material),
                 Shadow = GetLilShadowPropertyValues(material),
+#if LILTOON_1_6_0_OR_NEWER
+                RimShade = GetLilRimShadePropertyValues(material),  // v1.6.0
+#endif
                 Reflection = GetLilReflectionPropertyValues(material),
                 MatCap = GetLilMatCapPropertyValues(material),
                 MatCap2nd = GetLilMatCap2ndPropertyValues(material),
@@ -735,6 +740,32 @@ namespace LilToonShader
             };
         }
 
+        #endregion
+
+        #region Rim Shade
+
+#if LILTOON_1_6_0_OR_NEWER
+        /// <summary>
+        /// Get the lilToon Rim Shade property values from the material.
+        /// </summary>
+        /// <param name="material">A lilToon material.</param>
+        /// <returns></returns>
+        public virtual LilRimShade GetLilRimShadePropertyValues(Material material)
+        {
+            var materialProxy = new LilRimShadeMaterialProxy(material);
+
+            return new LilRimShade
+            {
+                UseRimShade = materialProxy.UseRimShade,                        // v1.6.0
+                RimShadeColor = materialProxy.RimShadeColor,                    // v1.6.0
+                RimShadeMask = materialProxy.RimShadeMask,                      // v1.6.0
+                RimShadeNormalStrength = materialProxy.RimShadeNormalStrength,  // v1.6.0
+                RimShadeBorder = materialProxy.RimShadeBorder,                  // v1.6.0
+                RimShadeBlur = materialProxy.RimShadeBlur,                      // v1.6.0
+                RimShadeFresnelPower = materialProxy.RimShadeFresnelPower,      // v1.6.0
+            };
+        }
+#endif
         #endregion
 
         #region Reflection

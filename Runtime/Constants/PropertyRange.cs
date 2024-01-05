@@ -178,6 +178,26 @@ namespace LilToonShader
 
         #endregion
 
+        #region Rim Shade
+
+        /// <summary>Rim Shade Normal Strength</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static FloatRangeDefault RimShadeNormalStrength = new FloatRangeDefault(0.0f, 1.0f, 1.0f);
+
+        /// <summary>Rim Shade Border</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static FloatRangeDefault RimShadeBorder = new FloatRangeDefault(0.0f, 1.0f, 0.5f);
+
+        /// <summary>Rim Shade Blur</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static FloatRangeDefault RimShadeBlur = new FloatRangeDefault(0.0f, 1.0f, 1.0f);
+
+        /// <summary>Rim Shade Fresnel Power</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public static FloatRangeDefault RimShadeFresnelPower = new FloatRangeDefault(0.01f, 50.0f, 1.0f);
+
+        #endregion
+
         #region Reflection
 
         /// <summary>Smoothness</summary>

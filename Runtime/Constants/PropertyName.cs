@@ -575,6 +575,38 @@ namespace LilToonShader
 
         #endregion
 
+        #region Rim Shade
+
+        /// <summary>Use Rim Shade</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public const string UseRimShade = "_UseRimShade";
+
+        /// <summary>Rim Shade Color</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public const string RimShadeColor = "_RimShadeColor";
+
+        /// <summary>Rim Shade Mask</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public const string RimShadeMask = "_RimShadeMask";
+
+        /// <summary>Rim Shade Normal Strength</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public const string RimShadeNormalStrength = "_RimShadeNormalStrength";
+
+        /// <summary>Rim Shade Border</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public const string RimShadeBorder = "_RimShadeBorder";
+
+        /// <summary>Rim Shade Blur</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public const string RimShadeBlur = "_RimShadeBlur";
+
+        /// <summary>Rim Shade Fresnel Power</summary>
+        /// <remarks>v1.6.0 added</remarks>
+        public const string RimShadeFresnelPower = "_RimShadeFresnelPower";
+
+        #endregion
+
         #region Reflection
 
         /// <summary>Use Reflection</summary>

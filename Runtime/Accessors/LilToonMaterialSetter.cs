@@ -2,8 +2,8 @@
 // @Namespace : LilToonShader
 // @Class     : LilToonMaterialSetter
 // ----------------------------------------------------------------------
-#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER
-#define LILTOON_1_5_0_OR_NEWER
+#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER && !LILTOON_1_6_0_OR_NEWER
+#define LILTOON_1_6_0_OR_NEWER
 #endif
 #nullable enable
 namespace LilToonShader
@@ -13,7 +13,9 @@ namespace LilToonShader
     using LilToonShader.Extensions;
     using LilToonShader.Proxies;
 
-#if LILTOON_1_5_0_OR_NEWER
+#if LILTOON_1_6_0_OR_NEWER
+    using LilToonShader.v1_6_0;
+#elif LILTOON_1_5_0_OR_NEWER
     using LilToonShader.v1_5_0;
 #elif LILTOON_1_4_0_OR_NEWER
     using LilToonShader.v1_4_0;
@@ -207,6 +209,11 @@ namespace LilToonShader
 
             // Shadow
             SetLilShadowPropertyValues(material, normalPropertyEntity.Shadow);
+
+#if LILTOON_1_6_0_OR_NEWER
+            // Rim Shade
+            SetLilRimShadePropertyValues(material, normalPropertyEntity.RimShade);  // v1.6.0
+#endif
 
             // Reflection
             SetLilReflectionPropertyValues(material, normalPropertyEntity.Reflection);
@@ -943,6 +950,35 @@ namespace LilToonShader
             };
         }
 
+        #endregion
+
+        #region Rim Shade
+
+#if LILTOON_1_6_0_OR_NEWER
+        /// <summary>
+        /// Set the lilToon Rim Shade property values to the material.
+        /// </summary>
+        /// <param name="material">A lilToon material.</param>
+        /// <param name="propertyBlock"></param>
+        public virtual void SetLilRimShadePropertyValues(Material material, ILilRimShade? propertyBlock)
+        {
+            if (propertyBlock is null)
+            {
+                return;
+            }
+
+            _ = new LilRimShadeMaterialProxy(material)
+            {
+                UseRimShade = propertyBlock.UseRimShade,                        // v1.6.0
+                RimShadeColor = propertyBlock.RimShadeColor,                    // v1.6.0
+                RimShadeMask = propertyBlock.RimShadeMask,                      // v1.6.0
+                RimShadeNormalStrength = propertyBlock.RimShadeNormalStrength,  // v1.6.0
+                RimShadeBorder = propertyBlock.RimShadeBorder,                  // v1.6.0
+                RimShadeBlur = propertyBlock.RimShadeBlur,                      // v1.6.0
+                RimShadeFresnelPower = propertyBlock.RimShadeFresnelPower,      // v1.6.0
+            };
+        }
+#endif
         #endregion
 
         #region Reflection
