@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.7.0] - 2024-01-18
+
+- Features
+  - lilToon version 1.7.0 is now supported.
+
 ## [1.6.0] - 2024-01-06
 
 - Features

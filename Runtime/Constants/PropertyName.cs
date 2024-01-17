@@ -1431,6 +1431,86 @@ namespace LilToonShader
 
         #endregion
 
+        #region UDIM Discard
+
+        /// <summary>UDIM Discard Compile</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardCompile = "_UDIMDiscardCompile";
+
+        /// <summary>UDIM Discard UV</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardUV = "_UDIMDiscardUV";
+
+        /// <summary>UDIM Discard Mode</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardMode = "_UDIMDiscardMode";
+
+        /// <summary>UDIM Discard Row 3-3</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow3_3 = "_UDIMDiscardRow3_3";
+
+        /// <summary>UDIM Discard Row 3-2</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow3_2 = "_UDIMDiscardRow3_2";
+
+        /// <summary>UDIM Discard Row 3-1</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow3_1 = "_UDIMDiscardRow3_1";
+
+        /// <summary>UDIM Discard Row 3-0</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow3_0 = "_UDIMDiscardRow3_0";
+
+        /// <summary>UDIM Discard Row 2-3</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow2_3 = "_UDIMDiscardRow2_3";
+
+        /// <summary>UDIM Discard Row 2-2</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow2_2 = "_UDIMDiscardRow2_2";
+
+        /// <summary>UDIM Discard Row 2-1</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow2_1 = "_UDIMDiscardRow2_1";
+
+        /// <summary>UDIM Discard Row 2-0</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow2_0 = "_UDIMDiscardRow2_0";
+
+        /// <summary>UDIM Discard Row 1-3</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow1_3 = "_UDIMDiscardRow1_3";
+
+        /// <summary>UDIM Discard Row 1-2</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow1_2 = "_UDIMDiscardRow1_2";
+
+        /// <summary>UDIM Discard Row 1-1</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow1_1 = "_UDIMDiscardRow1_1";
+
+        /// <summary>UDIM Discard Row 1-0</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow1_0 = "_UDIMDiscardRow1_0";
+
+        /// <summary>UDIM Discard Row 0-3</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow0_3 = "_UDIMDiscardRow0_3";
+
+        /// <summary>UDIM Discard Row 0-2</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow0_2 = "_UDIMDiscardRow0_2";
+
+        /// <summary>UDIM Discard Row 0-1</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow0_1 = "_UDIMDiscardRow0_1";
+
+        /// <summary>UDIM Discard Row 0-0</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public const string UDIMDiscardRow0_0 = "_UDIMDiscardRow0_0";
+
+        #endregion
+
         #region Encryption
 
         /// <summary>Ignore Encryption</summary>

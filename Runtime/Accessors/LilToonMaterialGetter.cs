@@ -2,8 +2,8 @@
 // @Namespace : LilToonShader
 // @Class     : LilToonMaterialGetter
 // ----------------------------------------------------------------------
-#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER && !LILTOON_1_6_0_OR_NEWER
-#define LILTOON_1_6_0_OR_NEWER
+#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER && !LILTOON_1_6_0_OR_NEWER && !LILTOON_1_7_0_OR_NEWER
+#define LILTOON_1_7_0_OR_NEWER
 #endif
 #nullable enable
 namespace LilToonShader
@@ -12,7 +12,9 @@ namespace LilToonShader
     using LilToonShader.Extensions;
     using LilToonShader.Proxies;
 
-#if LILTOON_1_6_0_OR_NEWER
+#if LILTOON_1_7_0_OR_NEWER
+    using LilToonShader.v1_7_0;
+#elif LILTOON_1_6_0_OR_NEWER
     using LilToonShader.v1_6_0;
 #elif LILTOON_1_5_0_OR_NEWER
     using LilToonShader.v1_5_0;
@@ -179,6 +181,9 @@ namespace LilToonShader
                 Dissolve = GetLilDissolvePropertyValues(material),
 #if LILTOON_1_4_0_OR_NEWER
                 IDMask = GetLilIDMaskPropertyValues(material),  // v1.4.0
+#endif
+#if LILTOON_1_7_0_OR_NEWER
+                UdimDiscard = GetLilUdimDiscardPropertyValues(material),  // v1.7.0
 #endif
                 Encryption = GetLilEncryptionPropertyValues(material),
                 Refraction = GetLilRefractionPropertyValues(material, propertyContainer.IsRefraction, propertyContainer.IsGem),
@@ -1342,6 +1347,44 @@ namespace LilToonShader
                 IDMaskPrior7 = materialProxy.IDMaskPrior7,  // v1.5.0
                 IDMaskPrior8 = materialProxy.IDMaskPrior8,  // v1.5.0
 #endif
+            };
+        }
+#endif
+        #endregion
+
+        #region UDIM Discard
+
+#if LILTOON_1_7_0_OR_NEWER
+        /// <summary>
+        /// Get the lilToon UDIM Discard property values from the material.
+        /// </summary>
+        /// <param name="material">A lilToon material.</param>
+        /// <returns></returns>
+        public virtual LilUdimDiscard GetLilUdimDiscardPropertyValues(Material material)
+        {
+            var materialProxy = new LilUdimDiscardMaterialProxy(material);
+
+            return new LilUdimDiscard
+            {
+                UDIMDiscardCompile = materialProxy.UDIMDiscardCompile,  // v1.7.0
+                UDIMDiscardUV = materialProxy.UDIMDiscardUV,            // v1.7.0
+                UDIMDiscardMode = materialProxy.UDIMDiscardMode,        // v1.7.0
+                UDIMDiscardRow3_3 = materialProxy.UDIMDiscardRow3_3,    // v1.7.0
+                UDIMDiscardRow3_2 = materialProxy.UDIMDiscardRow3_2,    // v1.7.0
+                UDIMDiscardRow3_1 = materialProxy.UDIMDiscardRow3_1,    // v1.7.0
+                UDIMDiscardRow3_0 = materialProxy.UDIMDiscardRow3_0,    // v1.7.0
+                UDIMDiscardRow2_3 = materialProxy.UDIMDiscardRow2_3,    // v1.7.0
+                UDIMDiscardRow2_2 = materialProxy.UDIMDiscardRow2_2,    // v1.7.0
+                UDIMDiscardRow2_1 = materialProxy.UDIMDiscardRow2_1,    // v1.7.0
+                UDIMDiscardRow2_0 = materialProxy.UDIMDiscardRow2_0,    // v1.7.0
+                UDIMDiscardRow1_3 = materialProxy.UDIMDiscardRow1_3,    // v1.7.0
+                UDIMDiscardRow1_2 = materialProxy.UDIMDiscardRow1_2,    // v1.7.0
+                UDIMDiscardRow1_1 = materialProxy.UDIMDiscardRow1_1,    // v1.7.0
+                UDIMDiscardRow1_0 = materialProxy.UDIMDiscardRow1_0,    // v1.7.0
+                UDIMDiscardRow0_3 = materialProxy.UDIMDiscardRow0_3,    // v1.7.0
+                UDIMDiscardRow0_2 = materialProxy.UDIMDiscardRow0_2,    // v1.7.0
+                UDIMDiscardRow0_1 = materialProxy.UDIMDiscardRow0_1,    // v1.7.0
+                UDIMDiscardRow0_0 = materialProxy.UDIMDiscardRow0_0,    // v1.7.0
             };
         }
 #endif

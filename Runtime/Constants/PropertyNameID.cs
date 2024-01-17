@@ -1433,6 +1433,86 @@ namespace LilToonShader
 
         #endregion
 
+        #region UDIM Discard
+
+        /// <summary>UDIM Discard Compile</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardCompile = Shader.PropertyToID(PropertyName.UDIMDiscardCompile);
+
+        /// <summary>UDIM Discard UV</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardUV = Shader.PropertyToID(PropertyName.UDIMDiscardUV);
+
+        /// <summary>UDIM Discard Mode</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardMode = Shader.PropertyToID(PropertyName.UDIMDiscardMode);
+
+        /// <summary>UDIM Discard Row 3-3</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow3_3 = Shader.PropertyToID(PropertyName.UDIMDiscardRow3_3);
+
+        /// <summary>UDIM Discard Row 3-2</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow3_2 = Shader.PropertyToID(PropertyName.UDIMDiscardRow3_2);
+
+        /// <summary>UDIM Discard Row 3-1</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow3_1 = Shader.PropertyToID(PropertyName.UDIMDiscardRow3_1);
+
+        /// <summary>UDIM Discard Row 3-0</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow3_0 = Shader.PropertyToID(PropertyName.UDIMDiscardRow3_0);
+
+        /// <summary>UDIM Discard Row 2-3</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow2_3 = Shader.PropertyToID(PropertyName.UDIMDiscardRow2_3);
+
+        /// <summary>UDIM Discard Row 2-2</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow2_2 = Shader.PropertyToID(PropertyName.UDIMDiscardRow2_2);
+
+        /// <summary>UDIM Discard Row 2-1</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow2_1 = Shader.PropertyToID(PropertyName.UDIMDiscardRow2_1);
+
+        /// <summary>UDIM Discard Row 2-0</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow2_0 = Shader.PropertyToID(PropertyName.UDIMDiscardRow2_0);
+
+        /// <summary>UDIM Discard Row 1-3</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow1_3 = Shader.PropertyToID(PropertyName.UDIMDiscardRow1_3);
+
+        /// <summary>UDIM Discard Row 1-2</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow1_2 = Shader.PropertyToID(PropertyName.UDIMDiscardRow1_2);
+
+        /// <summary>UDIM Discard Row 1-1</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow1_1 = Shader.PropertyToID(PropertyName.UDIMDiscardRow1_1);
+
+        /// <summary>UDIM Discard Row 1-0</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow1_0 = Shader.PropertyToID(PropertyName.UDIMDiscardRow1_0);
+
+        /// <summary>UDIM Discard Row 0-3</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow0_3 = Shader.PropertyToID(PropertyName.UDIMDiscardRow0_3);
+
+        /// <summary>UDIM Discard Row 0-2</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow0_2 = Shader.PropertyToID(PropertyName.UDIMDiscardRow0_2);
+
+        /// <summary>UDIM Discard Row 0-1</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow0_1 = Shader.PropertyToID(PropertyName.UDIMDiscardRow0_1);
+
+        /// <summary>UDIM Discard Row 0-0</summary>
+        /// <remarks>v1.7.0 added</remarks>
+        public static readonly int UDIMDiscardRow0_0 = Shader.PropertyToID(PropertyName.UDIMDiscardRow0_0);
+
+        #endregion
+
         #region Encryption
 
         /// <summary>Ignore Encryption</summary>

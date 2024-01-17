@@ -133,4 +133,18 @@ namespace LilToonShader
         /// <summary>UV3</summary>
         UV3 = 3,
     }
+
+    /// <summary>UDIM Discard UV Mode</summary>
+    /// <remarks>v1.7.0 added</remarks>
+    public enum LilUdimDiscardUVMode
+    {
+        /// <summary>UV0</summary>
+        UV0 = 0,
+        /// <summary>UV1</summary>
+        UV1 = 1,
+        /// <summary>UV2</summary>
+        UV2 = 2,
+        /// <summary>UV3</summary>
+        UV3 = 3,
+    }
 }

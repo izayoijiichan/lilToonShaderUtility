@@ -2,8 +2,8 @@
 // @Namespace : LilToonShader
 // @Class     : LilToonMaterialSetter
 // ----------------------------------------------------------------------
-#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER && !LILTOON_1_6_0_OR_NEWER
-#define LILTOON_1_6_0_OR_NEWER
+#if !LILTOON_1_2_12_OR_OLDER && !LILTOON_1_3_0_OR_NEWER && !LILTOON_1_4_0_OR_NEWER && !LILTOON_1_5_0_OR_NEWER && !LILTOON_1_6_0_OR_NEWER && !LILTOON_1_7_0_OR_NEWER
+#define LILTOON_1_7_0_OR_NEWER
 #endif
 #nullable enable
 namespace LilToonShader
@@ -13,7 +13,9 @@ namespace LilToonShader
     using LilToonShader.Extensions;
     using LilToonShader.Proxies;
 
-#if LILTOON_1_6_0_OR_NEWER
+#if LILTOON_1_7_0_OR_NEWER
+    using LilToonShader.v1_7_0;
+#elif LILTOON_1_6_0_OR_NEWER
     using LilToonShader.v1_6_0;
 #elif LILTOON_1_5_0_OR_NEWER
     using LilToonShader.v1_5_0;
@@ -250,6 +252,12 @@ namespace LilToonShader
             // ID Mask
             SetLilIDMaskPropertyValues(material, normalPropertyEntity.IDMask);  // v1.4.0
 #endif
+
+#if LILTOON_1_7_0_OR_NEWER
+            // UDIM Discard
+            SetLilUdimDiscardPropertyValues(material, normalPropertyEntity.UdimDiscard);  // v1.7.0
+#endif
+
             // Encryption
             SetLilEncryptionPropertyValues(material, normalPropertyEntity.Encryption);
 
@@ -1636,6 +1644,47 @@ namespace LilToonShader
                 IDMaskPrior7 = propertyBlock.IDMaskPrior7,  // v1.5.0
                 IDMaskPrior8 = propertyBlock.IDMaskPrior8,  // v1.5.0
 #endif
+            };
+        }
+#endif
+        #endregion
+
+        #region UDIM Discard
+
+#if LILTOON_1_7_0_OR_NEWER
+        /// <summary>
+        /// Set the lilToon UDIM Discard property values to the material.
+        /// </summary>
+        /// <param name="material">A lilToon material.</param>
+        /// <param name="propertyBlock"></param>
+        public virtual void SetLilUdimDiscardPropertyValues(Material material, ILilUdimDiscard? propertyBlock)
+        {
+            if (propertyBlock is null)
+            {
+                return;
+            }
+
+            _ = new LilUdimDiscardMaterialProxy(material)
+            {
+                UDIMDiscardCompile = propertyBlock.UDIMDiscardCompile,  // v1.7.0
+                UDIMDiscardUV = propertyBlock.UDIMDiscardUV,            // v1.7.0
+                UDIMDiscardMode = propertyBlock.UDIMDiscardMode,        // v1.7.0
+                UDIMDiscardRow3_3 = propertyBlock.UDIMDiscardRow3_3,    // v1.7.0
+                UDIMDiscardRow3_2 = propertyBlock.UDIMDiscardRow3_2,    // v1.7.0
+                UDIMDiscardRow3_1 = propertyBlock.UDIMDiscardRow3_1,    // v1.7.0
+                UDIMDiscardRow3_0 = propertyBlock.UDIMDiscardRow3_0,    // v1.7.0
+                UDIMDiscardRow2_3 = propertyBlock.UDIMDiscardRow2_3,    // v1.7.0
+                UDIMDiscardRow2_2 = propertyBlock.UDIMDiscardRow2_2,    // v1.7.0
+                UDIMDiscardRow2_1 = propertyBlock.UDIMDiscardRow2_1,    // v1.7.0
+                UDIMDiscardRow2_0 = propertyBlock.UDIMDiscardRow2_0,    // v1.7.0
+                UDIMDiscardRow1_3 = propertyBlock.UDIMDiscardRow1_3,    // v1.7.0
+                UDIMDiscardRow1_2 = propertyBlock.UDIMDiscardRow1_2,    // v1.7.0
+                UDIMDiscardRow1_1 = propertyBlock.UDIMDiscardRow1_1,    // v1.7.0
+                UDIMDiscardRow1_0 = propertyBlock.UDIMDiscardRow1_0,    // v1.7.0
+                UDIMDiscardRow0_3 = propertyBlock.UDIMDiscardRow0_3,    // v1.7.0
+                UDIMDiscardRow0_2 = propertyBlock.UDIMDiscardRow0_2,    // v1.7.0
+                UDIMDiscardRow0_1 = propertyBlock.UDIMDiscardRow0_1,    // v1.7.0
+                UDIMDiscardRow0_0 = propertyBlock.UDIMDiscardRow0_0,    // v1.7.0
             };
         }
 #endif
